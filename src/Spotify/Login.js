@@ -3,11 +3,11 @@ var request = require('request'); // "Request" library
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
+var SpotifyWebApi = require('spotify-web-api-node');
 
 var client_id = 'e5a2287a5ea14d379ec2ea832d4760a4'; // Your client id
 var client_secret = 'dbc2ab802d694e55ab516a43f89c921c'; // Your secret
-var redirect_uri = 'http://localhost:8888/'; // Your redirect uri
-
+var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 /**
  * Generates a random string containing numbers and letters
  * @param  {number} length The length of the string
@@ -89,17 +89,26 @@ app.get('/callback', function(req, res) {
           json: true
         };
 
-        // use the access token to access the Spotify Web API
-        request.get(options, function(error, response, body) {
-          console.log(body);
-        });
-
         // we can also pass the token to the browser to make requests from there
         res.redirect('/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
           }));
+
+
+          
+           // use the access token to access the Spotify Web API
+        var spotifyApi = new SpotifyWebApi();
+        spotifyApi.setAccessToken(access_token);
+        spotifyApi.getMyTopArtists()
+        .then(function(data) {
+          let topArtists = data.body.items;
+          console.log(topArtists);
+        }, function(err) {
+          console.log('Something went wrong!', err);
+        });
+
       } else {
         res.redirect('/#' +
           querystring.stringify({
