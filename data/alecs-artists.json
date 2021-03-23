@@ -1,0 +1,763 @@
+{
+  "items": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1uiEZYehlNivdK3iQyAbye"
+      },
+      "followers": {
+        "href": null,
+        "total": 839890
+      },
+      "genres": [
+        "indie soul",
+        "jazz pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1uiEZYehlNivdK3iQyAbye",
+      "id": "1uiEZYehlNivdK3iQyAbye",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/fad839d0564bf98f27a0b0fa048d7b0ec0033651",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/036883cc19c6f16615f7eecca3011f001adf9e1a",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/0e028fe978fe9a6ce12842bdd0918d188dbb9ec9",
+          "width": 160
+        }
+      ],
+      "name": "Tom Misch",
+      "popularity": 74,
+      "type": "artist",
+      "uri": "spotify:artist:1uiEZYehlNivdK3iQyAbye"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2aoFQUeHD1U7pL098lRsDU"
+      },
+      "followers": {
+        "href": null,
+        "total": 351211
+      },
+      "genres": [
+        "alternative hip hop",
+        "hip hop",
+        "psychedelic hip hop",
+        "rap"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2aoFQUeHD1U7pL098lRsDU",
+      "id": "2aoFQUeHD1U7pL098lRsDU",
+      "images": [
+        {
+          "height": 1000,
+          "url": "https://i.scdn.co/image/bc99e9cb1976fcecb929d819b3dfc6f6fabca500",
+          "width": 1000
+        },
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/9d7ed68679a970b86faaea230d16334baba5ed4b",
+          "width": 640
+        },
+        {
+          "height": 200,
+          "url": "https://i.scdn.co/image/3c14d3a5bf0dbc50595b6d5001633aae9d9e2b5f",
+          "width": 200
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ad65acde29d51f7f62a9307815d5b9029be3bb64",
+          "width": 64
+        }
+      ],
+      "name": "Madvillain",
+      "popularity": 69,
+      "type": "artist",
+      "uri": "spotify:artist:2aoFQUeHD1U7pL098lRsDU"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7FU0xCgmSYQEiBeevUqQ4S"
+      },
+      "followers": {
+        "href": null,
+        "total": 114727
+      },
+      "genres": [
+        "indie folk",
+        "indie pop",
+        "modern rock",
+        "nyc pop",
+        "stomp and holler",
+        "vapor soul"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7FU0xCgmSYQEiBeevUqQ4S",
+      "id": "7FU0xCgmSYQEiBeevUqQ4S",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/bd51e73ef59209a97823135f3b65556adbe11062",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/7ea00710aafcec57da6b212597f74a58fb7a27a6",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/f1c42d3b6480f1479f20864200be20961e0be58c",
+          "width": 160
+        }
+      ],
+      "name": "Yoke Lore",
+      "popularity": 66,
+      "type": "artist",
+      "uri": "spotify:artist:7FU0xCgmSYQEiBeevUqQ4S"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3jK9MiCrA42lLAdMGUZpwa"
+      },
+      "followers": {
+        "href": null,
+        "total": 1778458
+      },
+      "genres": [
+        "escape room"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3jK9MiCrA42lLAdMGUZpwa",
+      "id": "3jK9MiCrA42lLAdMGUZpwa",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ad015b706436e5bb40528b5883f2506cb1205e87",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/33bfeaff58f1dda057c8839fadc362903355afce",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/6d28da90d3e97fbfa054f84861891f828fac1507",
+          "width": 160
+        }
+      ],
+      "name": "Anderson .Paak",
+      "popularity": 85,
+      "type": "artist",
+      "uri": "spotify:artist:3jK9MiCrA42lLAdMGUZpwa"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0gEenHtJ9puwA63nbY2TAE"
+      },
+      "followers": {
+        "href": null,
+        "total": 6239
+      },
+      "genres": [
+        "chattanooga indie"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0gEenHtJ9puwA63nbY2TAE",
+      "id": "0gEenHtJ9puwA63nbY2TAE",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/14fc693ab1a269d7f5730b47cd8e4d61cd6005fe",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/e33f8bf7423b5ab48e02e0393732193f487e97fe",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/85180ad86a023e26dc35b14b4f7021580c881922",
+          "width": 160
+        }
+      ],
+      "name": "Nick Lutsko",
+      "popularity": 41,
+      "type": "artist",
+      "uri": "spotify:artist:0gEenHtJ9puwA63nbY2TAE"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0QWrMNukfcVOmgEU0FEDyD"
+      },
+      "followers": {
+        "href": null,
+        "total": 387079
+      },
+      "genres": [
+        "indie soul",
+        "uk alternative pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0QWrMNukfcVOmgEU0FEDyD",
+      "id": "0QWrMNukfcVOmgEU0FEDyD",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/852ebd6260da7ca7258008ff4734396e9790c74e",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/2a0b0afb633abd807af7d582a79a44ec50a05ca3",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/98b562e83bb688e788777c0c1fbdc09e44a36059",
+          "width": 160
+        }
+      ],
+      "name": "Jacob Collier",
+      "popularity": 65,
+      "type": "artist",
+      "uri": "spotify:artist:0QWrMNukfcVOmgEU0FEDyD"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/29XOeO6KIWxGthejQqn793"
+      },
+      "followers": {
+        "href": null,
+        "total": 601154
+      },
+      "genres": [
+        "afrofuturism",
+        "alternative hip hop",
+        "electronica",
+        "escape room",
+        "experimental hip hop",
+        "glitch",
+        "glitch hop",
+        "hip hop",
+        "intelligent dance music",
+        "jazztronica",
+        "psychedelic hip hop",
+        "wonky"
+      ],
+      "href": "https://api.spotify.com/v1/artists/29XOeO6KIWxGthejQqn793",
+      "id": "29XOeO6KIWxGthejQqn793",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/eeb8b29fbdf6b259b70495ba52de0ee82a42e110",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/faba1c480882fb8dbcd41016afdddbe2f5b65b8c",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ce5be958b5a9d30bdecf10cf1a92e46fffc71bba",
+          "width": 160
+        }
+      ],
+      "name": "Flying Lotus",
+      "popularity": 61,
+      "type": "artist",
+      "uri": "spotify:artist:29XOeO6KIWxGthejQqn793"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2iE18Oxc8YSumAU232n4rW"
+      },
+      "followers": {
+        "href": null,
+        "total": 1104111
+      },
+      "genres": [
+        "adult standards",
+        "motown"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2iE18Oxc8YSumAU232n4rW",
+      "id": "2iE18Oxc8YSumAU232n4rW",
+      "images": [
+        {
+          "height": 525,
+          "url": "https://i.scdn.co/image/19f768d93f6c80f7d4ca5b906e1c0376a3704389",
+          "width": 527
+        },
+        {
+          "height": 199,
+          "url": "https://i.scdn.co/image/d6fbea801da2cf0c52c810ba46b2a4e6ca1d847e",
+          "width": 200
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/c4db26389dbf3374df5e4fadc60f7b70046c786c",
+          "width": 64
+        }
+      ],
+      "name": "The Jackson 5",
+      "popularity": 72,
+      "type": "artist",
+      "uri": "spotify:artist:2iE18Oxc8YSumAU232n4rW"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0du5cEVh5yTK9QJze8zA0C"
+      },
+      "followers": {
+        "href": null,
+        "total": 29342391
+      },
+      "genres": [
+        "pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0du5cEVh5yTK9QJze8zA0C",
+      "id": "0du5cEVh5yTK9QJze8zA0C",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/c1ee384b2fe0ea8e9df0b194a17d6b41b2b7993a",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/aba91de7087e3b657cf11e98c45026ac6b7df544",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/b958dfcbcfed9af560764c04c4afc19381744892",
+          "width": 160
+        }
+      ],
+      "name": "Bruno Mars",
+      "popularity": 93,
+      "type": "artist",
+      "uri": "spotify:artist:0du5cEVh5yTK9QJze8zA0C"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4ytkhMSAnrDP8XzRNlw9FS"
+      },
+      "followers": {
+        "href": null,
+        "total": 95111
+      },
+      "genres": [
+        "adult standards",
+        "jazz trio"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4ytkhMSAnrDP8XzRNlw9FS",
+      "id": "4ytkhMSAnrDP8XzRNlw9FS",
+      "images": [
+        {
+          "height": 1000,
+          "url": "https://i.scdn.co/image/822d7cac5aa9649b2c8a0be5da89567f8b80ca56",
+          "width": 1000
+        },
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/0c2ca300db3332bf24ae50cce9dbb1e5d3789ea6",
+          "width": 640
+        },
+        {
+          "height": 200,
+          "url": "https://i.scdn.co/image/2c2dbcbc0bce3aa7c0bca4f114ffec7a90688999",
+          "width": 200
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/c649b5b0ef55206408245e435324ffc0dd376ae9",
+          "width": 64
+        }
+      ],
+      "name": "Vince Guaraldi Trio",
+      "popularity": 57,
+      "type": "artist",
+      "uri": "spotify:artist:4ytkhMSAnrDP8XzRNlw9FS"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6FBDaR13swtiWwGhX1WQsP"
+      },
+      "followers": {
+        "href": null,
+        "total": 6378857
+      },
+      "genres": [
+        "pop punk",
+        "punk",
+        "socal pop punk"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6FBDaR13swtiWwGhX1WQsP",
+      "id": "6FBDaR13swtiWwGhX1WQsP",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/345f0de2b6bdadd50e7b5236324e9d2d1253a7d1",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/8fafbf4ed95b697760ab17c7ca52862140ff2449",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/1d7fc0e645a87aaabfa1e1afcb2ad4ea50debf2f",
+          "width": 160
+        }
+      ],
+      "name": "blink-182",
+      "popularity": 82,
+      "type": "artist",
+      "uri": "spotify:artist:6FBDaR13swtiWwGhX1WQsP"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7pbDxGE6nQSZVfiFdq9lOL"
+      },
+      "followers": {
+        "href": null,
+        "total": 2844438
+      },
+      "genres": [
+        "bedroom pop",
+        "pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7pbDxGE6nQSZVfiFdq9lOL",
+      "id": "7pbDxGE6nQSZVfiFdq9lOL",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ccf08d0daab08ec8bcc76d549d0d62bb6da1ab14",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ecda49b90475c4cb452b6a02cec36ba878775fca",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/321b61bad8f9c7337c59798a8a3c7dcc8b997730",
+          "width": 160
+        }
+      ],
+      "name": "Rex Orange County",
+      "popularity": 82,
+      "type": "artist",
+      "uri": "spotify:artist:7pbDxGE6nQSZVfiFdq9lOL"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2h93pZq0e7k5yf4dywlkpM"
+      },
+      "followers": {
+        "href": null,
+        "total": 7437575
+      },
+      "genres": [
+        "alternative r&b",
+        "hip hop",
+        "lgbtq+ hip hop",
+        "neo soul",
+        "pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2h93pZq0e7k5yf4dywlkpM",
+      "id": "2h93pZq0e7k5yf4dywlkpM",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/7db34c8aace6feb91f38601bb75e6b3301b4657a",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/0cc22250c0b18183e5c62f240a5756ec5226dee1",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/e42028e7fe5a7ba790b5b4e7b096b06bf3319443",
+          "width": 160
+        }
+      ],
+      "name": "Frank Ocean",
+      "popularity": 87,
+      "type": "artist",
+      "uri": "spotify:artist:2h93pZq0e7k5yf4dywlkpM"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3NMTTJQY67HNOqVBKrbFxH"
+      },
+      "followers": {
+        "href": null,
+        "total": 42
+      },
+      "genres": [],
+      "href": "https://api.spotify.com/v1/artists/3NMTTJQY67HNOqVBKrbFxH",
+      "id": "3NMTTJQY67HNOqVBKrbFxH",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/2a13dfa198468a1863e4321dbf12d104cfac8429",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/e3ed09cc8e2bf508e8df682c7c393d1b4a87a841",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/15d2fc23fea63ce063959260e2642ca28307c8af",
+          "width": 160
+        }
+      ],
+      "name": "Liren",
+      "popularity": 1,
+      "type": "artist",
+      "uri": "spotify:artist:3NMTTJQY67HNOqVBKrbFxH"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/76M2Ekj8bG8W7X2nbx2CpF"
+      },
+      "followers": {
+        "href": null,
+        "total": 395202
+      },
+      "genres": [
+        "bass trap",
+        "brostep",
+        "edm",
+        "electro house",
+        "electronic trap",
+        "pop dance"
+      ],
+      "href": "https://api.spotify.com/v1/artists/76M2Ekj8bG8W7X2nbx2CpF",
+      "id": "76M2Ekj8bG8W7X2nbx2CpF",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/e534c6c6ce6489ab1390bd898d79c4c510d681ed",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/c9cf6fd1775f4710d7e7f905c6828769da46c13b",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/c15f9e995085b089fcfaa9eb8dc26860e17ab293",
+          "width": 160
+        }
+      ],
+      "name": "NGHTMRE",
+      "popularity": 69,
+      "type": "artist",
+      "uri": "spotify:artist:76M2Ekj8bG8W7X2nbx2CpF"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/34XlPCFfB4vT7P1ekWq9Jc"
+      },
+      "followers": {
+        "href": null,
+        "total": 132368
+      },
+      "genres": [
+        "boston rock",
+        "neo mellow",
+        "pop rock"
+      ],
+      "href": "https://api.spotify.com/v1/artists/34XlPCFfB4vT7P1ekWq9Jc",
+      "id": "34XlPCFfB4vT7P1ekWq9Jc",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/22019e37540fd1a2526660a1ca0b506e68d00c6d",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/522b6f6d760336587b704865b673c1938d2771c6",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/c427275e24a4362eec72ae342ccd2206d7a8cc04",
+          "width": 160
+        }
+      ],
+      "name": "Guster",
+      "popularity": 53,
+      "type": "artist",
+      "uri": "spotify:artist:34XlPCFfB4vT7P1ekWq9Jc"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0lawSNBxNgJFQYJnQzLH8c"
+      },
+      "followers": {
+        "href": null,
+        "total": 439691
+      },
+      "genres": [
+        "lo-fi beats"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0lawSNBxNgJFQYJnQzLH8c",
+      "id": "0lawSNBxNgJFQYJnQzLH8c",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/182e9c4468b53729a465bb5c0437210c847f99e3",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/6a16d67e33f8a58dc9af12dfa11c83be7c71d27a",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/5dd861dac57a66c98928a1c1169897e267abd4cd",
+          "width": 160
+        }
+      ],
+      "name": "khai dreams",
+      "popularity": 73,
+      "type": "artist",
+      "uri": "spotify:artist:0lawSNBxNgJFQYJnQzLH8c"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7pXu47GoqSYRajmBCjxdD6"
+      },
+      "followers": {
+        "href": null,
+        "total": 621173
+      },
+      "genres": [
+        "ann arbor indie",
+        "funk rock",
+        "instrumental funk"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7pXu47GoqSYRajmBCjxdD6",
+      "id": "7pXu47GoqSYRajmBCjxdD6",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/4dcfc1c4476e9859f72b19cb51dcfdeb72d566a4",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/f2171b80f9dcad9e03922d495922380fcb7855e2",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/8d5eccff271153b237d2857a748ed943bc2a73a5",
+          "width": 160
+        }
+      ],
+      "name": "Vulfpeck",
+      "popularity": 67,
+      "type": "artist",
+      "uri": "spotify:artist:7pXu47GoqSYRajmBCjxdD6"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3Gm5F95VdRxW3mqCn8RPBJ"
+      },
+      "followers": {
+        "href": null,
+        "total": 1548643
+      },
+      "genres": [
+        "hip hop",
+        "pop rap",
+        "portland hip hop",
+        "rap",
+        "underground hip hop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3Gm5F95VdRxW3mqCn8RPBJ",
+      "id": "3Gm5F95VdRxW3mqCn8RPBJ",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/e2d488d9e4eb7eed9283280e4038a5be0bd3becb",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/b7e2132463e4f14047ffec8d20e8e310b4693f20",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/f42a3cbf09a6a6e9c43cc482b7dd16e816ae7a47",
+          "width": 160
+        }
+      ],
+      "name": "Aminé",
+      "popularity": 78,
+      "type": "artist",
+      "uri": "spotify:artist:3Gm5F95VdRxW3mqCn8RPBJ"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4yvcSjfu4PC0CYQyLy4wSq"
+      },
+      "followers": {
+        "href": null,
+        "total": 1590052
+      },
+      "genres": [
+        "gauze pop",
+        "indietronica",
+        "shiver pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4yvcSjfu4PC0CYQyLy4wSq",
+      "id": "4yvcSjfu4PC0CYQyLy4wSq",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/f282504561b0c2b2ec74925793bbf132982e9098",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/43889206b3aab1e168d664ff9a2a30c5d4e50055",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/ebfc603dcc3c1efc110fc0563aa31121a2033804",
+          "width": 160
+        }
+      ],
+      "name": "Glass Animals",
+      "popularity": 84,
+      "type": "artist",
+      "uri": "spotify:artist:4yvcSjfu4PC0CYQyLy4wSq"
+    }
+  ],
+  "total": 50,
+  "limit": 20,
+  "offset": 0,
+  "previous": null,
+  "href": "https://api.spotify.com/v1/me/top/artists",
+  "next": "https://api.spotify.com/v1/me/top/artists?limit=20&offset=20"
+}

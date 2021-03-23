@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('zacks-artists-short.json');
+let rawdata = fs.readFileSync('jasmine_genres.json');
 let obj = JSON.parse(rawdata);
 let artists = obj.items;
 
@@ -21,6 +21,8 @@ for (let i = 0; i < artists.length; i++) {
     }
   }
 }
+
+// console.log(genreObjForUser);
 
 // https://stackoverflow.com/questions/1069666/sorting-object-property-by-values/16794116#16794116
 const sortUserGenreObject = Object.fromEntries(
@@ -47,16 +49,16 @@ genreCities.pop();
 let cityMatches = [];
 // look through each city (start at 1 bc first row is col lables)
 for(let city = 1; city < genreCities.length; city++) {
-  let isCityAMatch = false;
+  let isCityAMatch = 0;
   // start at 2 bc city, country, genre, ...)
   for(let userGenre = 0; userGenre < genreSortedListForUser.length; userGenre++){
-    if(isCityAMatch){
+    if(isCityAMatch > 5){
+      cityMatches.push(city);
       break;
     }
     for(let cityGenre = 2; cityGenre < genreCities[city].length; cityGenre++){
       if(genreCities[city][cityGenre] == genreSortedListForUser[userGenre]){
-        isCityAMatch =  true;
-        cityMatches.push(city);
+        isCityAMatch += 1;
         // console.log(genreCities[city][0]);
         break;
       }
@@ -74,11 +76,10 @@ for(let city = 0; city < cityMatches.length; city++) {
   for(let cityGenre = 2; cityGenre < genreCities[matchedCityNumber].length-1; cityGenre++){
     let cityGenrePos = cityGenre-2;
     for(let userGenrePos = 0; userGenrePos < genreSortedListForUser.length; userGenrePos++){
-      // console.log(genreCities[matchedCityNumber][cityGenre]);
-      // console.log(genreSortedListForUser[userGenrePos]);
       if(genreCities[matchedCityNumber][cityGenre] == genreSortedListForUser[userGenrePos]){
-        // console.log(true);
-        let differenceSquared = Math.pow(cityGenrePos - userGenrePos, 2);
+        // console.log(genreCities[matchedCityNumber][cityGenre]);
+        let differenceSquared = Math.abs(cityGenrePos - userGenrePos);
+        // console.log(differenceSquared);
         cityScore += differenceSquared;
       }
     }
@@ -100,7 +101,7 @@ for (let genre in sortLeastSquaresObject){
 // console.log(sortedLeastSqaresList);
 
 for(let city = 0; city < sortedLeastSqaresList.length; city++) {
-  let matchedCityNumber = cityMatches[city];
+  let matchedCityNumber = sortedLeastSqaresList[city];
   console.log(genreCities[matchedCityNumber][0], genreCities[matchedCityNumber][1]);
 }
 
