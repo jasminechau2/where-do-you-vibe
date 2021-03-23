@@ -1,0 +1,360 @@
+{
+  "items": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3MZsBdqDrRTJihTHQrO6Dq"
+      },
+      "followers": {
+        "href": null,
+        "total": 4267610
+      },
+      "genres": [
+        "alternative r&b",
+        "viral pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3MZsBdqDrRTJihTHQrO6Dq",
+      "id": "3MZsBdqDrRTJihTHQrO6Dq",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/946502271a52151aae958c8d5bfefc1088e50886",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/7bc3bb57c6977b18d8afe7d02adaeed4c31810df",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/50c504c91a2ccd2b5f39837e6261463267b858a2",
+          "width": 160
+        }
+      ],
+      "name": "Joji",
+      "popularity": 86,
+      "type": "artist",
+      "uri": "spotify:artist:3MZsBdqDrRTJihTHQrO6Dq"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6maAVJxVTGW1xA3LokpQm8"
+      },
+      "followers": {
+        "href": null,
+        "total": 187632
+      },
+      "genres": [
+        "otacore"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6maAVJxVTGW1xA3LokpQm8",
+      "id": "6maAVJxVTGW1xA3LokpQm8",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/fe660a7b63740b6e6514e70e1a891055fd061128",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/62f9ae9fd0a0e08c005a71ba55a6419d430e2982",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/766af74d3aab575c7ee5f4e03c9412e1c999673c",
+          "width": 160
+        }
+      ],
+      "name": "LilyPichu",
+      "popularity": 65,
+      "type": "artist",
+      "uri": "spotify:artist:6maAVJxVTGW1xA3LokpQm8"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5mqguTgtaoCMNMZD6txCh6"
+      },
+      "followers": {
+        "href": null,
+        "total": 340897
+      },
+      "genres": [
+        "bedroom pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/5mqguTgtaoCMNMZD6txCh6",
+      "id": "5mqguTgtaoCMNMZD6txCh6",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/296a395dd8cb2b1f8d3ee95cebb2de9888f2a2a9",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/08e17605be818d7a61589dab206c6813d18a5956",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/a163578572a29347275e34569c01ec0c8e09ea30",
+          "width": 160
+        }
+      ],
+      "name": "Phum Viphurit",
+      "popularity": 61,
+      "type": "artist",
+      "uri": "spotify:artist:5mqguTgtaoCMNMZD6txCh6"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/67WNUxmM7y4WzHPAVzBu3E"
+      },
+      "followers": {
+        "href": null,
+        "total": 196517
+      },
+      "genres": [
+        "indie pop",
+        "la indie"
+      ],
+      "href": "https://api.spotify.com/v1/artists/67WNUxmM7y4WzHPAVzBu3E",
+      "id": "67WNUxmM7y4WzHPAVzBu3E",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/aa809640f8c5e28a7fe76e93791c8ff9637ac750",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/5e56d754396587559bcc593fda216313a2aec16f",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/5dca2656d221eeb0cfb1698c3aaabc0e41991378",
+          "width": 160
+        }
+      ],
+      "name": "The Regrettes",
+      "popularity": 58,
+      "type": "artist",
+      "uri": "spotify:artist:67WNUxmM7y4WzHPAVzBu3E"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2kxP07DLgs4xlWz8YHlvfh"
+      },
+      "followers": {
+        "href": null,
+        "total": 770764
+      },
+      "genres": [
+        "indonesian r&b",
+        "pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2kxP07DLgs4xlWz8YHlvfh",
+      "id": "2kxP07DLgs4xlWz8YHlvfh",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/8e1d2fddeb9b7812ee53ed0da0cd2b2e02d1a4b3",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/90056e0e13b14cc982719206201e216ccc95249f",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/7dbd7d634f9920a60de22073fda693b1131a82aa",
+          "width": 160
+        }
+      ],
+      "name": "NIKI",
+      "popularity": 75,
+      "type": "artist",
+      "uri": "spotify:artist:2kxP07DLgs4xlWz8YHlvfh"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/52IlucwpJ6UPNEv2myDqNx"
+      },
+      "followers": {
+        "href": null,
+        "total": 148
+      },
+      "genres": [],
+      "href": "https://api.spotify.com/v1/artists/52IlucwpJ6UPNEv2myDqNx",
+      "id": "52IlucwpJ6UPNEv2myDqNx",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/7efb11a79da5f93310856f4011826f8f7509842f",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/16f660b3ac5d9383712d4163a45b58a098447d6d",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/6a63bfa5442cbb61747780a8622d10f7e104fece",
+          "width": 160
+        }
+      ],
+      "name": "koozie",
+      "popularity": 14,
+      "type": "artist",
+      "uri": "spotify:artist:52IlucwpJ6UPNEv2myDqNx"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1DLKitfb8fshL0DtCecRpY"
+      },
+      "followers": {
+        "href": null,
+        "total": 158798
+      },
+      "genres": [
+        "future bass",
+        "social media pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1DLKitfb8fshL0DtCecRpY",
+      "id": "1DLKitfb8fshL0DtCecRpY",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/6c479b5b273a752cabc3e438fc4e58d66c280685",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/fcb22652e41f4375aa3f1fbd285b0a5369bc3d31",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/205eac8b24795ea7eb8fba7f0e1e024fdd109573",
+          "width": 160
+        }
+      ],
+      "name": "Shawn Wasabi",
+      "popularity": 59,
+      "type": "artist",
+      "uri": "spotify:artist:1DLKitfb8fshL0DtCecRpY"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7yntSJ6uojO3z6GFUVwhAW"
+      },
+      "followers": {
+        "href": null,
+        "total": 1478178
+      },
+      "genres": [
+        "viral rap"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7yntSJ6uojO3z6GFUVwhAW",
+      "id": "7yntSJ6uojO3z6GFUVwhAW",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/a6f321b07f985820a3e26350248d6cfca8868bdd",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/8086bc5190cb3d7978f4fd16cac3648431c1d246",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/58d8d32e0e2867fa5db6017b275a1f42d4508823",
+          "width": 160
+        }
+      ],
+      "name": "CORPSE",
+      "popularity": 80,
+      "type": "artist",
+      "uri": "spotify:artist:7yntSJ6uojO3z6GFUVwhAW"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/072QZuLtCqlAesYnOGY7lN"
+      },
+      "followers": {
+        "href": null,
+        "total": 361203
+      },
+      "genres": [
+        "meme rap"
+      ],
+      "href": "https://api.spotify.com/v1/artists/072QZuLtCqlAesYnOGY7lN",
+      "id": "072QZuLtCqlAesYnOGY7lN",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/9c17414957830053a8edc62eae80fa4f7e2d69d4",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/a910c790ef4e9a5bd7f22859a64b545651e02743",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/fa9b1ecab8e84b1e593e7492750b5984c85891e8",
+          "width": 160
+        }
+      ],
+      "name": "Tiny Meat Gang",
+      "popularity": 64,
+      "type": "artist",
+      "uri": "spotify:artist:072QZuLtCqlAesYnOGY7lN"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2NNTIDSDRlsf4lzYW9fpKm"
+      },
+      "followers": {
+        "href": null,
+        "total": 58
+      },
+      "genres": [],
+      "href": "https://api.spotify.com/v1/artists/2NNTIDSDRlsf4lzYW9fpKm",
+      "id": "2NNTIDSDRlsf4lzYW9fpKm",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/0e888abf5baf12332a38b78d51794a2bba95a73b",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/8353f656d4d6ae1ae5fe27239e550e9c35ba973f",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/d9c2871a47a2819bee274152a2ccdeb876c595b1",
+          "width": 160
+        }
+      ],
+      "name": "Ladji Mouflet",
+      "popularity": 0,
+      "type": "artist",
+      "uri": "spotify:artist:2NNTIDSDRlsf4lzYW9fpKm"
+    }
+  ],
+  "total": 25,
+  "limit": 10,
+  "offset": 0,
+  "previous": null,
+  "href": "https://api.spotify.com/v1/me/top/artists?limit=10&offset=0",
+  "next": "https://api.spotify.com/v1/me/top/artists?limit=10&offset=10"
+}
