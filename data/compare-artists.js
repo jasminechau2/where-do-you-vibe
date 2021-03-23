@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('jasmine_genres.json');
+let rawdata = fs.readFileSync('artists/zacks-artists-short.json');
 let obj = JSON.parse(rawdata);
 let artists = obj.items;
 
@@ -67,7 +67,7 @@ for(let city = 1; city < genreCities.length; city++) {
 }
 
 // time for least squares
-let leastSquares = Object();
+let leastSquaresList = [];
 for(let city = 0; city < cityMatches.length; city++) {
   let matchedCityNumber = cityMatches[city];
   let cityScore = 0;
@@ -78,32 +78,38 @@ for(let city = 0; city < cityMatches.length; city++) {
     for(let userGenrePos = 0; userGenrePos < genreSortedListForUser.length; userGenrePos++){
       if(genreCities[matchedCityNumber][cityGenre] == genreSortedListForUser[userGenrePos]){
         // console.log(genreCities[matchedCityNumber][cityGenre]);
-        let differenceSquared = Math.abs(cityGenrePos - userGenrePos);
+        let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
+
+        // if(userGenrePos > 5){
+        //   differenceSquared = Math.pow(cityGenrePos - userGenrePos,10);
+        // }
         // console.log(differenceSquared);
         cityScore += differenceSquared;
       }
     }
   }
-  leastSquares[matchedCityNumber] = cityScore;
+  let cityScoreObject = {
+    cityNumber: matchedCityNumber,
+    score: cityScore
+  }
+  leastSquaresList.push(cityScoreObject)
 }
 
-// console.log(leastSquares);
+leastSquaresList.sort(function(a, b){return a.score - b.score});
 
-// https://stackoverflow.com/questions/1069666/sorting-object-property-by-values/16794116#16794116
-const sortLeastSquaresObject = Object.fromEntries(
-  Object.entries(leastSquares).sort(([,a],[,b]) => a-b)
-);
+console.log(leastSquaresList);
 
-let sortedLeastSqaresList = [];
-for (let genre in sortLeastSquaresObject){
-  sortedLeastSqaresList.unshift(genre);
-}
-// console.log(sortedLeastSqaresList);
 
-for(let city = 0; city < sortedLeastSqaresList.length; city++) {
-  let matchedCityNumber = sortedLeastSqaresList[city];
+for(let city = 0; city < leastSquaresList.length; city++) {
+  let matchedCityNumber = leastSquaresList[city]["cityNumber"];
   console.log(genreCities[matchedCityNumber][0], genreCities[matchedCityNumber][1]);
+
 }
+
+// for(let city = 0; city < sortedLeastSqaresList.length; city++) {
+//   let matchedCityNumber = sortedLeastSqaresList[city];
+//   console.log(genreCities[matchedCityNumber][0], genreCities[matchedCityNumber][1]);
+// }
 
 // look at all of cities in teh maintained list
 // look at each song and compare the position difference
