@@ -1,2 +1,3 @@
-var Spotify = require('spotify-web-api-js');
-var s = new Spotify();
+export default function UserInfo() {
+console.log("hi Jasmine")
+}

@@ -1,3 +1,4 @@
+
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
 var cors = require('cors');
@@ -7,7 +8,7 @@ var SpotifyWebApi = require('spotify-web-api-node');
 
 var client_id = 'e5a2287a5ea14d379ec2ea832d4760a4'; // Your client id
 var client_secret = 'dbc2ab802d694e55ab516a43f89c921c'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+var redirect_uri = 'http://localhost:3000/callback'; // Your redirect uri
 /**
  * Generates a random string containing numbers and letters
  * @param  {number} length The length of the string
@@ -23,11 +24,12 @@ var generateRandomString = function(length) {
   return text;
 };
 
+
 var stateKey = 'spotify_auth_state';
 
 var app = express();
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static('public'))
    .use(cors())
    .use(cookieParser());
 
@@ -39,13 +41,13 @@ app.get('/login', function(req, res) {
   // your application requests authorization
   var scope = 'user-read-private user-read-email user-top-read';
   res.redirect('https://accounts.spotify.com/authorize?' +
-    querystring.stringify({
+   querystring.stringify({
       response_type: 'code',
       client_id: client_id,
       scope: scope,
       redirect_uri: redirect_uri,
       state: state
-    }));
+   }));
 });
 
 app.get('/callback', function(req, res) {
@@ -88,6 +90,10 @@ app.get('/callback', function(req, res) {
           headers: { 'Authorization': 'Bearer ' + access_token },
           json: true
         };
+        // use the access token to access the Spotify Web API
+        request.get(options, function(error, response, body) {
+          console.log(body);
+        });
 
         // we can also pass the token to the browser to make requests from there
         res.redirect('/#' +
@@ -98,16 +104,19 @@ app.get('/callback', function(req, res) {
 
 
           
-           // use the access token to access the Spotify Web API
+         // use the access token to access the Spotify Web API
         var spotifyApi = new SpotifyWebApi();
         spotifyApi.setAccessToken(access_token);
-        spotifyApi.getMyTopArtists()
-        .then(function(data) {
-          let topArtists = data.body.items;
-          console.log(topArtists);
-        }, function(err) {
-          console.log('Something went wrong!', err);
-        });
+        
+          spotifyApi.getMyTopArtists({ time_range:'medium_term', limit:50})
+          .then(function(data) {
+            let topArtists = data.body.items;
+            console.log(topArtists);
+            console.log(topArtists.length);
+          }, function(err) {
+            console.log('Something went wrong!', err);
+          });
+
 
       } else {
         res.redirect('/#' +
@@ -143,5 +152,8 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-console.log('Listening on 8888');
-app.listen(8888);
+console.log('Listening on 3000');
+app.listen(3000);
+
+
+

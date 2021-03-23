@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login from './Spotify/Login';
-import reportWebVitals from './reportWebVitals';
+import UserInfo from '../Spotify/UserInfo';
+import reportWebVitals from '../reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <UserInfo/>
   </React.StrictMode>,
   document.getElementById('root')
 );
