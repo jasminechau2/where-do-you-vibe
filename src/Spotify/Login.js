@@ -5,7 +5,9 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var SpotifyWebApi = require('spotify-web-api-node');
+const { act } = require('react-dom/test-utils');
 
+const fs = require('fs');
 var client_id = 'e5a2287a5ea14d379ec2ea832d4760a4'; // Your client id
 var client_secret = 'dbc2ab802d694e55ab516a43f89c921c'; // Your secret
 var redirect_uri = 'http://localhost:3000/callback'; // Your redirect uri
@@ -85,15 +87,7 @@ app.get('/callback', function(req, res) {
         var access_token = body.access_token,
             refresh_token = body.refresh_token;
 
-        var options = {
-          url: 'https://api.spotify.com/v1/me',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
-        };
-        // use the access token to access the Spotify Web API
-        request.get(options, function(error, response, body) {
-          console.log(body);
-        });
+      console.log(userGenres(access_token));
 
         // we can also pass the token to the browser to make requests from there
         res.redirect('/#' +
@@ -103,21 +97,6 @@ app.get('/callback', function(req, res) {
           }));
 
 
-          
-         // use the access token to access the Spotify Web API
-        var spotifyApi = new SpotifyWebApi();
-        spotifyApi.setAccessToken(access_token);
-        
-          spotifyApi.getMyTopArtists({ time_range:'medium_term', limit:50})
-          .then(function(data) {
-            let topArtists = data.body.items;
-            console.log(topArtists);
-            console.log(topArtists.length);
-          }, function(err) {
-            console.log('Something went wrong!', err);
-          });
-
-
       } else {
         res.redirect('/#' +
           querystring.stringify({
@@ -125,32 +104,32 @@ app.get('/callback', function(req, res) {
           }));
       }
     });
+   
   }
 });
 
-app.get('/refresh_token', function(req, res) {
 
-  // requesting access token from refresh token
-  var refresh_token = req.query.refresh_token;
-  var authOptions = {
-    url: 'https://accounts.spotify.com/api/token',
-    headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
-    form: {
-      grant_type: 'refresh_token',
-      refresh_token: refresh_token
-    },
+const userGenres = (access_token) => {
+
+  var options = {
+    url: 'https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=10&offset=5',
+    headers: { 'Authorization': 'Bearer ' + access_token },
     json: true
   };
-
-  request.post(authOptions, function(error, response, body) {
-    if (!error && response.statusCode === 200) {
-      var access_token = body.access_token;
-      res.send({
-        'access_token': access_token
-      });
-    }
+  // use the access token to access the Spotify Web API
+  request.get(options, function(error, response, body) {
+    const userData = JSON.stringify(body);
+    fs.writeFile('./data/user.json', userData, 'utf8', (err) => {
+      if (err) {
+          console.log(`Error writing file: ${err}`);
+      } else {
+          console.log(`File is written successfully!`);
+      }
+  
   });
-});
+  });
+
+}
 
 console.log('Listening on 3000');
 app.listen(3000);
