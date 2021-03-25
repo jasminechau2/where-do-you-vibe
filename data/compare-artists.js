@@ -1,8 +1,6 @@
-'use strict';
-
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('artists/zacks-artists-short.json');
+let rawdata = fs.readFileSync('artists/user.json');
 let obj = JSON.parse(rawdata);
 let artists = obj.items;
 
@@ -60,7 +58,6 @@ for(let city = 1; city < genreCities.length; city++) {
       if(genreCities[city][cityGenre] == genreSortedListForUser[userGenre]){
         isCityAMatch += 1;
         // console.log(genreCities[city][0]);
-        break;
       }
     }
   }
@@ -80,8 +77,8 @@ for(let city = 0; city < cityMatches.length; city++) {
         // console.log(genreCities[matchedCityNumber][cityGenre]);
         let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
 
-        // if(userGenrePos > 5){
-        //   differenceSquared = Math.pow(cityGenrePos - userGenrePos,10);
+        // if(userGenrePos < 5 & cityGenrePos < 5){
+        //   console.log("matched top 5", );
         // }
         // console.log(differenceSquared);
         cityScore += differenceSquared;
@@ -97,7 +94,7 @@ for(let city = 0; city < cityMatches.length; city++) {
 
 leastSquaresList.sort(function(a, b){return a.score - b.score});
 
-console.log(leastSquaresList);
+// console.log(leastSquaresList);
 
 
 for(let city = 0; city < leastSquaresList.length; city++) {
