@@ -1,6 +1,7 @@
 
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
+var findCities = require('./compare-artists');
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
@@ -119,11 +120,13 @@ const userGenres = (access_token) => {
   // use the access token to access the Spotify Web API
   request.get(options, function(error, response, body) {
     const userData = JSON.stringify(body);
-    fs.writeFile('./data/user.json', userData, 'utf8', (err) => {
+    fs.writeFile('./user.json', userData, 'utf8', (err) => {
       if (err) {
           console.log(`Error writing file: ${err}`);
       } else {
           console.log(`File is written successfully!`);
+          let cities = findCities.findCities();
+          console.log(cities);
       }
   
   });

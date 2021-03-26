@@ -1,6 +1,14 @@
 const fs = require('fs');
 
 let rawdata = fs.readFileSync('artists/user.json');
+
+var findCities = function findCities(){
+  let answer = "done";
+  return answer;
+};
+
+module.exports.findCities = findCities;
+
 let obj = JSON.parse(rawdata);
 let artists = obj.items;
 
