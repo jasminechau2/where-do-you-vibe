@@ -28,9 +28,7 @@ class App extends Component {
     return hashParams;
   }
 
-  getUserGenres(){
-    return '';
-  }
+ 
   getUserInfo(){ //call to get user infomation from spotify api
       spotifyApi.getMe()
       .then((data) => {
