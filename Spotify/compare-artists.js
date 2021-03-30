@@ -1,13 +1,8 @@
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('user.json');
-
-var findCities = function findCities(){
-  let answer = "done";
-  return answer;
-};
-
-module.exports.findCities = findCities;
+var findCities = function findCities() {
+  console.log("hello");
+let rawdata = fs.readFileSync('./data/user.json');
 
 let obj = JSON.parse(rawdata);
 let artists = obj.items;
@@ -63,7 +58,7 @@ for(let city = 1; city < genreCities.length; city++) {
       break;
     }
     for(let cityGenre = 2; cityGenre < genreCities[city].length; cityGenre++){
-      if(genreCities[city][cityGenre] == genreSortedListForUser[userGenre]){
+      if(genreCities[city][cityGenre] === genreSortedListForUser[userGenre]){
         isCityAMatch += 1;
         // console.log(genreCities[city][0]);
       }
@@ -81,7 +76,7 @@ for(let city = 0; city < cityMatches.length; city++) {
   for(let cityGenre = 2; cityGenre < genreCities[matchedCityNumber].length-1; cityGenre++){
     let cityGenrePos = cityGenre-2;
     for(let userGenrePos = 0; userGenrePos < genreSortedListForUser.length; userGenrePos++){
-      if(genreCities[matchedCityNumber][cityGenre] == genreSortedListForUser[userGenrePos]){
+      if(genreCities[matchedCityNumber][cityGenre] === genreSortedListForUser[userGenrePos]){
         // console.log(genreCities[matchedCityNumber][cityGenre]);
         let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
 
@@ -120,3 +115,6 @@ for(let city = 0; city < leastSquaresList.length; city++) {
 // look at each song and compare the position difference
 // take the difference and square it
 // then sort the cities in desc order by squares
+}
+
+module.exports.findCities = findCities;
