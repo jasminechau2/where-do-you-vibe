@@ -73,6 +73,11 @@ class App extends Component {
           {this.getTopCities()}
           Hello { this.state.user.displayName }
         </div>
+        {/* can call a component from a component
+        import at the top
+        and can give it a param to pass
+        <userProfile passingParam = this.state.user.displayName> */}
+
       </div>
     );
   }
