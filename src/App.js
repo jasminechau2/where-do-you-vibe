@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import SpotifyWebApi from 'spotify-web-api-js';
 const spotifyApi = new SpotifyWebApi();
+const fs = require('fs');
+
 
 class App extends Component {
   constructor(){ //This reads the token from the url, token allows us access to user info
@@ -13,7 +15,8 @@ class App extends Component {
     }
     this.state = { //sets state, allows us to know if someone is logged in and their name
       loggedIn: token ? true : false,
-      user: {displayName:'not logged in', profilePic:''}
+      user: {displayName:'not logged in', profilePic:''},
+      topGenre: 'not logged in',
     }
   }
   getHashParams() {
@@ -41,6 +44,20 @@ class App extends Component {
         });
       })
   }
+
+  getTopCities(){
+    let genreCities = [];
+    let fileContents = fs.readFileSync('./Spotify/user_top_cities.csv');
+    let lines = fileContents.toString().split('\n');
+    console.log("Cities");
+
+    for(let i = 0; i < lines.length; i++) {
+	    genreCities.push(lines[i].toString().split(','));
+    }
+    genreCities.pop();
+    console.log(genreCities);
+  }
+
   render() {
     return (
       <div className="App">
@@ -51,6 +68,10 @@ class App extends Component {
         </div>
         <div>
           <img src={this.state.user.profilePic} style={{ height: 150 }}/>
+        </div>
+        <div>
+          {this.getTopCities()}
+          Hello { this.state.user.displayName }
         </div>
       </div>
     );

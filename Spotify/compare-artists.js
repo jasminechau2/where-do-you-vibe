@@ -23,8 +23,6 @@ for (let i = 0; i < artists.length; i++) {
   }
 }
 
-// console.log(genreObjForUser);
-
 // https://stackoverflow.com/questions/1069666/sorting-object-property-by-values/16794116#16794116
 const sortUserGenreObject = Object.fromEntries(
   Object.entries(genreObjForUser).sort(([,a],[,b]) => a-b)
@@ -60,7 +58,6 @@ for(let city = 1; city < genreCities.length; city++) {
     for(let cityGenre = 2; cityGenre < genreCities[city].length; cityGenre++){
       if(genreCities[city][cityGenre] === genreSortedListForUser[userGenre]){
         isCityAMatch += 1;
-        // console.log(genreCities[city][0]);
       }
     }
   }
@@ -71,19 +68,13 @@ let leastSquaresList = [];
 for(let city = 0; city < cityMatches.length; city++) {
   let matchedCityNumber = cityMatches[city];
   let cityScore = 0;
-  // console.log(genreCities[matchedCityNumber][0]);
-  // start at 2 bc city, country, genre, ...) end at -1 b/c the last elt for cites is ""
+
   for(let cityGenre = 2; cityGenre < genreCities[matchedCityNumber].length-1; cityGenre++){
     let cityGenrePos = cityGenre-2;
     for(let userGenrePos = 0; userGenrePos < genreSortedListForUser.length; userGenrePos++){
       if(genreCities[matchedCityNumber][cityGenre] === genreSortedListForUser[userGenrePos]){
-        // console.log(genreCities[matchedCityNumber][cityGenre]);
         let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
 
-        // if(userGenrePos < 5 & cityGenrePos < 5){
-        //   console.log("matched top 5", );
-        // }
-        // console.log(differenceSquared);
         cityScore += differenceSquared;
       }
     }
@@ -97,24 +88,39 @@ for(let city = 0; city < cityMatches.length; city++) {
 
 leastSquaresList.sort(function(a, b){return a.score - b.score});
 
-// console.log(leastSquaresList);
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const csvWriter = createCsvWriter({
+  path: 'Spotify/user_top_cities.csv',
+  header: [
+    {id: 'city', title: 'city'},
+    {id: 'country', title: 'country'},
+  ]
+});
 
+let topCitiesList = [];
+let matchingCountries = [];
 
-for(let city = 0; city < leastSquaresList.length; city++) {
+for(let city = leastSquaresList.length-5; city < leastSquaresList.length; city++) {
   let matchedCityNumber = leastSquaresList[city]["cityNumber"];
-  console.log(genreCities[matchedCityNumber][0], genreCities[matchedCityNumber][1]);
+  topCitiesList.push(genreCities[matchedCityNumber][0]);
+  matchingCountries.push(genreCities[matchedCityNumber][1])
+}
+
+let i = 0;
+let citiesCSV = [];
+topCitiesList.forEach(function(entry) {
+    var singleObj = {};
+    singleObj['city'] = topCitiesList[i];
+    singleObj['country'] = matchingCountries[i];
+    citiesCSV.push(singleObj);
+    i+=1;
+});
+
+console.log(citiesCSV);
+csvWriter.writeRecords(citiesCSV);
 
 }
 
-// for(let city = 0; city < sortedLeastSqaresList.length; city++) {
-//   let matchedCityNumber = sortedLeastSqaresList[city];
-//   console.log(genreCities[matchedCityNumber][0], genreCities[matchedCityNumber][1]);
-// }
 
-// look at all of cities in teh maintained list
-// look at each song and compare the position difference
-// take the difference and square it
-// then sort the cities in desc order by squares
-}
 
 module.exports.findCities = findCities;

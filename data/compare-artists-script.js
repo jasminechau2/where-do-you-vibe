@@ -104,12 +104,36 @@ leastSquaresList.sort(function(a, b){return a.score - b.score});
 
 // console.log(leastSquaresList);
 
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+const csvWriter = createCsvWriter({
+  path: 'user_top_cities.csv',
+  header: [
+    {id: 'city', title: 'city'},
+    {id: 'country', title: 'country'},
+  ]
+});
 
-for(let city = 0; city < leastSquaresList.length; city++) {
+let topCitiesList = [];
+let matchingCountries = [];
+
+for(let city = leastSquaresList.length-5; city < leastSquaresList.length; city++) {
   let matchedCityNumber = leastSquaresList[city]["cityNumber"];
-  console.log(genreCities[matchedCityNumber][0], genreCities[matchedCityNumber][1]);
-
+  topCitiesList.push(genreCities[matchedCityNumber][0]);
+  matchingCountries.push(genreCities[matchedCityNumber][1])
 }
+
+let i = 0;
+let citiesCSV = [];
+topCitiesList.forEach(function(entry) {
+    var singleObj = {};
+    singleObj['city'] = topCitiesList[i];
+    singleObj['country'] = matchingCountries[i];
+    citiesCSV.push(singleObj);
+    i+=1;
+});
+
+console.log(citiesCSV);
+csvWriter.writeRecords(citiesCSV);
 
 // for(let city = 0; city < sortedLeastSqaresList.length; city++) {
 //   let matchedCityNumber = sortedLeastSqaresList[city];
