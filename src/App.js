@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import SpotifyWebApi from 'spotify-web-api-js';
+import './components/UserGenresTemplate.js';
+import UserGenreList from './components/UserGenresTemplate';
 
 const spotifyApi = new SpotifyWebApi();
-const fs = require('fs');
-
 
 class App extends Component {
   constructor(){ //This reads the token from the url, token allows us access to user info
@@ -46,19 +46,6 @@ class App extends Component {
       })
   }
 
-  getTopCities(){
-    let genreCities = [];
-    let fileContents = fs.readFileSync('./Spotify/user_top_cities.csv');
-    let lines = fileContents.toString().split('\n');
-    console.log("Cities");
-
-    for(let i = 0; i < lines.length; i++) {
-	    genreCities.push(lines[i].toString().split(','));
-    }
-    genreCities.pop();
-    console.log(genreCities);
-  }
-
   render() {
     return (
       <div className="App">
@@ -70,15 +57,7 @@ class App extends Component {
         <div>
           <img src={this.state.user.profilePic} style={{ height: 150 }}/>
         </div>
-        <div>
-          {this.getTopCities()}
-          Hello { this.state.user.displayName }
-        </div>
-        {/* can call a component from a component
-        import at the top
-        and can give it a param to pass
-        <userProfile passingParam = this.state.user.displayName> */}
-
+        <UserGenreList/>
       </div>
     );
   }
