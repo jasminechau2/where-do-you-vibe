@@ -2,6 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 import re
+import json
+
+cityData = []
 
 def firstLetter(s):
     m = re.search(r'[A-Z]', s, re.I)
@@ -18,35 +21,46 @@ with open('links.csv') as csv_file:
 links = list(set(links))
 
 
-with open('places.csv', 'w', newline='') as file:
-    writer = csv.writer(file)
-    writer.writerow(["City", "Country", "Genres"])
 
-    i = 0
-    for a in links:
-        page = requests.get(a)
-        soup = BeautifulSoup(page.content, 'html.parser')
+i = 0
+for a in links:
+    page = requests.get(a)
+    soup = BeautifulSoup(page.content, 'html.parser')
 
 
-        cityName = ""
-        country = ""
-        city = soup.find_all("tr", {"class": "datarow firstrow"})
-        for tr in city:
-            cityName = tr.text[firstLetter(tr.text):-2]
-            country = tr.text[-2:]
-        locationList = [cityName, country]
-        print(locationList)
+    cityName = ""
+    country = ""
+    city = soup.find_all("tr", {"class": "datarow firstrow"})
+    for tr in city:
+        cityName = tr.text[firstLetter(tr.text):-2]
+        country = tr.text[-2:]
+    locationList = [cityName, country]
+    print(locationList)
 
-        genreText = ""
-        genreList = []
-        genres = soup.find_all("div", {"class": "note"})
-        for div in genres:
-            genreText = div.text
-        genreList = genreText.split("\n")
-        genreList.pop(0) #remove intro text at beginning
+    genreText = ""
+    genreList = []
+    genres = soup.find_all("div", {"class": "note"})
+    for div in genres:
+        genreText = div.text
+    genreList = genreText.split("\n")
+    genreList.pop(0) #remove intro text at beginning
 
-        writer.writerow(locationList+genreList)
-        i += 1
-        percent = (i/3660)*100
-        if(i%25 == 0):
-            print(percent)
+    cityData.append({
+        'city':locationList[0],
+        'country':locationList[1],
+        'genres':genreList
+    })
+
+    i += 1
+    percent = (i/3660)*100
+    if(i%25 == 0):
+        print(percent)
+
+    if (i == 5):
+        with open('places.json', 'w', newline='') as file:
+            jsonObject = []
+            jsonObject.append({
+                'items':cityData
+            })
+            json.dump(jsonObject[0], file, indent=2)
+        break
