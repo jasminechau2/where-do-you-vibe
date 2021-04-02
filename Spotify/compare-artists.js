@@ -1,9 +1,8 @@
 const fs = require('fs');
 
-var findCities = function findCities() {
-  let rawdata = fs.readFileSync('./data/user.json');
+var findCities = function findCities(user, places) {
 
-  let obj = JSON.parse(rawdata);
+  let obj = JSON.parse(user);
   let artists = obj.items;
 
   let genreObjForUser = Object();
@@ -33,29 +32,33 @@ var findCities = function findCities() {
   }
   // console.log(genreSortedListForUser);
 
-  //import cities from csv
+  //import cities from json
   // https://www.reddit.com/r/node/comments/2x066w/is_there_an_easy_synchronous_way_to_read_csv/
   let genreCities = [];
-  let fileContents = fs.readFileSync('./data/places.csv');
-  let lines = fileContents.toString().split('\n');
 
-  for(let i = 0; i < lines.length; i++) {
-    genreCities.push(lines[i].toString().split(','));
+  let placesObj = JSON.parse(places);
+  let cities = placesObj.items;
+    
+  for (let i = 0; i < cities.length; i++) {
+    let specificCity = [];
+    specificCity.push(cities[i].city);
+    specificCity.push(cities[i].country);
+    specificCity.push(cities[i].genres);
+    genreCities.push(specificCity);
   }
-  genreCities.pop();
 
   let cityMatches = [];
-  // look through each city (start at 1 bc first row is col lables)
-  for(let city = 1; city < genreCities.length; city++) {
+  // look through each city
+  for(let city = 0; city < genreCities.length; city++) {
     let isCityAMatch = 0;
-    // start at 2 bc city, country, genre, ...)
     for(let userGenre = 0; userGenre < genreSortedListForUser.length; userGenre++){
-      if(isCityAMatch > 5){
+      if(isCityAMatch > 5){ //change back to 5
         cityMatches.push(city);
         break;
       }
-      for(let cityGenre = 2; cityGenre < genreCities[city].length; cityGenre++){
-        if(genreCities[city][cityGenre] === genreSortedListForUser[userGenre]){
+      // start at 2 bc city, country, genre, ...)
+      for(let cityGenre = 2; cityGenre < genreCities[city][2].length; cityGenre++){
+        if(genreCities[city][2][cityGenre] === genreSortedListForUser[userGenre]){
           isCityAMatch += 1;
         }
       }
@@ -87,39 +90,29 @@ var findCities = function findCities() {
 
   leastSquaresList.sort(function(a, b){return a.score - b.score});
 
-  const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-  const csvWriter = createCsvWriter({
-    path: 'src/components/user_top_cities.csv',
-    header: [
-      {id: 'city', title: 'city'},
-      {id: 'country', title: 'country'},
-    ]
-  });
-
   let topCitiesList = [];
   let matchingCountries = [];
 
-  for(let city = leastSquaresList.length-5; city < leastSquaresList.length; city++) {
+  let lowestCityNumber = 0;
+  if(leastSquaresList.length > 5){
+    lowestCityNumber = leastSquaresList.length-5
+  }
+  for(let city = lowestCityNumber; city < leastSquaresList.length; city++) {
     let matchedCityNumber = leastSquaresList[city]["cityNumber"];
     topCitiesList.push(genreCities[matchedCityNumber][0]);
     matchingCountries.push(genreCities[matchedCityNumber][1])
   }
 
-  let i = 0;
-  let citiesCSV = [];
-  topCitiesList.forEach(function(entry) {
-      var singleObj = {};
-      singleObj['city'] = topCitiesList[i];
-      singleObj['country'] = matchingCountries[i];
-      citiesCSV.push(singleObj);
-      i+=1;
-  });
+  let returnList = [];
+  returnList.push(topCitiesList);
+  returnList.push(matchingCountries);
 
-  console.log(citiesCSV);
-  csvWriter.writeRecords(citiesCSV);
-
+  return returnList;
 }
 
+let user = fs.readFileSync('./user.json');
+let places = fs.readFileSync('./places.json');
 
+findCities(user, places);
 
 module.exports.findCities = findCities;
