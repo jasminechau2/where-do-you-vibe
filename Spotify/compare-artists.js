@@ -1,7 +1,6 @@
 const fs = require('fs');
 
 var findCities = function findCities() {
-  console.log("hello");
   let rawdata = fs.readFileSync('./data/user.json');
 
   let obj = JSON.parse(rawdata);
@@ -90,7 +89,7 @@ var findCities = function findCities() {
 
   const createCsvWriter = require('csv-writer').createObjectCsvWriter;
   const csvWriter = createCsvWriter({
-    path: 'Spotify/user_top_cities.csv',
+    path: 'src/components/user_top_cities.csv',
     header: [
       {id: 'city', title: 'city'},
       {id: 'country', title: 'country'},

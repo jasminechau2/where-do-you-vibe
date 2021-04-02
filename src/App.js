@@ -18,6 +18,7 @@ class App extends Component {
       loggedIn: token ? true : false,
       user: {displayName:'not logged in', profilePic:''},
       topGenre: 'not logged in',
+      topCity: 'not logged in',
     }
   }
   getHashParams() {
@@ -32,7 +33,6 @@ class App extends Component {
     return hashParams;
   }
 
- 
   getUserInfo(){ //call to get user infomation from spotify api
       spotifyApi.getMe()
       .then((data) => {

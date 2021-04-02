@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('artists/user.json');
+let rawdata = fs.readFileSync('artists/zacks-artists.json');
 
 var findCities = function findCities(){
   let answer = "done";

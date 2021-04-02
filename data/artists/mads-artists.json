@@ -1,0 +1,765 @@
+{
+  "items": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02"
+      },
+      "followers": {
+        "href": null,
+        "total": 38221230
+      },
+      "genres": [
+        "pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02",
+      "id": "06HL4z0CvFAxyc27GXpf02",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/8389f45cac7a58e3ab67a3bdeb5b4a0f9d8f7919",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ca417f738fca37ef08447d45f9c32e2650f48a86",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/02e96fdf26f6a3b1d435f163831ea50f7d2abb55",
+          "width": 160
+        }
+      ],
+      "name": "Taylor Swift",
+      "popularity": 97,
+      "type": "artist",
+      "uri": "spotify:artist:06HL4z0CvFAxyc27GXpf02"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR"
+      },
+      "followers": {
+        "href": null,
+        "total": 60377901
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/66CXWjxzNUsdJxJ2JdwvnR",
+      "id": "66CXWjxzNUsdJxJ2JdwvnR",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/f8c793519d837ca2f920c561535fe62ef32e8e5b",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/610f278171ed793b0d6c771f2877e5d4fd533d38",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/03345cd15fe15956bbc204131ac1b45991b99bb6",
+          "width": 160
+        }
+      ],
+      "name": "Ariana Grande",
+      "popularity": 96,
+      "type": "artist",
+      "uri": "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6x2LnllRG5uGarZMsD4iO8"
+      },
+      "followers": {
+        "href": null,
+        "total": 3765426
+      },
+      "genres": [
+        "contemporary country",
+        "country",
+        "country road",
+        "modern country rock"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6x2LnllRG5uGarZMsD4iO8",
+      "id": "6x2LnllRG5uGarZMsD4iO8",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/e1619b7517876f75c3b0b6e529f3c4243424f38d",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/f34b06c75cc1e99f636efdea80bf9936704fec55",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/7f4b062e1944b0fb992fdb5d633f3d66603e7ac5",
+          "width": 160
+        }
+      ],
+      "name": "Thomas Rhett",
+      "popularity": 81,
+      "type": "artist",
+      "uri": "spotify:artist:6x2LnllRG5uGarZMsD4iO8"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6qGkLCMQkNGOJ079iEcC5k"
+      },
+      "followers": {
+        "href": null,
+        "total": 352846
+      },
+      "genres": [
+        "hollywood",
+        "pop",
+        "show tunes"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6qGkLCMQkNGOJ079iEcC5k",
+      "id": "6qGkLCMQkNGOJ079iEcC5k",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/66e9f9ffa9fc4e6d677b87b786dd943d50fc5aa7",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/c7cc0a75f02e5168f1174c7ae2c78eeb56ca5cff",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/85acac0283926e0e386c2ee82b907b6c1b7ce74f",
+          "width": 160
+        }
+      ],
+      "name": "Ben Platt",
+      "popularity": 72,
+      "type": "artist",
+      "uri": "spotify:artist:6qGkLCMQkNGOJ079iEcC5k"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1GxkXlMwML1oSg5eLPiAz3"
+      },
+      "followers": {
+        "href": null,
+        "total": 4464271
+      },
+      "genres": [
+        "adult standards",
+        "canadian pop",
+        "jazz pop",
+        "lounge"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1GxkXlMwML1oSg5eLPiAz3",
+      "id": "1GxkXlMwML1oSg5eLPiAz3",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/6bf4c3c955399c4c45cd0677a860a42f39b6a508",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/87c11cf100dc95936eaa0c4486ee9f5ca0ccfc6c",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/d5308b295fd53042e5fd5498505695e9362549e9",
+          "width": 160
+        }
+      ],
+      "name": "Michael Bublé",
+      "popularity": 79,
+      "type": "artist",
+      "uri": "spotify:artist:1GxkXlMwML1oSg5eLPiAz3"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3cR4rhS2hBWqI7rJEBacvN"
+      },
+      "followers": {
+        "href": null,
+        "total": 195908
+      },
+      "genres": [
+        "broadway",
+        "show tunes",
+        "vocal jazz"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3cR4rhS2hBWqI7rJEBacvN",
+      "id": "3cR4rhS2hBWqI7rJEBacvN",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/104bfb04250997b43778db3879894d916df17099",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/2f373eaeccc509be32b7dd0cb18b5101c8249688",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/40ebda48ad184b465227e2ba325fb9fb15878bf0",
+          "width": 160
+        }
+      ],
+      "name": "Leslie Odom Jr.",
+      "popularity": 78,
+      "type": "artist",
+      "uri": "spotify:artist:3cR4rhS2hBWqI7rJEBacvN"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s"
+      },
+      "followers": {
+        "href": null,
+        "total": 44040990
+      },
+      "genres": [
+        "canadian pop",
+        "pop",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1uNFoZAHBGtllmzznpCI3s",
+      "id": "1uNFoZAHBGtllmzznpCI3s",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/1a81cce45919b84a588bb1f277e9ec818ff64f92",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/17c114f4f67d3a4aa9c4cfe284f3d16eb4e4345c",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/6bdd4e8479dfa008c1a6d0de694985e938552939",
+          "width": 160
+        }
+      ],
+      "name": "Justin Bieber",
+      "popularity": 100,
+      "type": "artist",
+      "uri": "spotify:artist:1uNFoZAHBGtllmzznpCI3s"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4AK6F7OLvEQ5QYCBNiQWHq"
+      },
+      "followers": {
+        "href": null,
+        "total": 20696830
+      },
+      "genres": [
+        "boy band",
+        "pop",
+        "post-teen pop",
+        "talent show"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4AK6F7OLvEQ5QYCBNiQWHq",
+      "id": "4AK6F7OLvEQ5QYCBNiQWHq",
+      "images": [
+        {
+          "height": 1000,
+          "url": "https://i.scdn.co/image/5bb443424a1ad71603c43d67f5af1a04da6bb3c8",
+          "width": 1000
+        },
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/289c7f686f5b78ceeb224453cf9a15697a678a79",
+          "width": 640
+        },
+        {
+          "height": 200,
+          "url": "https://i.scdn.co/image/45741ba38b51130bb96e00c0e24d17ba311a9293",
+          "width": 200
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/6c89c662ad0ab75bc2af9a3ae2b16f811daced50",
+          "width": 64
+        }
+      ],
+      "name": "One Direction",
+      "popularity": 91,
+      "type": "artist",
+      "uri": "spotify:artist:4AK6F7OLvEQ5QYCBNiQWHq"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/56oDRnqbIiwx4mymNEv7dS"
+      },
+      "followers": {
+        "href": null,
+        "total": 3727327
+      },
+      "genres": [
+        "dance pop",
+        "escape room",
+        "minnesota hip hop",
+        "pop",
+        "pop rap",
+        "trap queen"
+      ],
+      "href": "https://api.spotify.com/v1/artists/56oDRnqbIiwx4mymNEv7dS",
+      "id": "56oDRnqbIiwx4mymNEv7dS",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/e33e4245fe5901ed940ba95070bb8d56679b6fe0",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/4f9987e4ab87fc44cb3136b7aea0ec3ad003ccd2",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/a37585e2cd98ece162eba65f3c13d51a7e2d4bae",
+          "width": 160
+        }
+      ],
+      "name": "Lizzo",
+      "popularity": 79,
+      "type": "artist",
+      "uri": "spotify:artist:56oDRnqbIiwx4mymNEv7dS"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2jnIB6XdLvnJUeNTy5A0J2"
+      },
+      "followers": {
+        "href": null,
+        "total": 2700363
+      },
+      "genres": [
+        "boy band",
+        "dance pop",
+        "pop",
+        "post-teen pop",
+        "teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2jnIB6XdLvnJUeNTy5A0J2",
+      "id": "2jnIB6XdLvnJUeNTy5A0J2",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/648d13ff6cc48f34d8154894254ff3cf65778cbb",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/c947fadf0d9b57e4b6a8abdf0298ba2b5946b033",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/28e226845d149f56b6fe2125983bd541979dd015",
+          "width": 160
+        }
+      ],
+      "name": "Why Don't We",
+      "popularity": 79,
+      "type": "artist",
+      "uri": "spotify:artist:2jnIB6XdLvnJUeNTy5A0J2"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5pKCCKE2ajJHZ9KAiaK11H"
+      },
+      "followers": {
+        "href": null,
+        "total": 41990336
+      },
+      "genres": [
+        "barbadian pop",
+        "dance pop",
+        "pop",
+        "post-teen pop",
+        "r&b",
+        "urban contemporary"
+      ],
+      "href": "https://api.spotify.com/v1/artists/5pKCCKE2ajJHZ9KAiaK11H",
+      "id": "5pKCCKE2ajJHZ9KAiaK11H",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/1fc2f537d678d701d7d143a8fd4f0c2f29fbde22",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/e8a018bfd60bf25519fd4dc8ca941263afa66651",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/9dfb8baea10b330f5400922ec4d40d01922e805b",
+          "width": 160
+        }
+      ],
+      "name": "Rihanna",
+      "popularity": 92,
+      "type": "artist",
+      "uri": "spotify:artist:5pKCCKE2ajJHZ9KAiaK11H"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0DxPHf2flBAcV2SnZPg3SV"
+      },
+      "followers": {
+        "href": null,
+        "total": 95761
+      },
+      "genres": [
+        "alt z",
+        "indie cafe pop",
+        "indiecoustica",
+        "neo mellow",
+        "pop",
+        "pop rock",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0DxPHf2flBAcV2SnZPg3SV",
+      "id": "0DxPHf2flBAcV2SnZPg3SV",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/e802a718d6610f106e0fe2fa1fee2d86e657840d",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ba5e7b9304a24d6aed10488d83e535b1b4e2534f",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/18e1cc7e4849db20191d3ffd0d84685ceee2e2ad",
+          "width": 160
+        }
+      ],
+      "name": "Jake Scott",
+      "popularity": 68,
+      "type": "artist",
+      "uri": "spotify:artist:0DxPHf2flBAcV2SnZPg3SV"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4NZvixzsSefsNiIqXn0NDe"
+      },
+      "followers": {
+        "href": null,
+        "total": 739234
+      },
+      "genres": [
+        "indie pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4NZvixzsSefsNiIqXn0NDe",
+      "id": "4NZvixzsSefsNiIqXn0NDe",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/87254963154387dac4a8c88d39ebe082fedb13f5",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/586839921d7190d318e055a1eda3b83ebedda35d",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/151802f92cc9f0676a769c910e885be9b55c2c98",
+          "width": 160
+        }
+      ],
+      "name": "Maggie Rogers",
+      "popularity": 72,
+      "type": "artist",
+      "uri": "spotify:artist:4NZvixzsSefsNiIqXn0NDe"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4xFNR9j9SG8qDtLOW6Fy61"
+      },
+      "followers": {
+        "href": null,
+        "total": 15006
+      },
+      "genres": [
+        "dinner jazz"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4xFNR9j9SG8qDtLOW6Fy61",
+      "id": "4xFNR9j9SG8qDtLOW6Fy61",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273b768e708db9ae7b067a82ca4",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02b768e708db9ae7b067a82ca4",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851b768e708db9ae7b067a82ca4",
+          "width": 64
+        }
+      ],
+      "name": "Instrumental Music Cafe",
+      "popularity": 59,
+      "type": "artist",
+      "uri": "spotify:artist:4xFNR9j9SG8qDtLOW6Fy61"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2OEGI2wrCVmvavKEOMlccy"
+      },
+      "followers": {
+        "href": null,
+        "total": 46384
+      },
+      "genres": [
+        "hollywood",
+        "show tunes"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2OEGI2wrCVmvavKEOMlccy",
+      "id": "2OEGI2wrCVmvavKEOMlccy",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273b47bb04577839c77f2e300bd",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02b47bb04577839c77f2e300bd",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851b47bb04577839c77f2e300bd",
+          "width": 64
+        }
+      ],
+      "name": "Phillipa Soo",
+      "popularity": 73,
+      "type": "artist",
+      "uri": "spotify:artist:2OEGI2wrCVmvavKEOMlccy"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2RQXRUsr4IW1f3mKyKsy4B"
+      },
+      "followers": {
+        "href": null,
+        "total": 294763
+      },
+      "genres": [
+        "alt z",
+        "electropop",
+        "indie cafe pop",
+        "indie pop",
+        "indiecoustica",
+        "pop",
+        "pop rock"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2RQXRUsr4IW1f3mKyKsy4B",
+      "id": "2RQXRUsr4IW1f3mKyKsy4B",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/558fc92d7d877a9b819db6f3f5d7fa961745f22c",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/9b4c12acc66d2784ac4a5a029916e48d8b794287",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/186052bb88ae2120100c1fc450838a8f89ef2135",
+          "width": 160
+        }
+      ],
+      "name": "Noah Kahan",
+      "popularity": 72,
+      "type": "artist",
+      "uri": "spotify:artist:2RQXRUsr4IW1f3mKyKsy4B"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3UUJfRbrA2nTbcg4i0MOwu"
+      },
+      "followers": {
+        "href": null,
+        "total": 393887
+      },
+      "genres": [
+        "broadway",
+        "hollywood"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3UUJfRbrA2nTbcg4i0MOwu",
+      "id": "3UUJfRbrA2nTbcg4i0MOwu",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b2733743f2dba9dde74bf4338540",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e023743f2dba9dde74bf4338540",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d000048513743f2dba9dde74bf4338540",
+          "width": 64
+        }
+      ],
+      "name": "Original Broadway Cast of Hamilton",
+      "popularity": 80,
+      "type": "artist",
+      "uri": "spotify:artist:3UUJfRbrA2nTbcg4i0MOwu"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4q3ewBCX7sLwd24euuV69X"
+      },
+      "followers": {
+        "href": null,
+        "total": 31626374
+      },
+      "genres": [
+        "latin",
+        "reggaeton",
+        "trap latino"
+      ],
+      "href": "https://api.spotify.com/v1/artists/4q3ewBCX7sLwd24euuV69X",
+      "id": "4q3ewBCX7sLwd24euuV69X",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/1c66d291db8ab21ac32d045ef28199fb195b97cf",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/e515d8a5f2a1ec78be486fc51767589ba9790844",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/e64b26e7d388070788f47254c5a439b41b5a76f4",
+          "width": 160
+        }
+      ],
+      "name": "Bad Bunny",
+      "popularity": 99,
+      "type": "artist",
+      "uri": "spotify:artist:4q3ewBCX7sLwd24euuV69X"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/660YptcR0hNHJ8iEr1qcse"
+      },
+      "followers": {
+        "href": null,
+        "total": 123489
+      },
+      "genres": [
+        "hollywood",
+        "show tunes"
+      ],
+      "href": "https://api.spotify.com/v1/artists/660YptcR0hNHJ8iEr1qcse",
+      "id": "660YptcR0hNHJ8iEr1qcse",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/8067a7f894373f48aab29fcc6e00091d21dd89cd",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/1008ccaac489111b41b18db25e926db4edfb960e",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/1ecfd315057c192586fad18e67da5e0e90f37e24",
+          "width": 160
+        }
+      ],
+      "name": "Anthony Ramos",
+      "popularity": 73,
+      "type": "artist",
+      "uri": "spotify:artist:660YptcR0hNHJ8iEr1qcse"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5RZjpmuD14JKXvB8Ry1G1u"
+      },
+      "followers": {
+        "href": null,
+        "total": 78358
+      },
+      "genres": [
+        "hollywood",
+        "pop",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/5RZjpmuD14JKXvB8Ry1G1u",
+      "id": "5RZjpmuD14JKXvB8Ry1G1u",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/ab67616d0000b273edb49ad7b719f766ec02476b",
+          "width": 640
+        },
+        {
+          "height": 300,
+          "url": "https://i.scdn.co/image/ab67616d00001e02edb49ad7b719f766ec02476b",
+          "width": 300
+        },
+        {
+          "height": 64,
+          "url": "https://i.scdn.co/image/ab67616d00004851edb49ad7b719f766ec02476b",
+          "width": 64
+        }
+      ],
+      "name": "Amanda Seyfried",
+      "popularity": 71,
+      "type": "artist",
+      "uri": "spotify:artist:5RZjpmuD14JKXvB8Ry1G1u"
+    }
+  ],
+  "total": 50,
+  "limit": 20,
+  "offset": 0,
+  "href": "https://api.spotify.com/v1/me/top/artists",
+  "previous": null,
+  "next": "https://api.spotify.com/v1/me/top/artists?limit=20&offset=20"
+}
