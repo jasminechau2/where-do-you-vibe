@@ -1,10 +1,10 @@
 const fs = require('fs');
 
-var findCities = function findCities() {
-  let rawdata = fs.readFileSync('./data/user.json');
+var findCities = function findCities(artists) {
+  //let rawdata = fs.readFileSync('./data/user.json');
 
-  let obj = JSON.parse(rawdata);
-  let artists = obj.items;
+  //let obj = JSON.parse(rawdata);
+  //let artists = obj.items;
 
   let genreObjForUser = Object();
 
@@ -115,7 +115,7 @@ var findCities = function findCities() {
       i+=1;
   });
 
-  console.log(citiesCSV);
+  //console.log(citiesCSV);
   csvWriter.writeRecords(citiesCSV);
 
 }

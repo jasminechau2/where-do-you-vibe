@@ -6,7 +6,7 @@
  * For more information, read
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
- var findCities = require('./compare-artists');
+ 
 var express = require('express'); // Express web server framework
  var request = require('request'); // "Request" library
  var querystring = require('querystring');
@@ -92,34 +92,25 @@ var express = require('express'); // Express web server framework
          var access_token = body.access_token,
              refresh_token = body.refresh_token;
  
-         var options = {
-           url: 'https://api.spotify.com/v1/me',
-           headers: { 'Authorization': 'Bearer ' + access_token },
-           json: true
-         };
- 
-         // use the access token to access the Spotify Web API
-         request.get(options, function(error, response, body) {
-           console.log(body);
-         });
-         var optionsGenre = {
-          url: 'https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=20&offset=0',
-          headers: { 'Authorization': 'Bearer ' + access_token },
-          json: true
-        };
-        // use the access token to access the Spotify Web API
-        request.get(optionsGenre, function(error, response, body) {
-          const userData = JSON.stringify(body);
-          fs.writeFile('./data/user.json', userData, 'utf8', (err) => { //writes user genre data to a json file
-            if (err) {
-                console.log(`Error writing file: ${err}`);
-            } else {
-              findCities.findCities();
-               console.log(`File is written successfully!`);
-            }
         
-        });
-        });
+        //  var optionsGenre = {
+        //   url: 'https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=20&offset=0',
+        //   headers: { 'Authorization': 'Bearer ' + access_token },
+        //   json: true
+        // };
+        // // use the access token to access the Spotify Web API
+        // request.get(optionsGenre, function(error, response, body) {
+        //   const userData = JSON.stringify(body);
+        //   fs.writeFile('./data/user.json', userData, 'utf8', (err) => { //writes user genre data to a json file
+        //     if (err) {
+        //         console.log(`Error writing file: ${err}`);
+        //     } else {
+        //       findCities.findCities();
+        //        console.log(`File is written successfully!`);
+        //     }
+        
+        // });
+        // });
 
          // we can also pass the token to the browser to make requests from there
          res.redirect('http://localhost:3000/#' +
