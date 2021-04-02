@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import Map from './components/Map.js'
 import SpotifyWebApi from 'spotify-web-api-js';
+import cities from './places.json';
+
 //import './components/UserGenresTemplate.js';
 import UserGenreList from './components/UserGenresTemplate';
+
 
 const spotifyApi = new SpotifyWebApi();
 var findCities = require('../src/compare-artists');
@@ -21,9 +24,11 @@ class App extends Component {
       user: {displayName:'not logged in', profilePic:''},
       topGenre: {},
       topCity: 'not logged in',
+      allCities: cities,
     }
     var c = this.state.loggedIn ? this.getUserInfo() : "";
-  }
+  };
+
   getHashParams(){
     var hashParams = {};
     var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -53,7 +58,8 @@ class App extends Component {
         this.setState({
           topGenre: data
         });
-        findCities.findCities(data);      });
+        this.state.topCity = findCities.findCities(data, this.state.allCities);     
+       });
       console.log(this.state.topGenre[1]);
   };
 
@@ -71,7 +77,7 @@ class App extends Component {
           <img src={this.state.user.profilePic} style={{ height: 150 }}/>
         </div>
         <div>
-        <Map/>
+        <Map cityLocations = {""} lat_lan={""}/>
         </div>
        
       </div>

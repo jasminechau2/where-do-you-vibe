@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import React, {useState} from "react"
 
 
-function Map() {
+function Map({cityLocations, lat_lan}) {
   // setup
   const[city1, setCity1] = useState([50,1]);
   const[city2, setCity2] = useState([50,1.25]);

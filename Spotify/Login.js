@@ -7,12 +7,12 @@
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
  
-var express = require('express'); // Express web server framework
+ var express = require('express'); // Express web server framework
  var request = require('request'); // "Request" library
  var querystring = require('querystring');
  var cookieParser = require('cookie-parser');
  var fs = require('fs');
-
+ 
 
  var client_id = 'e5a2287a5ea14d379ec2ea832d4760a4'; // Your client id
  var client_secret =  'dbc2ab802d694e55ab516a43f89c921c'; // Your secret
