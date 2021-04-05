@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import './App.css';
 import Map from './components/Map.js'
 import SpotifyWebApi from 'spotify-web-api-js';
@@ -23,12 +23,14 @@ class App extends Component {
       loggedIn: token ? true : false,
       user: {displayName:'not logged in', profilePic:''},
       topGenre: {},
-      topCity: 'not logged in',
+      topCity: 'No top matches generated yet',
       allCities: cities,
     }
     var c = this.state.loggedIn ? this.getUserInfo() : "";
+  console.log(this.state.topCity)
   };
 
+ 
   getHashParams(){
     var hashParams = {};
     var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -50,32 +52,41 @@ class App extends Component {
               profilePic: data.images[0].url
             }
         });
-      });
-
-      spotifyApi.getMyTopArtists({time_range: 'medium_term', limit: 20})
-      .then((data)=>{
-        console.log(data);
-        this.setState({
-          topGenre: data
-        });
-        this.state.topCity = findCities.findCities(data, this.state.allCities);     
-       });
-      console.log(this.state.topGenre[1]);
+      });  
   };
 
   
+getGenreInfo(){
+  spotifyApi.getMyTopArtists({time_range: 'medium_term', limit: 20})
+  .then((data)=>{
+     this.setState({
+       topGenre: data,
+       topCity: findCities.findCities(data, this.state.allCities),
+    });     
+   });
 
+}
   
   render() {
     return (
       <div className="App">
-        <a href='http://localhost:8888/login' > Login to Spotify </a>
+        <a href='http://localhost:8888/login'> Login to Spotify </a>
         <div>
           Hello { this.state.user.displayName }
         </div>
         <div>
           <img src={this.state.user.profilePic} style={{ height: 150 }}/>
         </div>
+        
+      { this.state.loggedIn &&
+        <button onClick={() => this.getGenreInfo()}>
+         Get your genres
+        </button>
+      }
+      <div>
+        {this.state.topCity}
+      </div>
+
         <div>
         <Map cityLocations = {""} lat_lan={""}/>
         </div>

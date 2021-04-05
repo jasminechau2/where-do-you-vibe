@@ -1,8 +1,9 @@
+//const fs = require('fs');
 
 var findCities = function findCities(user, places) {
 
-  let obj = JSON.parse(user);
-  let artists = obj.items;
+  //let obj = JSON.parse(user);
+  let artists = user.items;
 
   let genreObjForUser = Object();
 
@@ -20,6 +21,7 @@ var findCities = function findCities(user, places) {
     }
   }
 
+
   // https://stackoverflow.com/questions/1069666/sorting-object-property-by-values/16794116#16794116
   const sortUserGenreObject = Object.fromEntries(
     Object.entries(genreObjForUser).sort(([,a],[,b]) => a-b)
@@ -35,8 +37,8 @@ var findCities = function findCities(user, places) {
   // https://www.reddit.com/r/node/comments/2x066w/is_there_an_easy_synchronous_way_to_read_csv/
   let genreCities = [];
 
-  let placesObj = JSON.parse(places);
-  let cities = placesObj.items;
+  //let placesObj = JSON.parse(places);
+  let cities = places.items;
     
   for (let i = 0; i < cities.length; i++) {
     let specificCity = [];
@@ -51,7 +53,7 @@ var findCities = function findCities(user, places) {
   for(let city = 0; city < genreCities.length; city++) {
     let isCityAMatch = 0;
     for(let userGenre = 0; userGenre < genreSortedListForUser.length; userGenre++){
-      if(isCityAMatch > 5){ //change back to 5
+      if(isCityAMatch > 1){ //change back to 5
         cityMatches.push(city);
         break;
       }
@@ -109,9 +111,9 @@ var findCities = function findCities(user, places) {
   return returnList;
 }
 
-let user = fs.readFileSync('./user.json');
-let places = fs.readFileSync('./places.json');
+//let user = fs.readFileSync('./user.json');
+//let places = fs.readFileSync('./places.json');
 
-findCities(user, places);
+//findCities(user, places);
 
 module.exports.findCities = findCities;
