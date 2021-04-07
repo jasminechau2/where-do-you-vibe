@@ -20,7 +20,11 @@ function Map({cityLocations, lat_lan}) {
             center={center}
             zoom={3}
             scrollWheelZoom={false}
-            style={{height: '100vh'}}> 
+            style={{
+              height: '300px',
+              padding: "100px",
+              marginTop: '50px',
+              }}> 
               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

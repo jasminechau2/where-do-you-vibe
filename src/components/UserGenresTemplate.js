@@ -23,8 +23,7 @@ export default function UserGenreList() {
     //    <dt>Genres</dt> <dd>{{items}}</dd>
     // </div>
     <div>
-        <p>These are your genres</p>
-        { genres}
+        { genres }
     </div>
     )
 }

@@ -1,11 +1,9 @@
 import React, { Component} from 'react';
-import './App.css';
 import Map from './components/Map.js'
 import SpotifyWebApi from 'spotify-web-api-js';
 import cities from './places.json';
 
 //import './components/UserGenresTemplate.js';
-import UserGenreList from './components/UserGenresTemplate';
 
 
 const spotifyApi = new SpotifyWebApi();
@@ -21,9 +19,9 @@ class App extends Component {
     }
     this.state = { //sets state, allows us to know if someone is logged in and their name
       loggedIn: token ? true : false,
-      user: {displayName:'not logged in', profilePic:''},
+      displayTitle:"Where's your vibe?",
       topGenre: {},
-      topCity: 'No top matches generated yet',
+      topCity: '',
       allCities: cities,
     }
     var c = this.state.loggedIn ? this.getUserInfo() : "";
@@ -49,7 +47,6 @@ class App extends Component {
         this.setState({
           user: { 
               displayName: data.display_name, 
-              profilePic: data.images[0].url
             }
         });
       });  
@@ -59,6 +56,7 @@ class App extends Component {
 getGenreInfo(){
   spotifyApi.getMyTopArtists({time_range: 'medium_term', limit: 20})
   .then((data)=>{
+    console.log(findCities.findCities(data, this.state.allCities));
      this.setState({
        topGenre: data,
        topCity: findCities.findCities(data, this.state.allCities),
@@ -70,16 +68,47 @@ getGenreInfo(){
   render() {
     return (
       <div className="App">
-        <a href='http://localhost:8888/login'> Login to Spotify </a>
-        <div>
-          Hello { this.state.user.displayName }
+        <div style = {{
+          fontSize: "87px",
+          color: "#1250B5"
+        }}>
+          { this.state.displayTitle }
         </div>
-        <div>
-          <img src={this.state.user.profilePic} style={{ height: 150 }}/>
-        </div>
+
+        <a href="https://everynoise.com/everyplace.cgi" style = {{
+          fontSize: "36px",
+          color: "#923307",
+          textDecoration: "none",
+        }}>Based on data from "Every Place at Once"</a>
+
+        <a href='http://localhost:8888/login' style ={{
+          marginTop: "10px",
+          color: "white",
+          backgroundColor: "#1db954",
+          borderRadius: "46px",
+          textDecoration: "none",
+          height: "32px",
+          width: "200px",
+          fontSize: "24px",
+          textAlign: "center",
+          verticalAlign: "middle",
+          padding: "5px"
+        }}> Login to Spotify </a>
         
       { this.state.loggedIn &&
-        <button onClick={() => this.getGenreInfo()}>
+        <button onClick={() => this.getGenreInfo()} style={{
+          marginTop: "10px",
+          color: "white",
+          backgroundColor: "#1db954",
+          borderRadius: "46px",
+          textDecoration: "none",
+          height: "32px",
+          width: "200px",
+          fontSize: "24px",
+          textAlign: "center",
+          verticalAlign: "middle",
+          padding: "5px"
+        }}>
          Get your genres
         </button>
       }
@@ -87,9 +116,9 @@ getGenreInfo(){
         {this.state.topCity}
       </div>
 
-        <div>
-        <Map cityLocations = {""} lat_lan={""}/>
-        </div>
+      <div>
+      <Map cityLocations = {""} lat_lan={""}/>
+      </div>
        
       </div>
     );

@@ -20,8 +20,6 @@ with open('links.csv') as csv_file:
         links = row
 links = list(set(links))
 
-
-
 i = 0
 for a in links:
     page = requests.get(a)
@@ -52,11 +50,11 @@ for a in links:
     })
 
     i += 1
-    percent = (i/3660)*100
+    percent = (i/len(links))*100
     if(i%25 == 0):
         print(percent)
 
-    if (i == 5):
+    if (i == len(links)):
         with open('places.json', 'w', newline='') as file:
             jsonObject = []
             jsonObject.append({
