@@ -115,7 +115,7 @@ getGenreInfo(){
       <div>
         {this.state.topCity}
       </div>
-
+ 
       <div>
       <Map cityLocations = {""} lat_lan={""}/>
       </div>

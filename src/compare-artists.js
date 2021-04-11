@@ -53,7 +53,7 @@ var findCities = function findCities(user, places) {
   for(let city = 0; city < genreCities.length; city++) {
     let isCityAMatch = 0;
     for(let userGenre = 0; userGenre < genreSortedListForUser.length; userGenre++){
-      if(isCityAMatch > 1){ //change back to 5
+      if(isCityAMatch > 5){
         cityMatches.push(city);
         break;
       }
@@ -103,6 +103,7 @@ var findCities = function findCities(user, places) {
     topCitiesList.push(genreCities[matchedCityNumber][0]);
     matchingCountries.push(genreCities[matchedCityNumber][1])
   }
+//prints in 5,4,3,2,1 order
 
   let returnList = [];
   returnList.push(topCitiesList);
