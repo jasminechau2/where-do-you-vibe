@@ -11,11 +11,14 @@
  var request = require('request'); // "Request" library
  var querystring = require('querystring');
  var cookieParser = require('cookie-parser');
- var fs = require('fs');
+
+ const port = process.env.PORT || 8888;
+ const path = require('path');
+require('dotenv').config();
  
 
- var client_id = 'e5a2287a5ea14d379ec2ea832d4760a4'; // Your client id
- var client_secret =  'dbc2ab802d694e55ab516a43f89c921c'; // Your secret
+ var client_id = process.env.REACT_APP_CLIENT_ID; // Your client id
+ var client_secret =  process.env.REACT_APP_CLIENT_SECRET; // Your secret
  var redirect_uri = 'http://localhost:8888/callback'; // Or Your redirect uri
  
  /**
@@ -37,8 +40,8 @@
  
  var app = express();
  
- app.use(express.static(__dirname + '/public'))
-    .use(cookieParser());
+  app.use(express.static('./src/index.js'))
+     .use(cookieParser());
  
  app.get('/login', function(req, res) {
  
@@ -91,26 +94,6 @@
  
          var access_token = body.access_token,
              refresh_token = body.refresh_token;
- 
-        
-        //  var optionsGenre = {
-        //   url: 'https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=20&offset=0',
-        //   headers: { 'Authorization': 'Bearer ' + access_token },
-        //   json: true
-        // };
-        // // use the access token to access the Spotify Web API
-        // request.get(optionsGenre, function(error, response, body) {
-        //   const userData = JSON.stringify(body);
-        //   fs.writeFile('./data/user.json', userData, 'utf8', (err) => { //writes user genre data to a json file
-        //     if (err) {
-        //         console.log(`Error writing file: ${err}`);
-        //     } else {
-        //       findCities.findCities();
-        //        console.log(`File is written successfully!`);
-        //     }
-        
-        // });
-        // });
 
          // we can also pass the token to the browser to make requests from there
          res.redirect('http://localhost:3000/#' +
@@ -153,4 +136,4 @@
  });
  
  console.log('Listening on 8888');
- app.listen(8888);
+ app.listen(port);
