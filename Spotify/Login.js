@@ -19,7 +19,7 @@ require('dotenv').config();
 
  var client_id = process.env.REACT_APP_CLIENT_ID; // Your client id
  var client_secret =  process.env.REACT_APP_CLIENT_SECRET; // Your secret
- var redirect_uri = 'http://localhost:8888/callback'; // Or Your redirect uri
+ var redirect_uri = 'https://where-do-you-vibe.herokuapp.com/callback'; // Or Your redirect uri
  
  /**
   * Generates a random string containing numbers and letters
