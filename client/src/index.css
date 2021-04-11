@@ -1,0 +1,27 @@
+* {
+  margin: 100;
+  font-family:  'Helvetica Neue';
+  font-weight: 400;
+}
+
+.App{
+  text-align: left;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#login, #loggedin {
+    display: none;
+ }
+.text-overflow {
+   overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 500px;
+} */

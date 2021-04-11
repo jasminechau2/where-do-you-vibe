@@ -1,0 +1,388 @@
+{
+  "items": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6M2wZ9GZgrQXHCFfjv46we"
+      },
+      "followers": {
+        "href": null,
+        "total": 23530852
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "pop dance",
+        "uk pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6M2wZ9GZgrQXHCFfjv46we",
+      "id": "6M2wZ9GZgrQXHCFfjv46we",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/552c454001ba87ea580c1f084482991502562996",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/11c55d5d4dd71860f58c83fdb4217f32f22a0c7b",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/12c917fb893e9c2c37b37f093b30c024e7a76dd5",
+          "width": 160
+        }
+      ],
+      "name": "Dua Lipa",
+      "popularity": 95,
+      "type": "artist",
+      "uri": "spotify:artist:6M2wZ9GZgrQXHCFfjv46we"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3DiDSECUqqY1AuBP8qtaIa"
+      },
+      "followers": {
+        "href": null,
+        "total": 8484105
+      },
+      "genres": [
+        "hip pop",
+        "neo soul",
+        "pop",
+        "r&b",
+        "urban contemporary"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3DiDSECUqqY1AuBP8qtaIa",
+      "id": "3DiDSECUqqY1AuBP8qtaIa",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/f603978d2974c3132fc13202f8555305dbd71710",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/a1f6edee42cee2dbef24aec64068efe51d4d0fc6",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/6d7dc52fb3fe43800cf45bfb6afec5d2b338c17b",
+          "width": 160
+        }
+      ],
+      "name": "Alicia Keys",
+      "popularity": 83,
+      "type": "artist",
+      "uri": "spotify:artist:3DiDSECUqqY1AuBP8qtaIa"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02"
+      },
+      "followers": {
+        "href": null,
+        "total": 37933141
+      },
+      "genres": [
+        "pop",
+        "pop dance"
+      ],
+      "href": "https://api.spotify.com/v1/artists/06HL4z0CvFAxyc27GXpf02",
+      "id": "06HL4z0CvFAxyc27GXpf02",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/8389f45cac7a58e3ab67a3bdeb5b4a0f9d8f7919",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/ca417f738fca37ef08447d45f9c32e2650f48a86",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/02e96fdf26f6a3b1d435f163831ea50f7d2abb55",
+          "width": 160
+        }
+      ],
+      "name": "Taylor Swift",
+      "popularity": 98,
+      "type": "artist",
+      "uri": "spotify:artist:06HL4z0CvFAxyc27GXpf02"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/39vA9YljbnOApXKniLWBZv"
+      },
+      "followers": {
+        "href": null,
+        "total": 446309
+      },
+      "genres": [
+        "art pop",
+        "electropop",
+        "etherpop",
+        "indie folk",
+        "indie pop",
+        "indie rock"
+      ],
+      "href": "https://api.spotify.com/v1/artists/39vA9YljbnOApXKniLWBZv",
+      "id": "39vA9YljbnOApXKniLWBZv",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/a9488380277cdce61ed6f625e70278c8cff8e4ce",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/91e8fa4ce28ee486d790a3eaebce294e7c6ac7d5",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/9ea9bfbe76357be12ac180927246a9279375afa9",
+          "width": 160
+        }
+      ],
+      "name": "Sylvan Esso",
+      "popularity": 67,
+      "type": "artist",
+      "uri": "spotify:artist:39vA9YljbnOApXKniLWBZv"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/21TinSsF5ytwsfdyz5VSVS"
+      },
+      "followers": {
+        "href": null,
+        "total": 859952
+      },
+      "genres": [
+        "alt z",
+        "indie cafe pop",
+        "indie pop",
+        "pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/21TinSsF5ytwsfdyz5VSVS",
+      "id": "21TinSsF5ytwsfdyz5VSVS",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/3abc2dccdb85591746e5b6e81a9d33ac360b6c18",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/60cbe8c69c9bef78fc2e60e2e928bc95241e302c",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/564281fc8f8cafc01ad996f0d1d16ba20004528a",
+          "width": 160
+        }
+      ],
+      "name": "dodie",
+      "popularity": 70,
+      "type": "artist",
+      "uri": "spotify:artist:21TinSsF5ytwsfdyz5VSVS"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/2VZNmg4vCnew4Pavo8zDdW"
+      },
+      "followers": {
+        "href": null,
+        "total": 635614
+      },
+      "genres": [
+        "compositional ambient",
+        "post-minimalism",
+        "soundtrack"
+      ],
+      "href": "https://api.spotify.com/v1/artists/2VZNmg4vCnew4Pavo8zDdW",
+      "id": "2VZNmg4vCnew4Pavo8zDdW",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/2a4c886b81253d6a93d446ae69b7ed634d7d7700",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/c58b8cc0c7a1c094e0545d1b96d98c88832b1e53",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/e7b1100d9db7754d142b5f4ab784ba0a07d33d97",
+          "width": 160
+        }
+      ],
+      "name": "Max Richter",
+      "popularity": 79,
+      "type": "artist",
+      "uri": "spotify:artist:2VZNmg4vCnew4Pavo8zDdW"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6f5yObGSpFj9eJL55GBzrb"
+      },
+      "followers": {
+        "href": null,
+        "total": 23150
+      },
+      "genres": [
+        "australian indie",
+        "australian pop",
+        "vapor soul"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6f5yObGSpFj9eJL55GBzrb",
+      "id": "6f5yObGSpFj9eJL55GBzrb",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/6fe69dae65d3ac103779470c3d80e679c0e8b6d5",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/1c54e9b61e3cab126d426307ff591a968a861096",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/cef0d957d80e9687167c46a0b255fef5c31c39c5",
+          "width": 160
+        }
+      ],
+      "name": "LANKS",
+      "popularity": 51,
+      "type": "artist",
+      "uri": "spotify:artist:6f5yObGSpFj9eJL55GBzrb"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/1CoZyIx7UvdxT5c8UkMzHd"
+      },
+      "followers": {
+        "href": null,
+        "total": 2013857
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "uk contemporary r&b"
+      ],
+      "href": "https://api.spotify.com/v1/artists/1CoZyIx7UvdxT5c8UkMzHd",
+      "id": "1CoZyIx7UvdxT5c8UkMzHd",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/f60db6f9b7264b835c7de6cdea9ba53e19398b81",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/0bfa8ba50cb3a91cbfec40ef0abee0392220e0e2",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/742a58bf85e15b729e72aeefdf5a3023ab40cfb0",
+          "width": 160
+        }
+      ],
+      "name": "Jorja Smith",
+      "popularity": 80,
+      "type": "artist",
+      "uri": "spotify:artist:1CoZyIx7UvdxT5c8UkMzHd"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/3WrFJ7ztbogyGnTHbHJFl2"
+      },
+      "followers": {
+        "href": null,
+        "total": 18974022
+      },
+      "genres": [
+        "beatlesque",
+        "british invasion",
+        "classic rock",
+        "merseybeat",
+        "psychedelic rock",
+        "rock"
+      ],
+      "href": "https://api.spotify.com/v1/artists/3WrFJ7ztbogyGnTHbHJFl2",
+      "id": "3WrFJ7ztbogyGnTHbHJFl2",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/6b2a709752ef9c7aaf0d270344157f6cd2e0f1a7",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/1047bf172446f2a815a99ab0a0395099d621be51",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/0561b59a91a5e904ad2d192747715688d5f05012",
+          "width": 160
+        }
+      ],
+      "name": "The Beatles",
+      "popularity": 89,
+      "type": "artist",
+      "uri": "spotify:artist:3WrFJ7ztbogyGnTHbHJFl2"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/0QWrMNukfcVOmgEU0FEDyD"
+      },
+      "followers": {
+        "href": null,
+        "total": 387079
+      },
+      "genres": [
+        "indie soul",
+        "uk alternative pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/0QWrMNukfcVOmgEU0FEDyD",
+      "id": "0QWrMNukfcVOmgEU0FEDyD",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/852ebd6260da7ca7258008ff4734396e9790c74e",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/2a0b0afb633abd807af7d582a79a44ec50a05ca3",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/98b562e83bb688e788777c0c1fbdc09e44a36059",
+          "width": 160
+        }
+      ],
+      "name": "Jacob Collier",
+      "popularity": 65,
+      "type": "artist",
+      "uri": "spotify:artist:0QWrMNukfcVOmgEU0FEDyD"
+    }
+  ],
+  "total": 50,
+  "limit": 10,
+  "offset": 0,
+  "href": "https://api.spotify.com/v1/me/top/artists?limit=10&offset=0",
+  "previous": null,
+  "next": "https://api.spotify.com/v1/me/top/artists?limit=10&offset=10"
+}

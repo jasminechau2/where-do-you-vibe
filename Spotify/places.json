@@ -1,0 +1,130 @@
+{
+  "items": [
+    {
+      "city": "La Trinidad",
+      "country": "PH",
+      "genres": [
+        "opm",
+        "tagalog rap",
+        "pinoy rock",
+        "pinoy hip hop",
+        "pinoy indie",
+        "classic opm",
+        "pinoy r&b",
+        "pop rock",
+        "pinoy trap",
+        "pinoy reggae",
+        "soft rock",
+        "acoustic opm",
+        "dance pop",
+        "pinoy pop punk",
+        ""
+      ]
+    },
+    {
+      "city": "Ambon City",
+      "country": "ID",
+      "genres": [
+        "indonesian pop",
+        "indonesian indie",
+        "indonesian jazz",
+        "indonesian worship",
+        "world worship",
+        ""
+      ]
+    },
+    {
+      "city": "Durban",
+      "country": "ZA",
+      "genres": [
+        "afro soul",
+        "south african pop",
+        "gqom",
+        "south african gospel",
+        "maskandi",
+        "south african house",
+        "south african alternative",
+        "south african hip hop",
+        "south african jazz",
+        "south african pop dance",
+        "afro house",
+        "kwaito",
+        ""
+      ]
+    },
+    {
+      "city": "Gravesend",
+      "country": "GB",
+      "genres": [
+        "uk hip hop",
+        "uk drill",
+        "grime",
+        "pop dance",
+        "afroswing",
+        "tropical house",
+        "dance pop",
+        "uk dance",
+        "house",
+        "london rap",
+        "uk garage",
+        "deep groove house",
+        "liquid funk",
+        "drum and bass",
+        "pop",
+        "post-teen pop",
+        "uk pop",
+        "edm",
+        "jump up",
+        "uk dancehall",
+        ""
+      ]
+    },
+    {
+      "city": "Andorra la Vella",
+      "country": "AD",
+      "genres": [
+        "spanish pop",
+        "urbano espanol",
+        "rap espanol",
+        "cantautor",
+        "musica catalana",
+        "pop flamenco",
+        "trap latino",
+        "indie catala",
+        "rock catala",
+        "rumba",
+        "spanish hip hop",
+        "spanish pop rock",
+        "latin arena pop",
+        "latin pop",
+        "catalan folk",
+        "spanish rock",
+        "flamenco urbano",
+        "latin",
+        "drill espanol",
+        "latin viral pop",
+        "reggae catala",
+        "rock en espanol",
+        "flamenco fusion",
+        "mestissatge",
+        "reggaeton",
+        "spanish new wave",
+        "dembow",
+        "dominican pop",
+        "electro latino",
+        "eurovision",
+        "flamenco",
+        "latin hip hop",
+        "latin rock",
+        "rap catala",
+        "rap dominicano",
+        "rap underground espanol",
+        "reggaeton flow",
+        "spanish punk",
+        "trap triste",
+        "tropical",
+        ""
+      ]
+    }
+  ]
+}
