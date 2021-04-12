@@ -19,8 +19,13 @@ require('dotenv').config();
 
  var client_id = process.env.REACT_APP_CLIENT_ID; // Your client id
  var client_secret =  process.env.REACT_APP_CLIENT_SECRET; // Your secret
- var redirect_uri = 'https://where-do-you-vibe.herokuapp.com/callback'; // Or Your redirect uri
- 
+ var redirect_uri  = process.env.REDIRECT_URI || 'http://localhost:8888/callback';
+let FRONTEND_URI = process.env.FRONTEND_URI || 'http://localhost:3000';
+
+if (process.env.NODE_ENV !== 'production') {
+  REDIRECT_URI = 'http://localhost:8888/callback';
+  FRONTEND_URI = 'http://localhost:3000';
+}
  /**
   * Generates a random string containing numbers and letters
   * @param  {number} length The length of the string
@@ -94,25 +99,22 @@ require('dotenv').config();
      };
  
      request.post(authOptions, function(error, response, body) {
-       if (!error && response.statusCode === 200) {
- 
-         var access_token = body.access_token,
-             refresh_token = body.refresh_token;
+      if (!error && response.statusCode === 200) {
+        const access_token = body.access_token;
+        const refresh_token = body.refresh_token;
 
-         // we can also pass the token to the browser to make requests from there
-         res.redirect('http://localhost:3000/#' +
-           querystring.stringify({
-             access_token: access_token,
-             refresh_token: refresh_token
-           }));
-       } else {
-         res.redirect('/#' +
-           querystring.stringify({
-             error: 'invalid_token'
-           }));
-       }
-     });
-   }
+        // we can also pass the token to the browser to make requests from there
+        res.redirect(
+          `${FRONTEND_URI}/#${querystring.stringify({
+            access_token,
+            refresh_token,
+          })}`,
+        );
+      } else {
+        res.redirect(`/#${querystring.stringify({ error: 'invalid_token' })}`);
+      }
+    });
+  }
  });
  
  app.get('/refresh_token', function(req, res) {
