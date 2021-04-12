@@ -12,7 +12,7 @@
  var querystring = require('querystring');
  var cookieParser = require('cookie-parser');
 
- const port = process.env.PORT || 8888;
+ const PORT = process.env.PORT || 8888;
  const path = require('path');
 require('dotenv').config();
  
@@ -20,7 +20,7 @@ require('dotenv').config();
  var client_id = process.env.REACT_APP_CLIENT_ID; // Your client id
  var client_secret =  process.env.REACT_APP_CLIENT_SECRET; // Your secret
  var redirect_uri  = process.env.REDIRECT_URI;
-let FRONTEND_URI = process.env.FRONTEND_URI;
+ var  FRONTEND_URI = process.env.FRONTEND_URI;
 
 if (process.env.NODE_ENV !== 'production') {
   redirect_uri = 'http://localhost:8888/callback';
@@ -45,8 +45,8 @@ if (process.env.NODE_ENV !== 'production') {
  
  var app = express();
  
-  app.use(express.static('../client/src/index.js'))
-     .use(cookieParser());
+ app.use(express.static('../client/src/index.js'))
+  .use(cookieParser());
 
 //  app.get('*', (req, res)=> {
 //    res.sendFile(path.resolve('./public', 'index.html' ));
@@ -141,5 +141,5 @@ if (process.env.NODE_ENV !== 'production') {
    });
  });
  
- console.log('Listening on 8888');
- app.listen(port);
+ console.log(`Listening on: ${PORT}`);
+ app.listen(PORT);
