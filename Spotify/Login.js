@@ -19,8 +19,8 @@ require('dotenv').config();
 
  var client_id = process.env.REACT_APP_CLIENT_ID; // Your client id
  var client_secret =  process.env.REACT_APP_CLIENT_SECRET; // Your secret
- var redirect_uri  = process.env.REDIRECT_URI || 'http://localhost:8888/callback';
-let FRONTEND_URI = process.env.FRONTEND_URI || 'http://localhost:3000';
+ var redirect_uri  = process.env.REDIRECT_URI;
+let FRONTEND_URI = process.env.FRONTEND_URI;
 
 if (process.env.NODE_ENV !== 'production') {
   redirect_uri = 'http://localhost:8888/callback';
