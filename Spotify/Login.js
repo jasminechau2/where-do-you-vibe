@@ -40,9 +40,12 @@ require('dotenv').config();
  
  var app = express();
  
-  app.use(express.static('./src/index.js'))
+  app.use(express.static('../client/src/index.js'))
      .use(cookieParser());
- 
+     
+ app.get('*', (req, res)=> {
+   res.sendFile(path.resolve(_dirname,'client','build', 'index.html' ));
+   })
  app.get('/login', function(req, res) {
  
    var state = generateRandomString(16);
