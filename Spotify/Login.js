@@ -42,9 +42,9 @@ require('dotenv').config();
  
   app.use(express.static('../client/src/index.js'))
      .use(cookieParser());
-     
+
  app.get('*', (req, res)=> {
-   res.sendFile(path.resolve(_dirname,'client','build', 'index.html' ));
+   res.sendFile(path.resolve('./public', 'index.html' ));
    })
  app.get('/login', function(req, res) {
  
