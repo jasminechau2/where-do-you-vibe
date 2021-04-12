@@ -23,7 +23,7 @@ require('dotenv').config();
 let FRONTEND_URI = process.env.FRONTEND_URI || 'http://localhost:3000';
 
 if (process.env.NODE_ENV !== 'production') {
-  REDIRECT_URI = 'http://localhost:8888/callback';
+  redirect_uri = 'http://localhost:8888/callback';
   FRONTEND_URI = 'http://localhost:3000';
 }
  /**
