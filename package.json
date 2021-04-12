@@ -14,9 +14,9 @@
     "request": "~2.83.0"
   },
   "scripts": {
-    "start": "concurrently \"npm run watch --prefix server\" \"npm start --prefix client\"",
+    "start": "node ./Spotify/Login.js",
     "install": "cd client && npm install",
-    "server": "node ./Spotify/Login.js && npm install",
+    "server": "node ./Spotify/Login.js",
     "client": "cd client && npm start",
     "heroku-postbuild": "cd client && npm install && npm run build"
   }
