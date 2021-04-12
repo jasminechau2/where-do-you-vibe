@@ -1,6 +1,5 @@
 import React, { Component} from 'react';
-import './App.css';
-import Map from './components/Map.js.js'
+import Map from './components/Map.js'
 import SpotifyWebApi from 'spotify-web-api-js';
 import cities from './places.json';
 
@@ -11,15 +10,14 @@ import UserGenreList from './components/UserGenresTemplate';
 const spotifyApi = new SpotifyWebApi();
 var findCities = require('./compare-artists');
 
+const LOGIN_URI =
+process.env.NODE_ENV !== 'production'
+? 'http://localhost:8888/login'
+: 'https://where-do-you-vibe.herokuapp.com/login';
 
 class App extends Component {
   constructor(){ //This reads the token from the url, token allows us access to user info
     super();
-    const LOGIN_URI =
-    process.env.NODE_ENV !== 'production'
-    ? 'http://localhost:8888/login'
-    : 'https://where-do-you-vibe.herokuapp.com/login';
-
     const params = this.getHashParams();
     const token = params.access_token;
     if (token) {
