@@ -13,6 +13,10 @@
   },
   "scripts": {
     "start": "node ./Spotify/Login.js",
+    "install": "cd client && npm install",
+    "server": "node ./Spotify/Login.js",
+    "client": "cd client && npm start",
+    "build": "react-scripts builds",
     "heroku-postbuild": "cd client && npm install && npm run build"
   }
 }
