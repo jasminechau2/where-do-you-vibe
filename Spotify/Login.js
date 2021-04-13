@@ -9,28 +9,25 @@
  
  var express = require('express'); // Express web server framework
  var request = require('request'); // "Request" library
+ var cors = require('cors');
  var querystring = require('querystring');
  var cookieParser = require('cookie-parser');
 
  const PORT = process.env.PORT || 8888;
  const path = require('path');
-require('dotenv').config();
+ require('dotenv').config();
  
 
  var client_id = process.env.REACT_APP_CLIENT_ID; // Your client id
  var client_secret =  process.env.REACT_APP_CLIENT_SECRET; // Your secret
  var redirect_uri  = process.env.REDIRECT_URI;
- var  FRONTEND_URI = process.env.FRONTEND_URI;
+ var FRONTEND_URI = process.env.FRONTEND_URI;
 
 if (process.env.NODE_ENV !== 'production') {
   redirect_uri = 'http://localhost:8888/callback';
   FRONTEND_URI = 'http://localhost:3000';
-}else if (process.env.NODE_ENV === "production") {
-  // All remaining requests return the React app, so it can handle routing.
-  app.get("*", (request, response) => {
-    response.sendFile(path.join(buildPath, "index.html"));
-  });
-}
+} 
+
  /**
   * Generates a random string containing numbers and letters
   * @param  {number} length The length of the string
@@ -48,9 +45,13 @@ if (process.env.NODE_ENV !== 'production') {
  
  var stateKey = 'spotify_auth_state';
  
- var app = express();
- 
- app.use(express.static(__dirname, '../where-do-you-vibe/build'))
+ const app = express();
+
+ // Resolve client build directory as absolute path to avoid errors in express
+const buildPath = path.resolve(__dirname, "../client/build");
+
+ app.use(express.static(buildPath))
+  .use(cors())
   .use(cookieParser());
 
 //  app.get('*', (req, res)=> {
@@ -146,5 +147,11 @@ if (process.env.NODE_ENV !== 'production') {
    });
  });
  
- console.log(`Listening on: ${PORT}`);
+ if (process.env.NODE_ENV === "production") {
+  // All remaining requests return the React app, so it can handle routing.
+  app.get("*", (request, response) => {
+    response.sendFile(path.join(buildPath, "index.html"));
+  });
+}
  app.listen(PORT);
+ console.log("Listening on port %d", PORT); // eslint-disable-line no-console
