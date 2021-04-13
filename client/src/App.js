@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import Map from './components/Map.js'
 import SpotifyWebApi from 'spotify-web-api-js';
 import cities from './places.json';
+import latLng from './lat-lng1.json'
 
 //import './components/UserGenresTemplate.js';
 import UserGenreList from './components/UserGenresTemplate';
@@ -29,6 +30,7 @@ class App extends Component {
       topGenre: {},
       topCity: 'No top matches generated yet',
       allCities: cities,
+      allLocations: latLng,
     }
     var c = this.state.loggedIn ? this.getUserInfo() : "";
   console.log(this.state.topCity)
