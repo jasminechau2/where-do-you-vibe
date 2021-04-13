@@ -25,6 +25,11 @@ require('dotenv').config();
 if (process.env.NODE_ENV !== 'production') {
   redirect_uri = 'http://localhost:8888/callback';
   FRONTEND_URI = 'http://localhost:3000';
+}else if (process.env.NODE_ENV === "production") {
+  // All remaining requests return the React app, so it can handle routing.
+  app.get("*", (request, response) => {
+    response.sendFile(path.join(buildPath, "index.html"));
+  });
 }
  /**
   * Generates a random string containing numbers and letters
@@ -45,7 +50,7 @@ if (process.env.NODE_ENV !== 'production') {
  
  var app = express();
  
- app.use(express.static('../client/src/index.js'))
+ app.use(express.static(__dirname, '../where-do-you-vibe/build'))
   .use(cookieParser());
 
 //  app.get('*', (req, res)=> {
