@@ -28,6 +28,7 @@ class App extends Component {
       user: {displayName:'your', profilePic:''},
       topGenre: {},
       topCity: 'No top matches generated yet',
+      genresGenerated: false,
       allCities: cities,
     }
     var c = this.state.loggedIn ? this.getUserInfo() : "";
@@ -66,6 +67,7 @@ getGenreInfo(){
      this.setState({
        topGenre: data,
        topCity: findCities.findCities(data, this.state.allCities),
+       genresGenerated: true,
     });     
    });
 
@@ -83,7 +85,7 @@ getGenreInfo(){
         </div> */}
 
         <div style = {{
-            fontSize: "43px",
+            fontSize: "56px",
             color: "#1250B5",
             textDecoration: "none",
           }}>
@@ -112,21 +114,15 @@ getGenreInfo(){
             cursor: "pointer"
           }}> Login to Spotify </a>
         }
-
-
-
-
-
-
         
-        { this.state.loggedIn &&
+        { this.state.loggedIn && !this.state.genresGenerated &&
         <button onClick={() => this.getGenreInfo()} style={{
           marginTop: "10px",
           color: "white",
           backgroundColor: "#1db954",
           borderRadius: "46px",
           textDecoration: "none",
-          height: "32px",
+          height: "38px",
           width: "200px",
           fontSize: "24px",
           textAlign: "center",
@@ -139,9 +135,10 @@ getGenreInfo(){
         </button>
       }
 
+     { this.state.loggedIn && this.state.genresGenerated &&
       <div>
         {this.state.topCity}
-      </div>
+      </div>}
 
         <div>
         <Map cityLocations = {""} lat_lan={""}/>
