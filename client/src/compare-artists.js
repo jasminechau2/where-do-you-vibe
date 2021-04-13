@@ -117,4 +117,5 @@ var findCities = function findCities(user, places) {
 
 //findCities(user, places);
 
-module.exports.findCities = findCities;
+const _findCities = findCities;
+export { _findCities as findCities };

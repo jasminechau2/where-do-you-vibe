@@ -8,7 +8,7 @@ import UserGenreList from './components/UserGenresTemplate';
 
 
 const spotifyApi = new SpotifyWebApi();
-var findCities = require('./compare-artists');
+var findCities = require('./compare-artists.js');
 
 const LOGIN_URI =
 process.env.NODE_ENV !== 'production'
