@@ -1,5 +1,5 @@
 {
-  "name": "where-do-you-vibe",
+  "name": "server",
   "version": "0.1.0",
   "main": "index.js",
   "engines": {
@@ -18,5 +18,6 @@
     "install": "cd client && npm install",
     "server": "node ./Spotify/Login.js",
     "client": "cd client && npm start",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"  }
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  }
 }
