@@ -89,7 +89,7 @@ getGenreInfo(){
             color: "#1250B5",
             textDecoration: "none",
           }}>
-            Where's { this.state.user.displayName } vibe?' 
+            Where's { this.state.user.displayName } vibe? 
         </div>
 
         <a href="https://everynoise.com/everyplace.cgi" style = {{
