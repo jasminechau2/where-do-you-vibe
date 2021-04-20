@@ -141,7 +141,7 @@ getGenreInfo(){
       </div>}
 
         <div>
-        <Map cityLocations = {""} lat_lan={""}/>
+        <Map cityLocations = {this.state.topCity} lat_lan={""}/>
         </div>
        
       </div>
