@@ -9,7 +9,7 @@ var findCities = function findCities(user, places) {
 
   for (let i = 0; i < artists.length; i++) {
     let genreListForArtist = artists[i].genres;
-    let posValue = artists.length-i;
+    let posValue = Math.log(artists.length-i);
     for(let i = 0; i < genreListForArtist.length; i++){
       let genre = String(genreListForArtist[i]);
       if(genreObjForUser[genre]){
@@ -31,7 +31,15 @@ var findCities = function findCities(user, places) {
   for (let genre in sortUserGenreObject){
     genreSortedListForUser.unshift(genre);
   }
-  // console.log(genreSortedListForUser);
+
+  let genreListMax = 5;
+  if (genreSortedListForUser.length < genreListMax){
+    genreListMax = genreSortedListForUser.length;
+  }
+  let genreReturnList = [];
+  for (let genre = 0; genre < genreListMax; genre++){
+    genreReturnList.push(genreSortedListForUser[genre])
+  }
 
   //import cities from json
   // https://www.reddit.com/r/node/comments/2x066w/is_there_an_easy_synchronous_way_to_read_csv/
@@ -72,13 +80,15 @@ var findCities = function findCities(user, places) {
     let matchedCityNumber = cityMatches[city];
     let cityScore = 0;
 
-    for(let cityGenre = 2; cityGenre < genreCities[matchedCityNumber].length-1; cityGenre++){
+    for(let cityGenre = 2; cityGenre < genreCities[matchedCityNumber][2].length-1; cityGenre++){
       let cityGenrePos = cityGenre-2;
       for(let userGenrePos = 0; userGenrePos < genreSortedListForUser.length; userGenrePos++){
-        if(genreCities[matchedCityNumber][cityGenre] === genreSortedListForUser[userGenrePos]){
+        if(genreCities[matchedCityNumber][2][cityGenre] === genreSortedListForUser[userGenrePos]){
           let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
-
           cityScore += differenceSquared;
+        }
+        else{
+          cityScore += 500;
         }
       }
     }
@@ -108,6 +118,7 @@ var findCities = function findCities(user, places) {
   let returnList = [];
   returnList.push(topCitiesList);
   returnList.push(matchingCountries);
+  returnList.push(genreReturnList);
 
   return returnList;
 }
@@ -117,4 +128,5 @@ var findCities = function findCities(user, places) {
 
 //findCities(user, places);
 
-module.exports.findCities = findCities;
+const _findCities = findCities;
+export { _findCities as findCities };

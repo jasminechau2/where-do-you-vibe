@@ -3,6 +3,8 @@ import React, {useState} from "react"
 
 
 function Map({cityLocations, lat_lan}) {
+  console.log(cityLocations);
+
   // setup
   const[city1, setCity1] = useState([50,1]);
   const[city2, setCity2] = useState([50,1.25]);
