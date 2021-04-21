@@ -9,7 +9,7 @@ import UserCityList from './components/user-cities-display-template';
 
 
 const spotifyApi = new SpotifyWebApi();
-var findCities = require('./compare-artists');
+var findCities = require('./compare-artists.js');
 
 const LOGIN_URI =
 process.env.NODE_ENV !== 'production'

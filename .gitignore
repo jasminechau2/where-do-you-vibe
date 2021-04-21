@@ -25,3 +25,4 @@ yarn-debug.log*
 yarn-error.log*
 data/user.json
 Spotify/user_top_cities.csv
+client/node_modules
