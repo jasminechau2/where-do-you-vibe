@@ -5,7 +5,7 @@ import cities from './places.json';
 import latLng from './lat-lng1.json'
 
 //import './components/UserGenresTemplate.js';
-import UserGenreList from './components/UserGenresTemplate';
+import UserCityList from './components/user-cities-display-template';
 
 
 const spotifyApi = new SpotifyWebApi();
@@ -28,12 +28,12 @@ class App extends Component {
       loggedIn: token ? true : false,
       user: {displayName:'not logged in', profilePic:''},
       topGenre: {},
-      topCity: 'No top matches generated yet',
+      algoGeneration: "nothing yet",
       allCities: cities,
       allLocations: latLng,
+      topCities: 'No top matches generated yet',
     }
     var c = this.state.loggedIn ? this.getUserInfo() : "";
-  console.log(this.state.topCity)
   };
 
  
@@ -65,14 +65,15 @@ class App extends Component {
 getGenreInfo(){
   spotifyApi.getMyTopArtists({time_range: 'medium_term', limit: 20})
   .then((data)=>{
-     this.setState({
-       topGenre: data,
-       topCity: findCities.findCities(data, this.state.allCities),
-    });     
+     this.setState({topGenre: data});
+     this.setState({algoGeneration: findCities.findCities(data, this.state.allCities)});
    });
+};
 
-}
-  
+setCities(cityData){
+  this.setState({topCities:cityData});
+};
+
   render() {
     return (
       <div className="App">
@@ -90,7 +91,7 @@ getGenreInfo(){
         </button>
       }
       <div>
-        {this.state.topCity}
+        <UserCityList citiesObject = {this.state.algoGeneration} callback = {this.setCities}/>
       </div>
 
         <div>
