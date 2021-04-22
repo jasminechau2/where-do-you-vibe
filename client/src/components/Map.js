@@ -1,17 +1,26 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import React, {useState} from "react"
+import cities from './lat-lng.json';
 
 
 function Map({cityLocations, lat_lan}) {
   console.log(cityLocations);
+  let latLng = cities.items;
 
+
+  
+  console.log(latLng[0]["lat"]);
+  let city1Lat = latLng[0]["lat"];
+  let city1Lon = latLng[0]["lng"];
   // setup
-  const[city1, setCity1] = useState([50,1]);
+  const[city1, setCity1] = useState([city1Lat,city1Lon]);
   const[city2, setCity2] = useState([50,1.25]);
   const[city3, setCity3] = useState([50,1.5]);
   const[city4, setCity4] = useState([50,1.75]);
   const[city5, setCity5] = useState([50,2]);
   const[center, setCenter] = useState([0,0]);
+
+
 
   return (
     <div >
