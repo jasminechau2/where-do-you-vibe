@@ -8,18 +8,16 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
     const countries = citiesObject[1]; 
     const combine = [];
     var i = 0; 
-
-    for( i =0 ; i < cities.length; i++ ){
-       combine.push( 
-            <li
-            key = {cities[i]}>
-            {cities[i]}
-            {countries[i]}
-            </li>
-        );
-      };
-      console.log(combine);
-   
+    if(citiesObject !== "nothing yet"){
+        for( i =0 ; i < cities.length; i++ ){
+            combine.push( 
+                 <li
+                 key = {cities[i]}>
+                 {cities[i]}, {countries[i]}
+                 </li>
+             );
+           };
+    }   
    
     //callback(combine);
     return ( 

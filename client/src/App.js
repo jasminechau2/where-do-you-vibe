@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import Map from './components/Map.js'
 import SpotifyWebApi from 'spotify-web-api-js';
 import cities from './places.json';
@@ -16,11 +16,11 @@ process.env.NODE_ENV !== 'production'
 ? 'http://localhost:8888/login'
 : 'https://where-do-you-vibe.herokuapp.com/login';
 
-class App extends Component {
-  constructor(){ //This reads the token from the url, token allows us access to user info
+class App extends Component { 
+  constructor(){
     super();
     const params = this.getHashParams();
-    const token = params.access_token;
+    const token = params.access_token; //This reads the token from the url, token allows us access to user info
     if (token) {
       spotifyApi.setAccessToken(token);
     }
@@ -32,12 +32,16 @@ class App extends Component {
       allCities: cities,
       allLocations: latLng,
       topCities: 'No top matches generated yet',
-    }
-    var c = this.state.loggedIn ? this.getUserInfo() : "";
-    
+    } 
   };
 
- 
+  componentDidMount(){
+    if(this.state.loggedIn){
+      this.getUserInfo()
+    };
+  };
+
+
   getHashParams(){
     var hashParams = {};
     var e, r = /([^&;=]+)=?([^&;]*)/g,
@@ -72,7 +76,7 @@ getGenreInfo(){
 };
 
 setCities(cityData){
-  this.setState({topCities:cityData});
+ // state.topCities = cityData;
 };
 
   render() {
