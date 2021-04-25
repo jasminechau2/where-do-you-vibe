@@ -34,6 +34,7 @@ class App extends Component {
       topCities: 'No top matches generated yet',
     }
     var c = this.state.loggedIn ? this.getUserInfo() : "";
+    
   };
 
  
@@ -77,7 +78,7 @@ setCities(cityData){
   render() {
     return (
       <div className="App">
-        <a href={LOGIN_URI}> Login to Spotify </a>
+       {this.state.loggedIn ? <a href = {'http://localhost:8888/logout'}>Log out</a> : <a href={LOGIN_URI}> Login to Spotify </a>}
         <div>
           Hello { this.state.user.displayName }
         </div>

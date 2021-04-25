@@ -45,7 +45,8 @@ if (process.env.NODE_ENV !== 'production') {
  };
  
  var stateKey = 'spotify_auth_state';
- 
+ const refreshKey = "refresh_key";
+
  const app = express();
 
  // Resolve client build directory as absolute path to avoid errors in express
@@ -55,6 +56,11 @@ const buildPath = path.resolve(__dirname, "../client/build");
   .use(cors())
   .use(cookieParser());
 
+  const cookieOption = {
+    // Comment out the following 2 lines while in development for the authoriazation flow to work properly
+    // sameSite:'None',
+    // secure: true
+  };
 //  app.get('*', (req, res)=> {
 //    res.sendFile(path.resolve('./public', 'index.html' ));
 //    })
@@ -72,7 +78,8 @@ const buildPath = path.resolve(__dirname, "../client/build");
        client_id: client_id,
        scope: scope,
        redirect_uri: redirect_uri,
-       state: state
+       state: state,
+      show_dialog: true
      }));
  });
  
@@ -104,7 +111,7 @@ const buildPath = path.resolve(__dirname, "../client/build");
        },
        json: true
      };
- 
+     //request get token
      request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
         const access_token = body.access_token;
@@ -118,14 +125,13 @@ const buildPath = path.resolve(__dirname, "../client/build");
           })}`,
         );
       } else {
-        res.redirect(`/#${querystring.stringify({ error: 'invalid_token' })}`);
+        res.redirect(`${FRONTEND_URI}/`,);
       }
     });
   }
  });
  
  app.get('/refresh_token', function(req, res) {
- 
    // requesting access token from refresh token
    var refresh_token = req.query.refresh_token;
    var authOptions = {
@@ -147,6 +153,15 @@ const buildPath = path.resolve(__dirname, "../client/build");
      }
    });
  });
+
+ app.get('/logout', function(req, res) {
+  var refreshKey = req.query.refresh_token;
+
+  res.clearCookie(refreshKey, cookieOption);
+  res.redirect(
+    `${FRONTEND_URI}/`,
+  ); 
+});
  
  if (process.env.NODE_ENV === "production") {
   // All remaining requests return the React app, so it can handle routing.
