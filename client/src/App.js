@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Map from './components/Map.js'
 import SpotifyWebApi from 'spotify-web-api-js';
 import cities from './places.json';
-import latLng from './lat-lng1.json'
+import latLng from './lat-lng.json'
 
 //import './components/UserGenresTemplate.js';
 import UserCityList from './components/user-cities-display-template';
@@ -102,8 +102,8 @@ class App extends Component {
         }
       }
     };
-   locations.push([0,0]);
-   locations.push([0,0]);
+   //locations.push([0,0]);
+   //locations.push([0,0]);
    return locations;
   };
 
