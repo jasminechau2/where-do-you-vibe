@@ -45,7 +45,7 @@ if (process.env.NODE_ENV !== 'production') {
  };
  
  var stateKey = 'spotify_auth_state';
- const refreshKey = "refresh_key";
+ var refreshKey = "refresh_key";
 
  const app = express();
 
