@@ -86,6 +86,15 @@ var findCities = function findCities(user, places) {
         if(genreCities[matchedCityNumber][2][cityGenre] === genreSortedListForUser[userGenrePos]){
           let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
           cityScore += differenceSquared;
+          if(cityGenre>25){
+            let differenceSquared = Math.pow(cityGenrePos - userGenrePos,5);
+            cityScore += differenceSquared;
+          } else if(cityGenre <5 | userGenrePos < 5){
+            cityScore = 0;
+          } else{
+            let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
+            cityScore += differenceSquared;
+          }
         }
         else{
           cityScore += 500;
