@@ -23,7 +23,7 @@ function Map({cityLocations, lat_lan}) {
             zoom={3}
             scrollWheelZoom={false}
             style={{
-              height: '300px',
+              height: '500px',
               padding: "100px",
               marginTop: '50px',
               }}> 
