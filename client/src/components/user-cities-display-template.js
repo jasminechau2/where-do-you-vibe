@@ -35,9 +35,6 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
             fontWeight: "normal",
             fontStyle: 'italic'
         },
-
-
-
     ]
     var i = 0; 
     if(citiesObject !== "nothing yet"){
@@ -64,7 +61,6 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
     return ( 
         <div>
             {combineCities}
-
             {combineGenres}
         </div>
         

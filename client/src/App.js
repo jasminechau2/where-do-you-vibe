@@ -107,10 +107,10 @@ class App extends Component {
    return locations;
   };
 
-  render() {
+  render() {    
     return (
       <div className="App">
-        {this.state.loggedIn ? <a href = {LOGOUT_URI}>Logout</a> : <a href={LOGIN_URI}> Login to Spotify </a>}
+        {this.state.loggedIn ? <a className="spotify-style" href = {LOGOUT_URI}>Logout</a> : <a className="spotify-style" href={LOGIN_URI}> Login to Spotify </a>}
         <div style = {{
             fontSize: "56px",
             color: "#1250B5",
@@ -124,40 +124,9 @@ class App extends Component {
           color: "#923307",
           textDecoration: "none",
         }}>Based on data from "Every Place at Once"</a>
-
-        { !this.state.loggedIn &&
-          <a href={LOGIN_URI} style ={{
-            marginTop: "10px",
-            color: "white",
-            backgroundColor: "#1db954",
-            borderRadius: "46px",
-            textDecoration: "none",
-            height: "32px",
-            width: "200px",
-            fontSize: "24px",
-            textAlign: "center",
-            verticalAlign: "middle",
-            padding: "5px",
-            cursor: "pointer"
-          }}> Login to Spotify </a>
-        }
         
         { this.state.loggedIn && !this.state.genresGenerated &&
-        <button onClick={() => this.getGenreInfo()} style={{
-          marginTop: "10px",
-          color: "white",
-          backgroundColor: "#1db954",
-          borderRadius: "46px",
-          textDecoration: "none",
-          height: "38px",
-          width: "200px",
-          fontSize: "24px",
-          textAlign: "center",
-          verticalAlign: "middle",
-          padding: "5px",
-          border: "none",
-          cursor: "pointer"
-        }}>
+        <button className="spotify-style" onClick={() => this.getGenreInfo()}>
          Get your genres
         </button>
       }
@@ -166,9 +135,6 @@ class App extends Component {
       <div>
         <UserCityList citiesObject = {this.state.algoGeneration} callback = {(topCity) => this.setState({topCity})}/>
       </div>}
-      <div>
-         {this.state.topGenre}
-       </div>
         <div>
         <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration}/>
         </div>
