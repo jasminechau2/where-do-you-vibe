@@ -67,7 +67,7 @@ class App extends Component {
         this.setState({
           user: { 
               displayName: data.display_name.concat("","'s"), 
-              profilePic: data.images[0].url
+              // profilePic: data.images[0].url
             }
         });
       });  

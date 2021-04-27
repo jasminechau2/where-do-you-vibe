@@ -74,6 +74,9 @@ var findCities = function findCities(user, places) {
     }
   }
 
+  //minimum length of the two cities
+  //only look at top 5 - full match is 1, no match is 0
+
   // time for least squares
   let leastSquaresList = [];
   for(let city = 0; city < cityMatches.length; city++) {
