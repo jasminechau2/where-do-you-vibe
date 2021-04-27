@@ -155,7 +155,7 @@ const buildPath = path.resolve(__dirname, "../client/build");
  });
 
  app.get('/logout', function(req, res) {
-  var refreshKey = req.query.refresh_token;
+  refreshKey = req.query.refresh_token;
 
   res.clearCookie(refreshKey, cookieOption);
   res.redirect(

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Map from './components/Map.js'
 import SpotifyWebApi from 'spotify-web-api-js';
 import cities from './places.json';
-import latLng from './lat-lng1.json'
+import latLng from './lat-lng.json'
 
 //import './components/UserGenresTemplate.js';
 import UserCityList from './components/user-cities-display-template';
@@ -32,13 +32,14 @@ class App extends Component {
     this.state = { //sets state, allows us to know if someone is logged in and their name
       loggedIn: token ? true : false,
       user: {displayName:'your', profilePic:''},
-      topGenre: {},
+      topGenre: [],
       algoGeneration: "nothing yet",
       topCity: 'No top matches generated yet',
       genresGenerated: false,
       allCities: cities,
-      allLocations: latLng,
-      topCities: 'No top matches generated yet',
+      allLocations: latLng["items"],
+      points: [[50,1],[50,1.25], [50,1.5],[50,1.75], [50,2]]
+
     } 
   };
 
@@ -47,7 +48,6 @@ class App extends Component {
       this.getUserInfo()
     };
   };
-
 
   getHashParams(){
     var hashParams = {};
@@ -74,22 +74,38 @@ class App extends Component {
   };
 
   
-getGenreInfo(){
-  spotifyApi.getMyTopArtists({time_range: 'medium_term', limit: 20})
-  .then((data)=>{
-     //this.setState({topGenre: data});
-     this.setState({algoGeneration: findCities.findCities(data, this.state.allCities)});
-     this.setState({
-       topGenre: data,
-       topCity: findCities.findCities(data, this.state.allCities),
-       genresGenerated: true,
-    });     
-   });
-};
+  getGenreInfo(){
+    spotifyApi.getMyTopArtists({time_range: 'medium_term', limit: 20})
+    .then((data)=>{
+      //this.setState({topGenre: data});
+      this.setState({algoGeneration: findCities.findCities(data, this.state.allCities)});
+      this.setState({
+        topGenre: this.state.algoGeneration[2],
+        genresGenerated: true,
+        points: this.getCitiesLatLng()
+      }); 
+    });
+  };
 
-setCities(cityData){
- // state.topCities = cityData;
-};
+  getCitiesLatLng(){
+    var i = 0;
+    var k = 0;
+    var cities = this.state.algoGeneration[0];
+    var countries = this.state.algoGeneration[1];
+    var locations = []; 
+    for(i = 0; i < cities.length; i++){
+      console.log(cities[i]);
+      for(k = 0; k < this.state.allLocations.length; k++){
+        if(cities[i] ===  this.state.allLocations[k].city && countries[i] === this.state.allLocations[k].country){
+          console.log(cities[i]);
+          locations.push([this.state.allLocations[k].lat, this.state.allLocations[k].lng]);
+        }
+      }
+    };
+   //locations.push([0,0]);
+   //locations.push([0,0]);
+   return locations;
+  };
 
   render() {
     return (
@@ -148,14 +164,15 @@ setCities(cityData){
 
      { this.state.loggedIn && this.state.genresGenerated &&
       <div>
-        <UserCityList citiesObject = {this.state.algoGeneration} callback = {this.setCities}/>
-        
+        <UserCityList citiesObject = {this.state.algoGeneration} callback = {(topCity) => this.setState({topCity})}/>
       </div>}
-
+      <div>
+         {this.state.topGenre}
+       </div>
         <div>
-        <Map cityLocations = {this.state.topCity} lat_lan={""}/>
+        <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration}/>
         </div>
-       
+ 
       </div>
     );
   }

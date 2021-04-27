@@ -2,17 +2,18 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import React, {useState} from "react"
 
 
-function Map({cityLocations, lat_lan}) {
-  console.log(cityLocations);
-
+function Map({cityLocations, cityInfo}) {
+  //console.log(cityLocations);
   // setup
-  const[city1, setCity1] = useState([50,1]);
-  const[city2, setCity2] = useState([50,1.25]);
-  const[city3, setCity3] = useState([50,1.5]);
-  const[city4, setCity4] = useState([50,1.75]);
-  const[city5, setCity5] = useState([50,2]);
+ // const[city1] = useState(cityLocations[0]);
+ // const[city2] = useState(cityLocations[1]);
+ // const[city3] = useState(cityLocations[2]);
+ // const[city4] = useState(cityLocations[3]);
+ // const[city5] = useState(cityLocations[4]);
   const[center, setCenter] = useState([0,0]);
-
+  
+  
+  console.log(cityLocations[0]);
   return (
     <div >
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -31,31 +32,31 @@ function Map({cityLocations, lat_lan}) {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-                <Marker position={city1}>
+                <Marker position={cityLocations[0]}>
                   <Popup>
                     A pretty CSS3 popup. <br /> Easily customizable.
                   </Popup>
                 </Marker>
 
-                <Marker position={city2}>
+                <Marker position={cityLocations[1]}>
                   <Popup>
                     A pretty CSS3 popup. <br /> Easily customizable.
                   </Popup>
                 </Marker>
 
-                <Marker position={city3}>
+                <Marker position={cityLocations[2]}>
                   <Popup>
                     A pretty CSS3 popup. <br /> Easily customizable.
                   </Popup>
                 </Marker>
 
-                <Marker position={city4}>
+                <Marker position={cityLocations[3]}>
                   <Popup>
                     A pretty CSS3 popup. <br /> Easily customizable.
                   </Popup>
                 </Marker>
 
-                <Marker position={city5}>
+                <Marker position={cityLocations[4]}>
                   <Popup>
                     A pretty CSS3 popup. <br /> Easily customizable.
                   </Popup>
