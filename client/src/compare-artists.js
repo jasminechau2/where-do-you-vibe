@@ -60,13 +60,13 @@ var findCities = function findCities(user, places) {
   // look through each city
   for(let city = 0; city < genreCities.length; city++) {
     let isCityAMatch = 0;
-    for(let userGenre = 0; userGenre < genreSortedListForUser.length; userGenre++){
-      if(isCityAMatch > 5){
+    for(let userGenre = 0; userGenre < 5; userGenre++){
+      if(isCityAMatch > 2){
         cityMatches.push(city);
         break;
       }
       // start at 2 bc city, country, genre, ...)
-      for(let cityGenre = 2; cityGenre < genreCities[city][2].length; cityGenre++){
+      for(let cityGenre = 2; cityGenre < 15; cityGenre++){
         if(genreCities[city][2][cityGenre] === genreSortedListForUser[userGenre]){
           isCityAMatch += 1;
         }
@@ -74,16 +74,51 @@ var findCities = function findCities(user, places) {
     }
   }
 
+  console.log(cityMatches.length);
+
   //minimum length of the two cities
   //only look at top 5 - full match is 1, no match is 0
 
   // time for least squares
+  // let leastSquaresList = [];
+  // for(let city = 0; city < cityMatches.length; city++) {
+  //   let matchedCityNumber = cityMatches[city];
+  //   let cityScore = 0;
+
+  //   for(let cityGenre = 2; cityGenre < genreCities[matchedCityNumber][2].length-1; cityGenre++){
+  //     let cityGenrePos = cityGenre-2;
+  //     for(let userGenrePos = 0; userGenrePos < genreSortedListForUser.length; userGenrePos++){
+  //       if(genreCities[matchedCityNumber][2][cityGenre] === genreSortedListForUser[userGenrePos]){
+  //         let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
+  //         cityScore += differenceSquared;
+  //         if(cityGenre>25){
+  //           let differenceSquared = Math.pow(cityGenrePos - userGenrePos,5);
+  //           cityScore += differenceSquared;
+  //         } else if(cityGenre <5 | userGenrePos < 5){
+  //           cityScore = 0;
+  //         } else{
+  //           let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
+  //           cityScore += differenceSquared;
+  //         }
+  //       }
+  //       else{
+  //         cityScore += 500;
+  //       }
+  //     }
+  //   }
+  //   let cityScoreObject = {
+  //     cityNumber: matchedCityNumber,
+  //     score: cityScore
+  //   }
+  //   leastSquaresList.push(cityScoreObject)
+  // }
+
   let leastSquaresList = [];
   for(let city = 0; city < cityMatches.length; city++) {
     let matchedCityNumber = cityMatches[city];
     let cityScore = 0;
 
-    for(let cityGenre = 2; cityGenre < genreCities[matchedCityNumber][2].length-1; cityGenre++){
+    for(let cityGenre = 2; cityGenre < 15; cityGenre++){
       let cityGenrePos = cityGenre-2;
       for(let userGenrePos = 0; userGenrePos < genreSortedListForUser.length; userGenrePos++){
         if(genreCities[matchedCityNumber][2][cityGenre] === genreSortedListForUser[userGenrePos]){
