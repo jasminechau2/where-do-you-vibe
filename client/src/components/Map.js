@@ -12,7 +12,14 @@ function Map({cityLocations, cityInfo}) {
  // const[city5] = useState(cityLocations[4]);
   const[center, setCenter] = useState([0,0]);
   
-  
+  var latLn = cityLocations.map(location =>  
+      <Marker position={location}>
+        <Popup>
+          A pretty CSS3 popup. <br /> Easily customizable.
+        </Popup>
+      </Marker> )
+  ;
+
   console.log(cityLocations[0]);
   return (
     <div >
@@ -32,35 +39,7 @@ function Map({cityLocations, cityInfo}) {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-                <Marker position={cityLocations[0]}>
-                  <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                  </Popup>
-                </Marker>
-
-                <Marker position={cityLocations[1]}>
-                  <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                  </Popup>
-                </Marker>
-
-                <Marker position={cityLocations[2]}>
-                  <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                  </Popup>
-                </Marker>
-
-                <Marker position={cityLocations[3]}>
-                  <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                  </Popup>
-                </Marker>
-
-                <Marker position={cityLocations[4]}>
-                  <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
-                  </Popup>
-                </Marker>
+               {latLn}
           </MapContainer>
     </div>
     
