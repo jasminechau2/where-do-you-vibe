@@ -94,7 +94,7 @@ class App extends Component {
     var countries = this.state.algoGeneration[1];
     var locations = []; 
     for(i = 0; i < cities.length; i++){
-      console.log(cities[i]);
+     // console.log(cities[i]);
       for(k = 0; k < this.state.allLocations.length; k++){
         if(cities[i] ===  this.state.allLocations[k].city && countries[i] === this.state.allLocations[k].country){
           console.log(cities[i]);
