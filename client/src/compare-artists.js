@@ -79,6 +79,11 @@ var findCities = function findCities(user, places) {
   //minimum length of the two cities
   //only look at top 5 - full match is 1, no match is 0
 
+  // top 5 user compared to and top 5 of all cites
+  // top 5 user compared to top 15 (or less) of all cities
+  // do the old alg
+  // after each iteration, if there is more than 1, sort and add in that order (be careful with orders)
+
   // time for least squares
   // let leastSquaresList = [];
   // for(let city = 0; city < cityMatches.length; city++) {
@@ -117,6 +122,7 @@ var findCities = function findCities(user, places) {
   for(let city = 0; city < cityMatches.length; city++) {
     let matchedCityNumber = cityMatches[city];
     let cityScore = 0;
+    
 
     for(let cityGenre = 2; cityGenre < 15; cityGenre++){
       let cityGenrePos = cityGenre-2;
