@@ -111,6 +111,7 @@ const buildPath = path.resolve(__dirname, "../client/build");
        },
        json: true
      };
+
      //request get token
      request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
@@ -118,11 +119,18 @@ const buildPath = path.resolve(__dirname, "../client/build");
         const refresh_token = body.refresh_token;
 
         // we can also pass the token to the browser to make requests from there
+        var auth = querystring.stringify({
+          access_token,
+          refresh_token,
+        });
+
+        res.cookie(querystring.stringify( {
+	        access_token: access_token, // Lifetime
+          refresh_token: refresh_token,
+        }))
+
         res.redirect(
-          `${FRONTEND_URI}/#${querystring.stringify({
-            access_token,
-            refresh_token,
-          })}`,
+          `${FRONTEND_URI}/#${auth}`,
         );
       } else {
         res.redirect(`${FRONTEND_URI}/`,);
