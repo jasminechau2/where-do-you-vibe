@@ -7,6 +7,7 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
     const genres = citiesObject[2];
     const combineCities = [];
     const combineGenres = [];
+    console.log(citiesObject);
     const styles = [
         {
             fontSize: "38px",
@@ -46,17 +47,20 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
                  {cities[i]}, {countries[i]}
                  </div>
              );
+           };
+           for( i = genres.length-1 ; i >= 0; i-- ){
              combineGenres.push(  //genres return in the correct order
                 <div
-                style = {styles[cities.length-i-1]}
-                key = {genres[cities.length-i-1]}> 
-                {genres[cities.length-i-1]}
+                style = {styles[genres.length-i-1]}
+                key = {genres[genres.length-i-1]}> 
+                {genres[genres.length-i-1]}
                 </div>
             ); 
            };
+
     };
 
-    
+    console.log(combineGenres);
 
     return ( 
         <div>

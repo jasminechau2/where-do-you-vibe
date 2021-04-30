@@ -3,24 +3,23 @@ import React, {useState} from "react"
 
 
 function Map({cityLocations, cityInfo}) {
-  //console.log(cityLocations);
-  // setup
- // const[city1] = useState(cityLocations[0]);
- // const[city2] = useState(cityLocations[1]);
- // const[city3] = useState(cityLocations[2]);
- // const[city4] = useState(cityLocations[3]);
- // const[city5] = useState(cityLocations[4]);
   const[center, setCenter] = useState([0,0]);
-  
-  var latLn = cityLocations.map(location =>  
-      <Marker position={location}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker> )
-  ;
+  //const[points, setPoints] = useState([]);
 
-  console.log(cityLocations[0]);
+   // const cities = cityInfo[0];
+   // const countries = cityInfo[1]; 
+   console.log(cityInfo);
+    const latLan = cityLocations.map(location =>  
+        <Marker position={location}>
+          <Popup>
+            {location}
+          </Popup>
+        </Marker> 
+        );
+  
+
+
+  
   return (
     <div >
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -39,7 +38,7 @@ function Map({cityLocations, cityInfo}) {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
-               {latLn}
+              {cityLocations !== 0 ? latLan : []}
           </MapContainer>
     </div>
     
