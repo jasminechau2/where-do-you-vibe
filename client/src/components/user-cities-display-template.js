@@ -38,11 +38,8 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
     ]
     
     if(citiesObject !== "nothing yet"){
-        let numCities = 5;
-        if(cities.length < numCities){
-            numCities = cities.length;
-        }
-        for(let i = 0 ; i < numCities; i++ ){
+
+        for(let i = 0 ; i < cities.length; i++ ){
             combineCities.push( //cities return in the reverse order
                  <div
                  style = {styles[i]}

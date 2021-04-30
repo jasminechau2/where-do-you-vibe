@@ -140,9 +140,9 @@ var findCities = function findCities(user, places) {
 
   if(topCitiesList.length >= 5){
     let returnList = [];
-    returnList.push(topCitiesList);
-    returnList.push(topCountriesList);
-    returnList.push(genreReturnList);
+    returnList.push(topCitiesList.slice(0,5));
+    returnList.push(topCountriesList.slice(0,5));
+    returnList.push(genreReturnList.slice(0,5));
   
     return returnList;
   }
@@ -159,9 +159,9 @@ var findCities = function findCities(user, places) {
 
   if(topCitiesList.length >= 5){
     let returnList = [];
-    returnList.push(topCitiesList);
-    returnList.push(topCountriesList);
-    returnList.push(genreReturnList);
+    returnList.push(topCitiesList.slice(0,5));
+    returnList.push(topCountriesList.slice(0,5));
+    returnList.push(genreReturnList.slice(0,5));
   
     return returnList;
   }
@@ -178,9 +178,9 @@ var findCities = function findCities(user, places) {
 
   if(topCitiesList.length >= 5){
     let returnList = [];
-    returnList.push(topCitiesList);
-    returnList.push(topCountriesList);
-    returnList.push(genreReturnList);
+    returnList.push(topCitiesList.slice(0,5));
+    returnList.push(topCountriesList.slice(0,5));
+    returnList.push(genreReturnList.slice(0,5));
   
     return returnList;
   }
