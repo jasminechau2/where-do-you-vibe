@@ -36,21 +36,25 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
             fontStyle: 'italic'
         },
     ]
-    var i = 0; 
+    
     if(citiesObject !== "nothing yet"){
-        for( i = cities.length-1 ; i >= 0; i-- ){
+        let numCities = 5;
+        if(cities.length < numCities){
+            numCities = cities.length;
+        }
+        for(let i = 0 ; i < numCities; i++ ){
             combineCities.push( //cities return in the reverse order
                  <div
-                 style = {styles[cities.length-i-1]}
+                 style = {styles[i]}
                  key = {cities[i]}>
                  {cities[i]}, {countries[i]}
                  </div>
              );
              combineGenres.push(  //genres return in the correct order
                 <div
-                style = {styles[cities.length-i-1]}
-                key = {genres[cities.length-i-1]}> 
-                {genres[cities.length-i-1]}
+                style = {styles[i]}
+                key = {genres[i]}> 
+                {genres[i]}
                 </div>
             ); 
            };
