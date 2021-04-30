@@ -9,7 +9,18 @@ function Map({cityLocations, cityInfo, cityDetails}) {
    if(cityInfo[0].length !== 0){
     const cities = cityInfo[0];
     const countries = cityInfo[1]; 
-
+    for(i = 0; i < cities.length; i++){
+      for(k = 0; k < cityDetails.length; k++){
+        if(cities[i] === cityDetails[k].city && countries[i] === cityDetails[k].country){
+          cityDetails.push(
+            <div>
+              
+            </div>
+          );
+        };
+      };
+    };
+    //locations.push([0,0]);
 
    }
 
