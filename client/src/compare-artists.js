@@ -51,7 +51,7 @@ var createListOfPotentialMatches = function createListOfPotentialMatches(genreCi
   for(let city = 0; city < genreCities.length; city++) {
     let isCityAMatch = 0;
     for(let userGenre = 0; userGenre < numUserGenres; userGenre++){
-      if(isCityAMatch == minGenreMatches){
+      if(isCityAMatch === minGenreMatches){
         cityMatches.push(city);
         break;
       }

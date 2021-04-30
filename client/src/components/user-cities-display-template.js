@@ -48,7 +48,7 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
                  </div>
              );
            };
-           for( i = genres.length-1 ; i >= 0; i-- ){
+           for(let i = 0; i < genres.length; i++ ){
              combineGenres.push(  //genres return in the correct order
                 <div
                 style = {styles[i]}

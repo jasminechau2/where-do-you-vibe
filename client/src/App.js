@@ -95,12 +95,10 @@ class App extends Component {
     for(i = 0; i < cities.length; i++){
       for(k = 0; k < this.state.allLocations.length; k++){
         if(cities[i] ===  this.state.allLocations[k].city && countries[i] === this.state.allLocations[k].country){
-          console.log(cities[i]);
           locations.push([this.state.allLocations[k].lat, this.state.allLocations[k].lng]);
         };
       };
     };
-    locations.push([0,0]);
    return locations
   };
 
@@ -135,7 +133,7 @@ class App extends Component {
       </div>}
       {
       <div>
-        <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities}/>
+        <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]}/>
         </div>
       }
       </div>
