@@ -61,7 +61,7 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
 
     return ( 
         <div>
-            {combineCities ? <div style = {styles[0]}> You have no matches </div> : combineCities}
+            {combineCities.length === 0 ? <div style = {styles[0]}> You have no matches </div> : combineCities}
             {combineGenres}
         </div>
         
