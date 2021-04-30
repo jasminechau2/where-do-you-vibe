@@ -7,7 +7,6 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
     const genres = citiesObject[2];
     const combineCities = [];
     const combineGenres = [];
-    console.log(citiesObject);
     const styles = [
         {
             fontSize: "38px",
@@ -60,11 +59,9 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
 
     };
 
-    console.log(combineGenres);
-
     return ( 
         <div>
-            {combineCities}
+            {combineCities ? <div style = {styles[0]}> You have no matches </div> : combineCities}
             {combineGenres}
         </div>
         

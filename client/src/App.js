@@ -48,7 +48,6 @@ class App extends Component {
     if(this.state.loggedIn){
       this.getUserInfo();
     };
-    console.log(this.state.topGenre);
 
   };
 
@@ -134,11 +133,11 @@ class App extends Component {
       <div>
         <UserCityList citiesObject = {this.state.algoGeneration} callback = {(topCity) => this.setState({topCity})}/>
       </div>}
-      {/*
+      {
       <div>
-        <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration}/>
+        <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities}/>
         </div>
-      */}
+      }
       </div>
     );
   }
