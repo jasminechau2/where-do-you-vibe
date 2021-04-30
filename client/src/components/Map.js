@@ -4,10 +4,15 @@ import React, {useState} from "react"
 
 function Map({cityLocations, cityInfo, cityDetails}) {
   const[center, setCenter] = useState([0,0]);
+   var cityDetails = [];
 
-   // const cities = cityInfo[0];
-   // const countries = cityInfo[1]; 
-   console.log(cityInfo);
+   if(cityInfo[0].length !== 0){
+    const cities = cityInfo[0];
+    const countries = cityInfo[1]; 
+
+
+   }
+
     const latLan = cityLocations.map(location =>  
       <li key = {location}>
         <Marker position={location}>
@@ -19,8 +24,6 @@ function Map({cityLocations, cityInfo, cityDetails}) {
         );
   
 
-
-  
   return (
     <div >
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -29,7 +32,7 @@ function Map({cityLocations, cityInfo, cityDetails}) {
         <MapContainer 
             center={center}
             zoom={3}
-            scrollWheelZoom={false}
+            scrollWheelZoom={true}
             style={{
               height: '500px',
               padding: "100px",
