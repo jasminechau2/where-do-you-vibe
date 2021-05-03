@@ -24,24 +24,25 @@ process.env.NODE_ENV !== 'production'
 class App extends Component { 
   constructor(){
     super();
-    const params = this.getHashParams();
-    const token = params.access_token; //This reads the token from the url, token allows us access to user info
-    if (token) {
-      spotifyApi.setAccessToken(token);
+    const access_tok = document.cookie.split('=');
+    //const params = this.getHashParams();
+    //const token = params.access_token; //This reads the token from the url, token allows us access to user info
+
+    if (access_tok[0] !== "") {
+      spotifyApi.setAccessToken(access_tok[1]);
     }
     this.state = { //sets state, allows us to know if someone is logged in and their name
-      loggedIn: token ? true : false,
+      loggedIn: access_tok[0] ? true : false,
       user: {displayName:'your'},
       topGenre: [],
       algoGeneration: "nothing yet",
-      topCity: 'No top matches generated yet',
+      selectedCity: '',
       genresGenerated: false,
       allCities: cities,
       allLocations: latLng["items"],
       points: []
 
     } 
-
   };
 
   componentDidMount(){

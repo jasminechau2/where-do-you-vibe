@@ -43,7 +43,8 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
             combineCities.push( //cities return in the reverse order
                  <div
                  style = {styles[i]}
-                 key = {cities[i]}>
+                 key = {cities[i]}
+                 >
                  {cities[i]}, {countries[i]}
                  </div>
              );

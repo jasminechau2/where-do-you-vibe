@@ -123,14 +123,12 @@ const buildPath = path.resolve(__dirname, "../client/build");
           access_token,
           refresh_token,
         });
-
-        res.cookie(querystring.stringify( {
-	        access_token: access_token, // Lifetime
-          refresh_token: refresh_token,
-        }))
+        res.cookie(
+	        "access_token",access_token
+        )
 
         res.redirect(
-          `${FRONTEND_URI}/#${auth}`,
+          `${FRONTEND_URI}/`,
         );
       } else {
         res.redirect(`${FRONTEND_URI}/`,);
@@ -166,6 +164,9 @@ const buildPath = path.resolve(__dirname, "../client/build");
   refreshKey = req.query.refresh_token;
 
   res.clearCookie(refreshKey, cookieOption);
+  res.clearCookie("access_token", cookieOption);
+  res.clearCookie("token", cookieOption);
+
   res.redirect(
     `${FRONTEND_URI}/`,
   ); 

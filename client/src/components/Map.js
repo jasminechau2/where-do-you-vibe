@@ -27,13 +27,15 @@ function Map({cityLocations, cityInfo, cityDetails}) {
    
     const latLan = cityLocations.map(location => {
           i = i + 1;
-          return (<li key = {location}>
-          <Marker position={location}>
-          <Popup>
-              {popupContent[i]}
-              </Popup>
-          </Marker> 
-          </li>)
+          return (
+            <div key = {location}>
+              <Marker position={location}>
+                <Popup>
+                  {popupContent[i]}
+                </Popup>
+              </Marker> 
+          </div>
+          )
       });
 
   return (
@@ -46,7 +48,7 @@ function Map({cityLocations, cityInfo, cityDetails}) {
             zoom={3}
             scrollWheelZoom={true}
             style={{
-              height: '500px',
+              height: '200px',
               padding: "100px",
               marginTop: '50px',
               }}> 
