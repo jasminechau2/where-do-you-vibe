@@ -97,7 +97,7 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
             <ul className="main-display-wrapper">
                 <li>
                     <ul className="title-and-cities">
-                        <li>Your to city and your most listened genres:</li>
+                        <li>Your top city and your most listened genres:</li>
                         <li style = {cityStyles[0]}>{cities[0]+", "+countries[0]}</li>
                     </ul>
                 </li>
