@@ -12,7 +12,10 @@ with open('places.json') as placesJson:
     items = json.load(placesJson)
     for place in items['items']:
         if (cityCount >= 1380):
-            query = place['city'] +", "+ place['country']
+            country = place['country']
+            if (country == "IN"):
+                country = "India"
+            query = place['city'] +", "+ country
             results = geocoder.geocode(query)
             lat = results[0]['geometry']['lat']
             lng = results[0]['geometry']['lng']
