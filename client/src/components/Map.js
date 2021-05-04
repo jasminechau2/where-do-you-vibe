@@ -48,9 +48,7 @@ function Map({cityLocations, cityInfo, cityDetails}) {
             zoom={3}
             scrollWheelZoom={true}
             style={{
-              height: '200px',
-              padding: "100px",
-              marginTop: '50px',
+              height: '400px',
               }}> 
               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -1,7 +1,6 @@
 * {
-  margin: 100;
+  margin: 0;
   font-family:  'arial';
-  font-weight: 400;
 }
 
 .App{
@@ -13,35 +12,36 @@
 
 a.spotify-style{
   line-height: 1;
-  margin-top: 10px;
   color: white;
   background-color: #1db954;
   border-radius: 500px;
   text-decoration: none;
-  width: 200px;
+  width: 400px;
   font-size: 24px;
   text-align: center;
   vertical-align: middle;
-  padding: 16px 12px;
+  padding: 16px 40px;
   border: none;
   cursor: pointer;
   transition-property: background-color;
   transition-duration: .3s;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
 }
 
-
 .App a.spotify-style:hover{
-  background-color: rgba(29, 185, 112, 0.705);
+  background-color: rgb(28, 211, 67);
 }
 
 button.spotify-style{
   line-height: 1;
-  margin-top: 10px;
+  margin: 12px;
   color: white;
   background-color: #1db954;
   border-radius: 500px;
   text-decoration: none;
-  width: 200px;
+  width: 250px;
   font-size: 24px;
   text-align: center;
   vertical-align: middle;
@@ -51,9 +51,53 @@ button.spotify-style{
   transition-property: background-color;
   transition-duration: .3s;
 }
-
 
 .App button.spotify-style:hover{
   background-color: rgba(29, 185, 112, 0.705);
 }
 
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 24px;
+  
+  list-style: none;
+  background: #A8CAFFFC;
+  font-size: 36px;
+  font-weight: bold;
+  align-items: center;
+  border-bottom: solid;
+  border-color: black;
+
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+.main-display-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 12px 12px;
+  
+  list-style: none;
+  font-size: 36px;
+  font-weight: bold;
+  align-items: flex-end;
+  border-bottom: solid;
+  border-color: black;
+}
+
+.title-and-cities {
+
+  list-style: none;
+  font-size: 36px;
+  font-weight: bold;
+  align-items: center;
+
+
+}

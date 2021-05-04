@@ -103,42 +103,29 @@ class App extends Component {
    return locations
   };
 
-
   render() {    
     return (
       <div className="App">
-        {this.state.loggedIn ? <a className="spotify-style" href = {LOGOUT_URI}>Logout</a> : <a className="spotify-style" href={LOGIN_URI}> Login to Spotify </a>}
-        <div style = {{
-            fontSize: "56px",
-            color: "#1250B5",
-            textDecoration: "none",
-          }}>
-            Where's { this.state.user.displayName } vibe? 
-        </div>
+        <ul class = "navigation">
+          <li>Where's { this.state.user.displayName } vibe? </li>
+          <li>
+            {this.state.loggedIn ? <a className="spotify-style" href = {LOGOUT_URI}>Logout</a> : <a className="spotify-style" href={LOGIN_URI}> Login to Spotify </a>}
+          </li>
+        </ul>
 
-        <a href="https://everynoise.com/everyplace.cgi" style = {{
-          fontSize: "36px",
-          color: "#923307",
-          textDecoration: "none",
-        }}>Based on data from "Every Place at Once"</a>
-        
         { this.state.loggedIn && !this.state.genresGenerated &&
-        <button className="spotify-style" onClick={() => this.getGenreInfo()}>
-         Get your genres
-        </button>
-      }
+          <button className="spotify-style" onClick={() => this.getGenreInfo()}>
+          Get your genres
+          </button>
+        }
 
-     { this.state.loggedIn && this.state.genresGenerated &&
-      <div>
-        <UserCityList citiesObject = {this.state.algoGeneration} callback = {(topCity) => this.setState({topCity})}/>
-      </div>}
-      {
-      <div>
-        <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]}/>
+      { this.state.loggedIn && this.state.genresGenerated &&
+        <div>
+          <UserCityList citiesObject = {this.state.algoGeneration} callback = {(topCity) => this.setState({topCity})}/>
+          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]}/>
+        </div>}
         </div>
-      }
-      </div>
-    );
+      );
   }
 }
 export default App;
