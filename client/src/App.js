@@ -52,17 +52,17 @@ class App extends Component {
 
   };
 
-  getHashParams(){
-    var hashParams = {};
-    var e, r = /([^&;=]+)=?([^&;]*)/g,
-        q = window.location.hash.substring(1);
-    e = r.exec(q)
-    while (e) {
-       hashParams[e[1]] = decodeURIComponent(e[2]);
-       e = r.exec(q);
-    }
-    return hashParams;
-  };
+  // getHashParams(){
+  //   var hashParams = {};
+  //   var e, r = /([^&;=]+)=?([^&;]*)/g,
+  //       q = window.location.hash.substring(1);
+  //   e = r.exec(q)
+  //   while (e) {
+  //      hashParams[e[1]] = decodeURIComponent(e[2]);
+  //      e = r.exec(q);
+  //   }
+  //   return hashParams;
+  // };
 
   getUserInfo(){ //call to get user infomation from spotify api
       spotifyApi.getMe()
@@ -115,28 +115,30 @@ class App extends Component {
           }}>
             Where's { this.state.user.displayName } vibe? 
         </div>
-
+        <div>
         <a href="https://everynoise.com/everyplace.cgi" style = {{
           fontSize: "36px",
           color: "#923307",
           textDecoration: "none",
         }}>Based on data from "Every Place at Once"</a>
-        
+        </div>
+        <div>
         { this.state.loggedIn && !this.state.genresGenerated &&
         <button className="spotify-style" onClick={() => this.getGenreInfo()}>
          Get your genres
         </button>
       }
-
+      </div>
+      <div>
      { this.state.loggedIn && this.state.genresGenerated &&
-      <div>
         <UserCityList citiesObject = {this.state.algoGeneration} callback = {(topCity) => this.setState({topCity})}/>
-      </div>}
-      {
-      <div>
-        <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]}/>
-        </div>
       }
+      </div>
+      <div>
+      {
+      <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]}/>
+      }
+      </div>
       </div>
     );
   }

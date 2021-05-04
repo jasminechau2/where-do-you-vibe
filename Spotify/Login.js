@@ -93,10 +93,9 @@ const buildPath = path.resolve(__dirname, "../client/build");
    var storedState = req.cookies ? req.cookies[stateKey] : null;
  
    if (state === null || state !== storedState) {
-     res.redirect('/#' +
-       querystring.stringify({
-         error: 'state_mismatch'
-       }));
+    res.redirect(
+      `${FRONTEND_URI}/`,
+    );
    } else {
      res.clearCookie(stateKey);
      var authOptions = {
@@ -119,10 +118,6 @@ const buildPath = path.resolve(__dirname, "../client/build");
         const refresh_token = body.refresh_token;
 
         // we can also pass the token to the browser to make requests from there
-        var auth = querystring.stringify({
-          access_token,
-          refresh_token,
-        });
         res.cookie(
 	        "access_token",access_token
         )
