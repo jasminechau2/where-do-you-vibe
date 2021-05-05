@@ -1,4 +1,4 @@
-import { color } from "d3-color";
+//import { color } from "d3-color";
 
 /*
 * This component lists the user's top cities that match with their top genres 
@@ -75,6 +75,9 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
                  <div
                  style = {cityStyles[i]}
                  key = {cities[i]}
+                 onClick = {() => {
+                    callback(cities[i]);
+                 }} 
                  >
                  {cities[i]}, {countries[i]}
                  </div>
@@ -98,7 +101,13 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
                 <li>
                     <ul className="title-and-cities">
                         <li>Your top city and your most listened genres:</li>
-                        <li style = {cityStyles[0]}>{cities[0]+", "+countries[0]}</li>
+                        <li 
+                         style = {cityStyles[0]} 
+                         onClick = { () => {
+                            callback(cities[0]);
+                        }}>
+                            {cities[0]+", "+countries[0]}
+                        </li>
                     </ul>
                 </li>
                 <li style={genreStyles[0]}>

@@ -40,16 +40,16 @@ class App extends Component {
       genresGenerated: false,
       allCities: cities,
       allLocations: latLng["items"],
-      points: []
+      points: [],
+      topCity:''
+    }
 
-    } 
   };
 
   componentDidMount(){
     if(this.state.loggedIn){
       this.getUserInfo();
     };
-
   };
 
   // getHashParams(){
@@ -106,7 +106,7 @@ class App extends Component {
   render() {    
     return (
       <div className="App">
-        <ul class = "navigation">
+        <ul className = "navigation">
           <li>Where's { this.state.user.displayName } vibe? </li>
           <li>
             {this.state.loggedIn ? <a className="spotify-style" href = {LOGOUT_URI}>Logout</a> : <a className="spotify-style" href={LOGIN_URI}> Login to Spotify </a>}
@@ -122,13 +122,13 @@ class App extends Component {
          Get your genres (medium term)
         </button>
         <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
-         Get your genres (long_term)
+         Get your genres (long term)
         </button>
 
       { this.state.loggedIn && this.state.genresGenerated &&
         <div>
-          <UserCityList citiesObject = {this.state.algoGeneration} callback = {(topCity) => this.setState({topCity})}/>
-          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]}/>
+          <UserCityList citiesObject = {this.state.algoGeneration} callback = {(selectCity) => this.setState({topCity: selectCity})}/>
+          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} selectedCity = {this.state.topCity}/>
         </div>}
         </div>
       );

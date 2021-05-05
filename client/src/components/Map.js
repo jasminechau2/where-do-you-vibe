@@ -1,6 +1,5 @@
-import { MapContainer, TileLayer, Marker, Popup, useMap, setView, whenCreated} from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, useMap} from 'react-leaflet'
 import React, {useState, useCallback} from "react"
-import { map } from 'leaflet';
 
 function MakeMarkers({cityInfo, cityDetails, cityLocations}){
   const map = useMap();
@@ -29,46 +28,52 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
   const latLan = cityLocations.map(location => {
     i = i + 1;
     return (
-      <div key = {location} >
         <Marker position={location} 
          eventHandlers={{
           click: () => {
             map.setView(
               location,
-              14
+              10
             );
           }
         }}
+        key = {location}
         >
           <Popup>
             {popupContent[i]}
           </Popup>
         </Marker> 
-    </div>
     )
   })
 
   return (latLan)
 }
 
-function ResetButton({center, zoom, map}){
-  const onClick = useCallback(()=>{
-    map.setView(center, zoom)
-  },[map])
+function ResetButton({map}){
+ 
+  const onClick = useCallback(() => {
+    map.setView([40,0], 2)
+  }, [map])
+
   return ( 
     <button onClick={onClick}>reset</button>)
 }
 
-function Map({cityLocations, cityInfo, cityDetails}) {
+function Map({cityLocations, cityInfo, cityDetails, selectedCity}) {
   const [map, setMap] = useState(null);
-  const[center] = useState([0,0]);
-  const zoom = 2
+  const center = [40,0];
+  const zoom = 2;
+
+  if(selectedCity){
+    console.log(selectedCity);
+
+  }
   return (
     <div id="mapid">
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
        crossorigin=""/>  
-       {map ? <ResetButton center={center} zoom={zoom} map={map} /> : null}
+       {map ? <ResetButton map={map} /> : null}
         <MapContainer 
             center={center}
             zoom={zoom}
