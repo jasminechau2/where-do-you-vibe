@@ -1,5 +1,6 @@
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
-import React, {useState} from "react"
+import { MapContainer, TileLayer, Marker, Popup, useMap, setView, whenCreated} from 'react-leaflet'
+import React, {useState, useCallback} from "react"
+import { map } from 'leaflet';
 
 function MakeMarkers({cityInfo, cityDetails, cityLocations}){
   const map = useMap();
@@ -7,14 +8,11 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
   var popupContent = [];
   const cities = cityInfo[0];
   const countries = cityInfo[1]; 
-  console.log(cityInfo);
 
   if(cities.length !== 0){
-
    for(let i = 0; i < cities.length; i++){
      for(let k = 0; k < cityDetails.length; k++){
-       if(cities[i] === cityDetails[k].city && countries[i] === cityDetails[k].country){
-         
+       if(cities[i] === cityDetails[k].city && countries[i] === cityDetails[k].country){    
          popupContent.push(
            <div>
              City: {cityDetails[k].city}  <br />
@@ -48,28 +46,40 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
         </Marker> 
     </div>
     )
-})
-return (latLan)
+  })
+
+  return (latLan)
+}
+
+function ResetButton({center, zoom, map}){
+  const onClick = useCallback(()=>{
+    map.setView(center, zoom)
+  },[map])
+  return ( 
+    <button onClick={onClick}>reset</button>)
 }
 
 function Map({cityLocations, cityInfo, cityDetails}) {
-  const[center, setCenter] = useState([0,0]);
- 
-
+  const [map, setMap] = useState(null);
+  const[center] = useState([0,0]);
+  const zoom = 2
   return (
     <div id="mapid">
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-       crossorigin=""/>
+       crossorigin=""/>  
+       {map ? <ResetButton center={center} zoom={zoom} map={map} /> : null}
         <MapContainer 
             center={center}
-            zoom={2}
+            zoom={zoom}
             scrollWheelZoom={true}
             style={{
               height: '200px',
               padding: "100px",
               marginTop: '50px',
-              }}> 
+              }}
+              whenCreated={setMap}
+              > 
               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -75,8 +75,8 @@ class App extends Component {
       });  
   };
 
-  getGenreInfo(){
-    spotifyApi.getMyTopArtists({time_range: 'medium_term', limit: 20})
+  getGenreInfo(time){
+    spotifyApi.getMyTopArtists({time_range: time, limit: 20})
     .then((data)=>{
       this.setState({algoGeneration: findCities.findCities(data, this.state.allCities)});
       this.setState({
@@ -123,11 +123,16 @@ class App extends Component {
         }}>Based on data from "Every Place at Once"</a>
         </div>
         <div>
-        { this.state.loggedIn && !this.state.genresGenerated &&
-        <button className="spotify-style" onClick={() => this.getGenreInfo()}>
-         Get your genres
+        { this.state.loggedIn && !this.state.genresGenerated }
+        <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
+         Get your genres (short term)
         </button>
-      }
+        <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
+         Get your genres (medium term)
+        </button>
+        <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
+         Get your genres (long_term)
+        </button>
       </div>
       <div>
      { this.state.loggedIn && this.state.genresGenerated &&
