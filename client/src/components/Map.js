@@ -74,13 +74,13 @@ function Map({cityLocations, cityInfo, cityDetails}) {
             zoom={zoom}
             scrollWheelZoom={true}
             style={{
-              height: '200px',
+              height: '400px',
               padding: "100px",
               marginTop: '50px',
               }}
               whenCreated={setMap}
               > 
-              <TileLayer
+               <TileLayer
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
