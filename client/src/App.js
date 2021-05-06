@@ -52,17 +52,17 @@ class App extends Component {
 
   };
 
-  getHashParams(){
-    var hashParams = {};
-    var e, r = /([^&;=]+)=?([^&;]*)/g,
-        q = window.location.hash.substring(1);
-    e = r.exec(q)
-    while (e) {
-       hashParams[e[1]] = decodeURIComponent(e[2]);
-       e = r.exec(q);
-    }
-    return hashParams;
-  };
+  // getHashParams(){
+  //   var hashParams = {};
+  //   var e, r = /([^&;=]+)=?([^&;]*)/g,
+  //       q = window.location.hash.substring(1);
+  //   e = r.exec(q)
+  //   while (e) {
+  //      hashParams[e[1]] = decodeURIComponent(e[2]);
+  //      e = r.exec(q);
+  //   }
+  //   return hashParams;
+  // };
 
   getUserInfo(){ //call to get user infomation from spotify api
       spotifyApi.getMe()
@@ -75,8 +75,8 @@ class App extends Component {
       });  
   };
 
-  getGenreInfo(){
-    spotifyApi.getMyTopArtists({time_range: 'medium_term', limit: 20})
+  getGenreInfo(time){
+    spotifyApi.getMyTopArtists({time_range: time, limit: 20})
     .then((data)=>{
       this.setState({algoGeneration: findCities.findCities(data, this.state.allCities)});
       this.setState({
@@ -113,11 +113,17 @@ class App extends Component {
           </li>
         </ul>
 
-        { this.state.loggedIn && !this.state.genresGenerated &&
-          <button className="spotify-style" onClick={() => this.getGenreInfo()}>
-          Get your city match
-          </button>
+        { this.state.loggedIn && !this.state.genresGenerated
         }
+        <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
+         Get your genres (short term)
+        </button>
+        <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
+         Get your genres (medium term)
+        </button>
+        <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
+         Get your genres (long_term)
+        </button>
 
       { this.state.loggedIn && this.state.genresGenerated &&
         <div>
