@@ -50,6 +50,9 @@ button.spotify-style{
   cursor: pointer;
   transition-property: background-color;
   transition-duration: .3s;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
 }
 
 .App button.spotify-style:hover{
@@ -102,6 +105,7 @@ button.spotify-style{
   border-bottom: solid;
   border-color: black;
 }
+
 
 @media all and (max-width: 800px) {
   .navigation {

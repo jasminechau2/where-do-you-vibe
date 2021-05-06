@@ -113,21 +113,34 @@ class App extends Component {
           </li>
         </ul>
 
-        { this.state.loggedIn && !this.state.genresGenerated
+        { this.state.loggedIn && !this.state.genresGenerated &&
+           <div className="main-display-wrapper">
+            <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
+            Short term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
+            Medium term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
+            Long term match
+            </button>
+          </div>
         }
-        <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
-         Get your genres (short term)
-        </button>
-        <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
-         Get your genres (medium term)
-        </button>
-        <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
-         Get your genres (long_term)
-        </button>
 
       { this.state.loggedIn && this.state.genresGenerated &&
         <div>
           <UserCityList citiesObject = {this.state.algoGeneration} callback = {(topCity) => this.setState({topCity})}/>
+          <div className="main-display-wrapper">
+            <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
+            Short term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
+            Medium term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
+            Long term match
+            </button>
+          </div>
           <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]}/>
         </div>}
         </div>
