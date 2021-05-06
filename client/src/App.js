@@ -115,7 +115,7 @@ class App extends Component {
 
         { this.state.loggedIn && !this.state.genresGenerated &&
           <button className="spotify-style" onClick={() => this.getGenreInfo()}>
-          Get your genres
+          Get your city match
           </button>
         }
 

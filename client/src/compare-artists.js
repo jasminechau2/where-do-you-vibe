@@ -121,7 +121,7 @@ var findCities = function findCities(user, places) {
 
   let genreSortedListForUser = getSortedUserGenreList(artists);
 
-  let genreListMax = 5;
+  let genreListMax = 10;
   if (genreSortedListForUser.length < genreListMax){
     genreListMax = genreSortedListForUser.length;
   }
@@ -142,7 +142,7 @@ var findCities = function findCities(user, places) {
     let returnList = [];
     returnList.push(topCitiesList.slice(0,5));
     returnList.push(topCountriesList.slice(0,5));
-    returnList.push(genreReturnList.slice(0,5));
+    returnList.push(genreReturnList.slice(0,10));
   
     return returnList;
   }
@@ -161,7 +161,7 @@ var findCities = function findCities(user, places) {
     let returnList = [];
     returnList.push(topCitiesList.slice(0,5));
     returnList.push(topCountriesList.slice(0,5));
-    returnList.push(genreReturnList.slice(0,5));
+    returnList.push(genreReturnList.slice(0,10));
   
     return returnList;
   }
@@ -180,7 +180,7 @@ var findCities = function findCities(user, places) {
     let returnList = [];
     returnList.push(topCitiesList.slice(0,5));
     returnList.push(topCountriesList.slice(0,5));
-    returnList.push(genreReturnList.slice(0,5));
+    returnList.push(genreReturnList.slice(0,10));
   
     return returnList;
   }
