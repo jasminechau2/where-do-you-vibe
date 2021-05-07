@@ -1,6 +1,6 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap} from 'react-leaflet'
 import React, {useState, useCallback} from "react"
-
+//USER GENRE LIST LIMIT IS 15
 function MakeMarkers({cityInfo, cityDetails, cityLocations}){
   const map = useMap();
 
@@ -35,6 +35,9 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
               location,
               10
             );
+          },
+          mouseover: () => {
+            console.log("hello");
           }
         }}
         key = {location}

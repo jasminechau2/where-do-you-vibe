@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Map from './components/Map.js'
-import SpotifyWebApi from 'spotify-web-api-js';
+import SpotifyWebApi from 'spotify-web-api-js'; //https://github.com/thelinmichael/spotify-web-api-node
 import cities from './places.json';
 import latLng from './lat-lng.json'
 
@@ -8,7 +8,7 @@ import latLng from './lat-lng.json'
 import UserCityList from './components/user-cities-display-template';
 
 
-const spotifyApi = new SpotifyWebApi();
+const spotifyApi = new SpotifyWebApi(); 
 var findCities = require('./compare-artists.js');
 
 const LOGIN_URI =
