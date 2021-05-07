@@ -1,5 +1,3 @@
-//import { color } from "d3-color";
-
 /*
 * This component lists the user's top cities that match with their top genres 
 */
@@ -11,7 +9,7 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
     const combineGenres = [];
     const genreStyles = [
         {
-            fontSize: "38px",
+            fontSize: "52px",
             color: "#004EB9",
             fontWeight: "bolder"
         },
@@ -29,18 +27,16 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
             fontSize: "32px",
             color: "#005CED",
             fontWeight: "normal",
-            fontStyle: 'italic'
         },
         {
             fontSize: "32px",
             color: "#0F6BFF",
             fontWeight: "normal",
-            fontStyle: 'italic'
         },
     ]
     const cityStyles = [
         {
-            fontSize: "38px",
+            fontSize: "52px",
             color: "#000000",
             fontWeight: "bolder"
         },
@@ -58,13 +54,11 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
             fontSize: "32px",
             color: "#636363",
             fontWeight: "normal",
-            fontStyle: 'italic'
         },
         {
             fontSize: "32px",
             color: "#757575",
             fontWeight: "normal",
-            fontStyle: 'italic'
         },
     ]
     
@@ -83,7 +77,7 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
                  </div>
              );
            };
-           for(let i = 1; i < genres.length; i++ ){
+           for(let i = 0; i < genres.length; i++ ){
              combineGenres.push(  //genres return in the correct order
                 <div
                 style = {genreStyles[i]}
@@ -97,35 +91,19 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
 
     return ( 
         <div>
-            <ul className="main-display-wrapper">
-                <li>
-                    <ul className="title-and-cities">
-                        <li>Your top city and your most listened genres:</li>
-                        <li 
-                         style = {cityStyles[0]} 
-                         onClick = { () => {
-                            callback(cities[0]);
-                        }}>
-                            {cities[0]+", "+countries[0]}
-                        </li>
-                    </ul>
-                </li>
-                <li style={genreStyles[0]}>
-                    {genres[0]}
-                </li>
-            </ul>
-            <ul className="main-display-wrapper">
-                <li>
-                    <ul className="title-and-cities">
-                        {combineCities}
-                    </ul>
-                </li>
-                <li>
-                    {combineGenres}
-                </li>
-            </ul>
-            
-            
+            <div className="main-display-wrapper">
+                <div>Your top city:</div>
+                <div style = {cityStyles[0]} onClick = {() => {callback(cities[0]); }}> {cities[0]+", "+countries[0]}
+                </div>
+            </div>
+            <div className="main-display-wrapper">
+                <div>And your next best matches:</div>
+                <div>{combineCities}</div>
+            </div>
+            <div className="genre-display-wrapper">
+                <div>Your top genres:</div>
+                <div className="genres">{combineGenres}</div>
+            </div>
 
 
             {/* {combineCities.length === 0 ? <div style = {styles[0]}> You have no matches </div> : combineCities}

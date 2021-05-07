@@ -52,18 +52,6 @@ class App extends Component {
     };
   };
 
-  // getHashParams(){
-  //   var hashParams = {};
-  //   var e, r = /([^&;=]+)=?([^&;]*)/g,
-  //       q = window.location.hash.substring(1);
-  //   e = r.exec(q)
-  //   while (e) {
-  //      hashParams[e[1]] = decodeURIComponent(e[2]);
-  //      e = r.exec(q);
-  //   }
-  //   return hashParams;
-  // };
-
   getUserInfo(){ //call to get user infomation from spotify api
       spotifyApi.getMe()
       .then((data) => {
@@ -113,22 +101,35 @@ class App extends Component {
           </li>
         </ul>
 
-        { this.state.loggedIn && !this.state.genresGenerated
+        { this.state.loggedIn && !this.state.genresGenerated &&
+           <div className="main-display-wrapper">
+            <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
+            Short term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
+            Medium term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
+            Long term match
+            </button>
+          </div>
         }
-        <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
-         Get your genres (short term)
-        </button>
-        <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
-         Get your genres (medium term)
-        </button>
-        <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
-         Get your genres (long term)
-        </button>
 
       { this.state.loggedIn && this.state.genresGenerated &&
         <div>
-          <UserCityList citiesObject = {this.state.algoGeneration} callback = {(selectCity) => this.setState({topCity: selectCity})}/>
-          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} selectedCity = {this.state.topCity}/>
+          <UserCityList citiesObject = {this.state.algoGeneration} callback = {(selectedCity) => this.setState({topCity: selectedCity})}/>
+          <div className="main-display-wrapper">
+            <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
+            Short term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
+            Medium term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
+            Long term match
+            </button>
+          </div>
+          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} selectedCity={this.state.topcity}/>
         </div>}
         </div>
       );

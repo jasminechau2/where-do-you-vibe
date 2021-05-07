@@ -50,6 +50,9 @@ button.spotify-style{
   cursor: pointer;
   transition-property: background-color;
   transition-duration: .3s;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
 }
 
 .App button.spotify-style:hover{
@@ -72,32 +75,44 @@ button.spotify-style{
 
 }
 
-@media all and (max-width: 800px) {
-  .navigation {
-    justify-content: space-around;
-  }
-}
-
 .main-display-wrapper {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding: 12px 12px;
-  
   list-style: none;
   font-size: 36px;
   font-weight: bold;
+  border-bottom: solid;
+  border-color: black;
+  padding: 12px;
+}
+
+.genres{
+  display: flex;
+  flex-direction: row;
   align-items: flex-end;
+  gap: 12px;
+  font-size: 28px;
+  color: #0F6BFF;
+  font-weight: normal;
+}
+
+.genre-display-wrapper {
+  display: flex;
+  flex-flow: column;
+  justify-content: left;
+  padding: 12px;
+  list-style: none;
+  font-size: 36px;
+  font-weight: bold;
   border-bottom: solid;
   border-color: black;
 }
 
-.title-and-cities {
 
-  list-style: none;
-  font-size: 36px;
-  font-weight: bold;
-  align-items: center;
-
-
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+  .genres{
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

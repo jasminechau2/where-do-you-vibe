@@ -59,7 +59,7 @@ function ResetButton({map}){
   }, [map])
 
   return ( 
-    <button onClick={onClick}>reset</button>)
+    <button className="spotify-style" onClick={onClick}>Reset zoom</button>)
 }
 
 function Map({cityLocations, cityInfo, cityDetails, selectedCity}) {
@@ -76,15 +76,12 @@ function Map({cityLocations, cityInfo, cityDetails, selectedCity}) {
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
        crossorigin=""/>  
-       {map ? <ResetButton map={map} /> : null}
         <MapContainer 
             center={center}
             zoom={zoom}
             scrollWheelZoom={true}
             style={{
-              height: '400px',
-              padding: "100px",
-              marginTop: '50px',
+              height: '600px',
               }}
               whenCreated={setMap}
               > 
@@ -94,6 +91,7 @@ function Map({cityLocations, cityInfo, cityDetails, selectedCity}) {
               />
               {cityLocations.length !== 0 ? <MakeMarkers cityInfo = {cityInfo} cityDetails = {cityDetails} cityLocations={cityLocations}/> : []}
           </MapContainer>
+          {map ? <ResetButton center={center} zoom={zoom} map={map} /> : null}
     </div>
     
   );
