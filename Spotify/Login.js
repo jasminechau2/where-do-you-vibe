@@ -57,6 +57,7 @@ const buildPath = path.resolve(__dirname, "../client/build");
   .use(cookieParser());
 
   const cookieOption = {
+    expire: 3600000 + Date.now(),
     // Comment out the following 2 lines while in development for the authoriazation flow to work properly
     // sameSite:'None',
     // secure: true
@@ -118,9 +119,8 @@ const buildPath = path.resolve(__dirname, "../client/build");
         const refresh_token = body.refresh_token;
 
         // we can also pass the token to the browser to make requests from there
-        res.cookie(
-	        "access_token",access_token
-        )
+        
+        res.cookie( "access_token", access_token, {expires: new Date(3600000 + Date.now())});
 
         res.redirect(
           `${FRONTEND_URI}/`,
@@ -148,9 +148,7 @@ const buildPath = path.resolve(__dirname, "../client/build");
    request.post(authOptions, function(error, response, body) {
      if (!error && response.statusCode === 200) {
        var access_token = body.access_token;
-       res.send({
-         'access_token': access_token
-       });
+       res.cookie( "access_token", access_token, {expires: 3600000 + Date.now()})
      }
    });
  });
@@ -158,9 +156,8 @@ const buildPath = path.resolve(__dirname, "../client/build");
  app.get('/logout', function(req, res) {
   refreshKey = req.query.refresh_token;
 
-  res.clearCookie(refreshKey, cookieOption);
+  res.clearCookie('refresh_token', cookieOption);
   res.clearCookie("access_token", cookieOption);
-  res.clearCookie("token", cookieOption);
 
   res.redirect(
     `${FRONTEND_URI}/`,

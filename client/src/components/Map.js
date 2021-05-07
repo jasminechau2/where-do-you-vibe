@@ -67,10 +67,10 @@ function Map({cityLocations, cityInfo, cityDetails, selectedCity}) {
   const center = [40,0];
   const zoom = 2;
 
-  if(selectedCity){
+  
     console.log(selectedCity);
 
-  }
+
   return (
     <div id="mapid">
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"

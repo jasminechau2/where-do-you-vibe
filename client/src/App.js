@@ -24,7 +24,8 @@ process.env.NODE_ENV !== 'production'
 class App extends Component { 
   constructor(){
     super();
-    const access_tok = document.cookie.split('=');
+    const tokens = document.cookie.split(';')
+    const access_tok = tokens[0].split('=');
     //const params = this.getHashParams();
     //const token = params.access_token; //This reads the token from the url, token allows us access to user info
 
@@ -129,7 +130,7 @@ class App extends Component {
             Long term match
             </button>
           </div>
-          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} selectedCity={this.state.topcity}/>
+          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} selectedCity={this.state.topCity}/>
         </div>}
         </div>
       );
