@@ -1,7 +1,6 @@
 * {
-  margin: 100;
-  font-family:  'Helvetica Neue';
-  font-weight: 400;
+  margin: 0;
+  font-family:  'arial';
 }
 
 .App{
@@ -11,17 +10,109 @@
   flex-direction: column;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a.spotify-style{
+  line-height: 1;
+  color: white;
+  background-color: #1db954;
+  border-radius: 500px;
+  text-decoration: none;
+  width: 400px;
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 16px 40px;
+  border: none;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: .3s;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
 }
 
-#login, #loggedin {
-    display: none;
- }
-.text-overflow {
-   overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 500px;
-} */
+.App a.spotify-style:hover{
+  background-color: rgb(28, 211, 67);
+}
+
+button.spotify-style{
+  line-height: 1;
+  margin: 12px;
+  color: white;
+  background-color: #1db954;
+  border-radius: 500px;
+  text-decoration: none;
+  width: 250px;
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 16px 12px;
+  border: none;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: .3s;
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+}
+
+.App button.spotify-style:hover{
+  background-color: rgba(29, 185, 112, 0.705);
+}
+
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 24px;
+  
+  list-style: none;
+  background: #A8CAFFFC;
+  font-size: 36px;
+  font-weight: bold;
+  align-items: center;
+  border-bottom: solid;
+  border-color: black;
+
+}
+
+.main-display-wrapper {
+  list-style: none;
+  font-size: 36px;
+  font-weight: bold;
+  border-bottom: solid;
+  border-color: black;
+  padding: 12px;
+}
+
+.genres{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 12px;
+  font-size: 28px;
+  color: #0F6BFF;
+  font-weight: normal;
+}
+
+.genre-display-wrapper {
+  display: flex;
+  flex-flow: column;
+  justify-content: left;
+  padding: 12px;
+  list-style: none;
+  font-size: 36px;
+  font-weight: bold;
+  border-bottom: solid;
+  border-color: black;
+}
+
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+  .genres{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

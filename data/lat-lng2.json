@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "city": "Vicenza",
+      "country": "IT",
+      "lat": 45.6348591,
+      "lng": 11.4063543
+    },
+    {
+      "city": "Curic\u00f3",
+      "country": "CL",
+      "lat": -34.985368,
+      "lng": -71.2393705
+    }
+  ]
+}

@@ -1,13 +1,14 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import Map from './components/Map.js'
-import SpotifyWebApi from 'spotify-web-api-js';
+import SpotifyWebApi from 'spotify-web-api-js'; //https://github.com/thelinmichael/spotify-web-api-node
 import cities from './places.json';
+import latLng from './lat-lng.json'
 
 //import './components/UserGenresTemplate.js';
-import UserGenreList from './components/UserGenresTemplate';
+import UserCityList from './components/user-cities-display-template';
 
 
-const spotifyApi = new SpotifyWebApi();
+const spotifyApi = new SpotifyWebApi(); 
 var findCities = require('./compare-artists.js');
 
 const LOGIN_URI =
@@ -15,36 +16,41 @@ process.env.NODE_ENV !== 'production'
 ? 'http://localhost:8888/login'
 : 'https://where-do-you-vibe.herokuapp.com/login';
 
-class App extends Component {
-  constructor(){ //This reads the token from the url, token allows us access to user info
+const LOGOUT_URI =
+process.env.NODE_ENV !== 'production'
+? 'http://localhost:8888/logout'
+: 'https://where-do-you-vibe.herokuapp.com/logout';
+
+class App extends Component { 
+  constructor(){
     super();
-    const params = this.getHashParams();
-    const token = params.access_token;
-    if (token) {
-      spotifyApi.setAccessToken(token);
+    const tokens = document.cookie.split(';')
+    const access_tok = tokens[0].split('=');
+    //const params = this.getHashParams();
+    //const token = params.access_token; //This reads the token from the url, token allows us access to user info
+
+    if (access_tok[0] !== "") {
+      spotifyApi.setAccessToken(access_tok[1]);
     }
     this.state = { //sets state, allows us to know if someone is logged in and their name
-      loggedIn: token ? true : false,
-      user: {displayName:'not logged in', profilePic:''},
-      topGenre: {},
-      topCity: 'No top matches generated yet',
+      loggedIn: access_tok[0] ? true : false,
+      user: {displayName:'your'},
+      topGenre: [],
+      algoGeneration: "nothing yet",
+      selectedCity: '',
+      genresGenerated: false,
       allCities: cities,
+      allLocations: latLng["items"],
+      points: [],
+      topCity:''
     }
-    var c = this.state.loggedIn ? this.getUserInfo() : "";
-  console.log(this.state.topCity)
+
   };
 
- 
-  getHashParams(){
-    var hashParams = {};
-    var e, r = /([^&;=]+)=?([^&;]*)/g,
-        q = window.location.hash.substring(1);
-    e = r.exec(q)
-    while (e) {
-       hashParams[e[1]] = decodeURIComponent(e[2]);
-       e = r.exec(q);
-    }
-    return hashParams;
+  componentDidMount(){
+    if(this.state.loggedIn){
+      this.getUserInfo();
+    };
   };
 
   getUserInfo(){ //call to get user infomation from spotify api
@@ -52,51 +58,82 @@ class App extends Component {
       .then((data) => {
         this.setState({
           user: { 
-              displayName: data.display_name, 
-              profilePic: data.images[0].url
+              displayName: data.display_name.concat("","'s"), 
             }
         });
       });  
   };
 
-  
-getGenreInfo(){
-  spotifyApi.getMyTopArtists({time_range: 'medium_term', limit: 20})
-  .then((data)=>{
-     this.setState({
-       topGenre: data,
-       topCity: findCities.findCities(data, this.state.allCities),
-    });     
-   });
+  getGenreInfo(time){
+    spotifyApi.getMyTopArtists({time_range: time, limit: 20})
+    .then((data)=>{
+      this.setState({algoGeneration: findCities.findCities(data, this.state.allCities)});
+      this.setState({
+        topGenre: this.state.algoGeneration[2],
+        genresGenerated: true,
+        points: this.getCitiesLatLng()
+      }); 
+    });
+  };
 
-}
-  
-  render() {
+  getCitiesLatLng(){
+    var i = 0;
+    var k = 0;
+    var cities = this.state.algoGeneration[0];
+    var countries = this.state.algoGeneration[1];
+    var locations = []; 
+    for(i = 0; i < cities.length; i++){
+      for(k = 0; k < this.state.allLocations.length; k++){
+        if(cities[i] ===  this.state.allLocations[k].city && countries[i] === this.state.allLocations[k].country){
+          locations.push([this.state.allLocations[k].lat, this.state.allLocations[k].lng]);
+        };
+      };
+    };
+   return locations
+  };
+
+  render() {    
     return (
       <div className="App">
-        <a href={LOGIN_URI}> Login to Spotify </a>
-        <div>
-          Hello { this.state.user.displayName }
-        </div>
-        <div>
-          <img src={this.state.user.profilePic} style={{ height: 150 }}/>
-        </div>
-        
-      { this.state.loggedIn &&
-        <button onClick={() => this.getGenreInfo()}>
-         Get your genres
-        </button>
-      }
-      <div>
-        {this.state.topCity}
-      </div>
+        <ul className = "navigation">
+          <li>Where's { this.state.user.displayName } vibe? </li>
+          <li>
+            {this.state.loggedIn ? <a className="spotify-style" href = {LOGOUT_URI}>Logout</a> : <a className="spotify-style" href={LOGIN_URI}> Login to Spotify </a>}
+          </li>
+        </ul>
 
+        { this.state.loggedIn && !this.state.genresGenerated &&
+           <div className="main-display-wrapper">
+            <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
+            Short term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
+            Medium term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
+            Long term match
+            </button>
+          </div>
+        }
+
+      { this.state.loggedIn && this.state.genresGenerated &&
         <div>
-        <Map cityLocations = {""} lat_lan={""}/>
+          <UserCityList citiesObject = {this.state.algoGeneration} callback = {(selectedCity) => this.setState({topCity: selectedCity})}/>
+          <div className="main-display-wrapper">
+            <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
+            Short term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
+            Medium term match
+            </button>
+            <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
+            Long term match
+            </button>
+          </div>
+          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} selectedCity={this.state.topCity}/>
+        </div>}
         </div>
-       
-      </div>
-    );
+      );
   }
 }
 export default App;

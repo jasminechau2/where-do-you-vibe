@@ -45,7 +45,8 @@ if (process.env.NODE_ENV !== 'production') {
  };
  
  var stateKey = 'spotify_auth_state';
- 
+ var refreshKey = "refresh_key";
+
  const app = express();
 
  // Resolve client build directory as absolute path to avoid errors in express
@@ -55,6 +56,12 @@ const buildPath = path.resolve(__dirname, "../client/build");
   .use(cors())
   .use(cookieParser());
 
+  const cookieOption = {
+    expire: 3600000 + Date.now(),
+    // Comment out the following 2 lines while in development for the authoriazation flow to work properly
+    // sameSite:'None',
+    // secure: true
+  };
 //  app.get('*', (req, res)=> {
 //    res.sendFile(path.resolve('./public', 'index.html' ));
 //    })
@@ -72,7 +79,8 @@ const buildPath = path.resolve(__dirname, "../client/build");
        client_id: client_id,
        scope: scope,
        redirect_uri: redirect_uri,
-       state: state
+       state: state,
+      show_dialog: true
      }));
  });
  
@@ -86,10 +94,9 @@ const buildPath = path.resolve(__dirname, "../client/build");
    var storedState = req.cookies ? req.cookies[stateKey] : null;
  
    if (state === null || state !== storedState) {
-     res.redirect('/#' +
-       querystring.stringify({
-         error: 'state_mismatch'
-       }));
+    res.redirect(
+      `${FRONTEND_URI}/`,
+    );
    } else {
      res.clearCookie(stateKey);
      var authOptions = {
@@ -104,28 +111,28 @@ const buildPath = path.resolve(__dirname, "../client/build");
        },
        json: true
      };
- 
+
+     //request get token
      request.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
         const access_token = body.access_token;
         const refresh_token = body.refresh_token;
 
         // we can also pass the token to the browser to make requests from there
+        
+        res.cookie( "access_token", access_token, {expires: new Date(3600000 + Date.now())});
+
         res.redirect(
-          `${FRONTEND_URI}/#${querystring.stringify({
-            access_token,
-            refresh_token,
-          })}`,
+          `${FRONTEND_URI}/`,
         );
       } else {
-        res.redirect(`/#${querystring.stringify({ error: 'invalid_token' })}`);
+        res.redirect(`${FRONTEND_URI}/`,);
       }
     });
   }
  });
  
  app.get('/refresh_token', function(req, res) {
- 
    // requesting access token from refresh token
    var refresh_token = req.query.refresh_token;
    var authOptions = {
@@ -141,12 +148,21 @@ const buildPath = path.resolve(__dirname, "../client/build");
    request.post(authOptions, function(error, response, body) {
      if (!error && response.statusCode === 200) {
        var access_token = body.access_token;
-       res.send({
-         'access_token': access_token
-       });
+       res.cookie( "access_token", access_token, {expires: 3600000 + Date.now()})
      }
    });
  });
+
+ app.get('/logout', function(req, res) {
+  refreshKey = req.query.refresh_token;
+
+  res.clearCookie('refresh_token', cookieOption);
+  res.clearCookie("access_token", cookieOption);
+
+  res.redirect(
+    `${FRONTEND_URI}/`,
+  ); 
+});
  
  if (process.env.NODE_ENV === "production") {
   // All remaining requests return the React app, so it can handle routing.

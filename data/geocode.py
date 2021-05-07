@@ -1,28 +1,39 @@
 from opencage.geocoder import OpenCageGeocode
-import csv
+import json
 
 
 key = "a9fc6969619b4da09337d152b416c1f2"  # get api key from:  https://opencagedata.com
 geocoder = OpenCageGeocode(key)
 
-with open('lat-lng2.csv', 'w', newline='') as write_file:
-    writer = csv.writer(write_file)
-    writer.writerow(["City", "Country", "lat", "lng"])
-    with open('places.csv') as read_file:
-        csv_reader = csv.reader(read_file, delimiter=',')
-        line_count = 0
-        for row in csv_reader:
-            if (line_count <= 1829):
-                line_count += 1
-            else:
-                query = row[0] +", "+ row[1]
+latLngData = []
 
-                results = geocoder.geocode(query)
-                lat = results[0]['geometry']['lat']
-                lng = results[0]['geometry']['lng']
-                print (lat, lng, row[0])
-                writer.writerow([row[0], row[1], lat, lng])
-
-                line_count += 1
-                if(line_count == 3662):
-                    break
+with open('places.json') as placesJson:
+    cityCount = 0;
+    items = json.load(placesJson)
+    for place in items['items']:
+        if (cityCount >= 1380):
+            country = place['country']
+            if (country == "IN"):
+                country = "India"
+            query = place['city'] +", "+ country
+            results = geocoder.geocode(query)
+            lat = results[0]['geometry']['lat']
+            lng = results[0]['geometry']['lng']
+            print (lat, lng,  place['city'], cityCount)
+            latLngData.append({
+                'city': place['city'],
+                'country':place['country'],
+                'lat':lat,
+                'lng':lng
+            })
+        cityCount += 1
+        if(cityCount == 3660):
+            with open('lat-lng2.json', 'w', newline='') as file:
+                jsonObject = []
+                jsonObject.append({
+                    'items':latLngData
+                })
+                json.dump(jsonObject[0], file, indent=2)
+                break
+# 0-1380
+# 1381 - 3660
