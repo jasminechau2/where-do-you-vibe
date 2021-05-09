@@ -14,12 +14,14 @@ var findCities = require('./compare-artists.js');
 const LOGIN_URI =
 process.env.NODE_ENV !== 'production'
 ? 'http://localhost:8888/login'
-: 'https://where-do-you-vibe.herokuapp.com/login';
+: 'https://www.wheredoyouvibe.com/login';
+//'https://where-do-you-vibe.herokuapp.com/login';
 
 const LOGOUT_URI =
 process.env.NODE_ENV !== 'production'
 ? 'http://localhost:8888/logout'
-: 'https://where-do-you-vibe.herokuapp.com/logout';
+: 'https://www.wheredoyouvibe.com/logout';
+//'https://where-do-you-vibe.herokuapp.com/logout';
 
 class App extends Component { 
   constructor(){
