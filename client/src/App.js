@@ -148,3 +148,10 @@ class App extends Component {
   }
 }
 export default App;
+
+
+// reference links:
+// https://egghead.io/lessons/react-create-and-style-a-list-of-data-with-react
+// https://react-beautiful-dnd.netlify.app/?path=/story/single-horizontal-list--simple
+// https://github.com/atlassian/react-beautiful-dnd
+
