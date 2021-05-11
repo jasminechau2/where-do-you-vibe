@@ -6,6 +6,7 @@ import latLng from './lat-lng.json'
 
 //import './components/UserGenresTemplate.js';
 import UserCityList from './components/user-cities-display-template';
+import initialData from './initial-data.js';
 
 
 const spotifyApi = new SpotifyWebApi();
@@ -40,8 +41,8 @@ class App extends Component {
       genresGenerated: false,
       allCities: cities,
       allLocations: latLng["items"],
-      points: []
-
+      points: [],
+      initialData: initialData,
     } 
   };
 
@@ -103,8 +104,17 @@ class App extends Component {
    return locations
   };
 
+  getReorderBoxes(){
+    this.state.initialData.columnOrder.map((columnId=>{
+      const column = this.state.initialData.columns[columnId];
+      const tasks = column.taskIds.map(taskId => this.state.initialData.tasks[taskId]);
+      return column.title;
+    }));
+  };
+
   render() {    
     return (
+      this.getReorderBoxes(),
       <div className="App">
         <ul class = "navigation">
           <li>Where's { this.state.user.displayName } vibe? </li>
@@ -114,7 +124,7 @@ class App extends Component {
         </ul>
 
         { this.state.loggedIn && !this.state.genresGenerated &&
-           <div className="main-display-wrapper">
+            <div className="main-display-wrapper">
             <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
             Short term match
             </button>
@@ -127,22 +137,22 @@ class App extends Component {
           </div>
         }
 
-      { this.state.loggedIn && this.state.genresGenerated &&
-        <div>
-          <UserCityList citiesObject = {this.state.algoGeneration} callback = {(topCity) => this.setState({topCity})}/>
-          <div className="main-display-wrapper">
-            <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
-            Short term match
-            </button>
-            <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
-            Medium term match
-            </button>
-            <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
-            Long term match
-            </button>
-          </div>
-          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]}/>
-        </div>}
+        { this.state.loggedIn && this.state.genresGenerated &&
+          <div>
+            <UserCityList citiesObject = {this.state.algoGeneration} callback = {(topCity) => this.setState({topCity})}/>
+            <div className="main-display-wrapper">
+              <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
+              Short term match
+              </button>
+              <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
+              Medium term match
+              </button>
+              <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
+              Long term match
+              </button>
+            </div>
+            <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]}/>
+          </div>}
         </div>
       );
   }
