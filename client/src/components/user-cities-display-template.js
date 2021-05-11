@@ -66,15 +66,16 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
 
         for(let i = 1 ; i < cities.length; i++ ){
             combineCities.push( //cities return in the reverse order
-                 <div
+                 <p
                  style = {cityStyles[i]}
                  key = {cities[i]}
-                 onClick = {() => {
-                    callback(cities[i]);
-                 }} 
+                 onClick = {() =>{
+                    console.log("https://everynoise.com/everyplace.cgi?root=Brownsville%20Texas%20US&scope=all");
+                 }}
+                 
                  >
                  {cities[i]}, {countries[i]}
-                 </div>
+                 </p>
              );
            };
            for(let i = 0; i < genres.length; i++ ){
