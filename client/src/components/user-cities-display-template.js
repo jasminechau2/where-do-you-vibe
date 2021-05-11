@@ -89,7 +89,7 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
     return ( 
         <div>
             <div className="main-display-wrapper">
-                <div>Your top city:</div>
+                <p>Your top city:</p>
                 <div style = {cityStyles[0]}>{cities[0]+", "+countries[0]}</div>
             </div>
             <div className="main-display-wrapper">

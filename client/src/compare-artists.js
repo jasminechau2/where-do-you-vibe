@@ -132,7 +132,7 @@ var findCities = function findCities(user, places) {
 
   let genreCities = getListofCityGenres(places.items);
 
-  // top 5 user compared to and top 5 of all cites
+  // top 5 user compared to and top 5 of all cites (need two matches to pass)
   let cityMatches = createListOfPotentialMatches(genreCities, genreSortedListForUser, 2, 5, 5);
   let topCitiesAndCountries = sortListOfMatches(cityMatches, genreCities, genreSortedListForUser, 15 , 5);
   topCitiesList.push.apply(topCitiesList, topCitiesAndCountries[0]);
