@@ -108,3 +108,5 @@ export default Map;
 //references
 //https://stackoverflow.com/questions/65663372/how-to-change-map-zoom-dynamically-when-clicking-on-a-marker-in-react-leaflet-v
 //https://react-leaflet.js.org/
+//https://stackoverflow.com/questions/51662140/how-to-toggle-popup-in-react-leaflet-on-mouse-hover
+//https://react-leaflet.js.org/docs/api-map

@@ -4,7 +4,6 @@ import SpotifyWebApi from 'spotify-web-api-js'; //https://github.com/thelinmicha
 import cities from './places.json';
 import latLng from './lat-lng.json'
 
-//import './components/UserGenresTemplate.js';
 import UserCityList from './components/user-cities-display-template';
 
 
@@ -28,8 +27,6 @@ class App extends Component {
     super();
     const tokens = document.cookie.split(';')
     const access_tok = tokens[0].split('=');
-    //const params = this.getHashParams();
-    //const token = params.access_token; //This reads the token from the url, token allows us access to user info
 
     if (access_tok[0] !== "") {
       spotifyApi.setAccessToken(access_tok[1]);
@@ -139,3 +136,7 @@ class App extends Component {
   }
 }
 export default App;
+
+//references
+// https://www.joekarlsson.com/2019/04/how-to-build-a-spotify-player-with-react-in-15-minutes/
+// https://medium.com/@jonnykalambay/now-playing-using-spotifys-awesome-api-with-react-7db8173a7b13

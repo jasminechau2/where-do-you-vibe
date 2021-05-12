@@ -172,3 +172,8 @@ const buildPath = path.resolve(__dirname, "../client/build");
 }
  app.listen(PORT);
  console.log("Listening on port %d", PORT); // eslint-disable-line no-console
+
+ //references
+ // https://flaviocopes.com/cookies/#samesite
+ // https://alligator.io/nodejs/express-cookies/
+ // https://www.tutorialspoint.com/javascript/javascript_cookies.htm
