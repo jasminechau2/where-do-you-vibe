@@ -36,8 +36,14 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
               10
             );
           },
-          mouseover: () => {
-            console.log("hello");
+          mouseover: (open) => {
+            open.target.openPopup();
+          },
+          popupclose: ()=>{
+            map.setView(
+              [40,0], 
+              2
+            );
           }
         }}
         key = {location}
