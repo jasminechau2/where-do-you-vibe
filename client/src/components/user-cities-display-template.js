@@ -72,7 +72,6 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
                  onClick = {() =>{
                     console.log("https://everynoise.com/everyplace.cgi?root=Brownsville%20Texas%20US&scope=all");
                  }}
-                 
                  >
                  {cities[i]}, {countries[i]}
                  </p>
@@ -80,11 +79,11 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
            };
            for(let i = 0; i < genres.length; i++ ){
              combineGenres.push(  //genres return in the correct order
-                <div
+                <p
                 style = {genreStyles[i]}
                 key = {genres[i]}> 
                 {genres[i]}
-                </div>
+                </p>
             ); 
            };
 
@@ -93,16 +92,16 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
     return ( 
         <div>
             <div className="main-display-wrapper">
-                <div>Your top city:</div>
+                <h1>Your top city:</h1>
                 <div style = {cityStyles[0]} onClick = {() => {callback(cities[0]); }}> {cities[0]+", "+countries[0]}
                 </div>
             </div>
             <div className="main-display-wrapper">
-                <div>And your next best matches:</div>
+                <h2>And your next best matches:</h2>
                 <div>{combineCities}</div>
             </div>
             <div className="genre-display-wrapper">
-                <div>Your top genres:</div>
+                <h2>Your top genres:</h2>
                 <div className="genres">{combineGenres}</div>
             </div>
 
