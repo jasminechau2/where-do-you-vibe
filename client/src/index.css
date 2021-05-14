@@ -115,6 +115,9 @@ button.spotify-style{
   .navigation {
     justify-content: space-around;
   }
+  .login-button-wrapper{
+    margin-top: 12px;
+  }
   .genres{
     flex-direction: column;
     align-items: flex-start;

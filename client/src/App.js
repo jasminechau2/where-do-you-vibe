@@ -103,8 +103,8 @@ class App extends Component {
         " */}
         <ul className = "navigation">
           <li>Where's { this.state.user.displayName } vibe? </li>
-          <li>
-            {this.state.loggedIn ? <a className="spotify-style" href = {LOGOUT_URI}>Logout</a> : <a className="spotify-style" href={LOGIN_URI}> Login to Spotify </a>}
+          <li className = "login-button-wrapper">
+            {this.state.loggedIn ? <a className="spotify-style" href = {LOGOUT_URI}>logout</a> : <a className="spotify-style" href={LOGIN_URI}> login to Spotify </a>}
           </li>
         </ul>
 
