@@ -25,9 +25,6 @@ a.spotify-style{
   cursor: pointer;
   transition-property: background-color;
   transition-duration: .3s;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
 }
 
 .App a.spotify-style:hover{
@@ -50,9 +47,6 @@ button.spotify-style{
   cursor: pointer;
   transition-property: background-color;
   transition-duration: .3s;
-  border-style: solid;
-  border-color: black;
-  border-width: 2px;
 }
 
 .App button.spotify-style:hover{
@@ -64,9 +58,9 @@ button.spotify-style{
   flex-flow: row wrap;
   justify-content: space-between;
   padding: 24px;
-  
+  color: white;
   list-style: none;
-  background: #A8CAFFFC;
+  background: #0046B8;
   font-size: 36px;
   font-weight: bold;
   align-items: center;
@@ -82,6 +76,16 @@ button.spotify-style{
   border-bottom: solid;
   border-color: black;
   padding: 12px;
+}
+
+.main-text-wrapper {
+  list-style: none;
+  font-size: 24px;
+  font-weight: bold;
+  border-bottom: solid;
+  border-color: black;
+  padding: 12px;
+  margin-left: 12px;
 }
 
 .genres{
@@ -110,6 +114,9 @@ button.spotify-style{
 @media all and (max-width: 800px) {
   .navigation {
     justify-content: space-around;
+  }
+  .login-button-wrapper{
+    margin-top: 12px;
   }
   .genres{
     flex-direction: column;

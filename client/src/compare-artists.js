@@ -30,6 +30,7 @@ var getSortedUserGenreList = function getSortedUserGenreList(artists) {
   return genreSortedListForUser;
 }
 
+//create usable list of cities and genres
 var getListofCityGenres = function getListofCityGenres(cities){
   let genreCities = [];
     
