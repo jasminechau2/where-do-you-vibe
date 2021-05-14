@@ -97,6 +97,10 @@ class App extends Component {
   render() {    
     return (
       <div className="App">
+
+        {/* add link for where do remove spotify access "You can disconnect this project from your Spotify account here under the app name “Bad Music”. This project does not store any Spotify data.
+        https://www.spotify.com/us/account/apps/
+        " */}
         <ul className = "navigation">
           <li>Where's { this.state.user.displayName } vibe? </li>
           <li>
@@ -105,35 +109,78 @@ class App extends Component {
         </ul>
 
         { this.state.loggedIn && !this.state.genresGenerated &&
+          <div className="main-display-wrapper" style={{
+            backgroundColor:"yellow"
+          }}>
+          <p>
+            We need to talk to you about our algorithm. While we were building this site we realized that our algorithm takes our 
+            opinions on how matching should work and then displays them as truth to you. 
+          </p> 
+          <p style={{
+            textDecoration:"underline"
+          }}>Isn't that what all algorithms do?</p>        
+        </div>
+        }
+
+        { this.state.loggedIn && !this.state.genresGenerated &&
            <div className="main-display-wrapper">
+            <h2>Find a match for the music you've listened to...</h2>
             <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
-            Short term match
+            this month
             </button>
             <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
-            Medium term match
+            the last six months
             </button>
             <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
-            Long term match
+            since you got Spotify
             </button>
           </div>
         }
+
+      {!this.state.loggedIn && !this.state.genresGenerated && 
+        <div className="main-text-wrapper" > 
+        <h2>Sup! We are Jasmine and Zack.</h2>
+        <p>
+          We are seniors at Middlebury College in Vermont. As we were looking at jobs, we found it difficult to figure out the "vibes" of cities that we could move to. So we did the reasonable CS major thing and made a whole a** website. And this is that. Welcome.
+          Here is how it works:
+        </p>
+        <ol>
+          <li>You click the login button up above</li>
+          <li>Spotify recognizes our site and gives us permission to ask for your listening history</li>
+          <li>We store this "permission slip" in your brower's cookies (don't worry, this is the only thing we use cookies for, we don't track you)</li>
+          <li>Our site sends Spotify your token along with a request to see your listening history for the period you specify</li>
+          <li>Spotify gives us the requested information -- and nothing else</li>
+          <li>We run our algorithm on your data and display a list of cities so you can question your life choices</li>
+        </ol>
+        </div>
+      }
 
       { this.state.loggedIn && this.state.genresGenerated &&
         <div>
           <UserCityList citiesObject = {this.state.algoGeneration} callback = {(selectedCity) => this.setState({topCity: selectedCity})}/>
           <div className="main-display-wrapper">
             <button className="spotify-style" onClick={() => this.getGenreInfo('short_term')}>
-            Short term match
+            this month
             </button>
             <button className="spotify-style" onClick={() => this.getGenreInfo('medium_term')}>
-            Medium term match
+            the last six months
             </button>
             <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
-            Long term match
+            since you got Spotify
             </button>
           </div>
           <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} selectedCity={this.state.topCity}/>
-        </div>}
+        </div>
+      }
+
+  
+      { (this.state.genresGenerated || !this.state.loggedIn) &&
+       <div className="main-text-wrapper">
+        <p> If you are curious about how we found your match, we are happy to share! You can send us an email at jchau [at] middlebury [dot] edu and zeinhorn [at] middlebury [dot] edu. Or if you are technially savvy, we didn't compress our code and it is visible if you inspect this page :)</p>
+       </div>
+      }
+      
+
         </div>
       );
   }
