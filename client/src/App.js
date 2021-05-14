@@ -113,7 +113,7 @@ class App extends Component {
             backgroundColor:"yellow"
           }}>
           <p>
-            We need to talk to you about our algorithm. While we were building this site we realized that our algorithm takes our 
+            We need to talk to you about our algorithm. While we were building this site we realized that it takes our 
             opinions on how matching should work and then displays them as truth to you. 
           </p> 
           <p style={{
