@@ -145,7 +145,7 @@ var findCities = function findCities(user, places) {
   }
 
   // top 5 user compared to and top 5 of all cites
-  cityMatches = createListOfPotentialMatches(genreCities, genreSortedListForUser, 2, 3, 5);
+  cityMatches = createListOfPotentialMatches(genreCities, genreSortedListForUser, 2, 5, 5);
   topCitiesAndCountries = sortListOfMatches(cityMatches, genreCities, genreSortedListForUser, 15 , 5);
   for(let i = 0; i<topCitiesAndCountries[0].length; i++){
     if(!topCitiesList.includes(topCitiesAndCountries[0][i])){
@@ -153,7 +153,7 @@ var findCities = function findCities(user, places) {
       topCountriesList.push(topCitiesAndCountries[1][i]);
     }
   }
-  
+
   if(topCitiesList.length >= 5){
     let returnList = [];
     returnList.push(topCitiesList.slice(0,5));
