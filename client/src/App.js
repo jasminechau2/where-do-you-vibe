@@ -114,7 +114,7 @@ class App extends Component {
           }}>
           <p>
             We need to talk to you about our algorithm. While we were building this site we realized that it takes our 
-            opinions on how matching should work and then displays them to you as truth. 
+            opinion on how matching should work and then displays it to you as truth. 
           </p> 
           <p style={{
             textDecoration:"underline"
@@ -139,7 +139,7 @@ class App extends Component {
 
       {!this.state.loggedIn && !this.state.genresGenerated && 
         <div className="main-text-wrapper" > 
-        <h2>Sup! We are Jasmine and Zack.</h2>
+        <h2>Hi! We are Jasmine and Zack.</h2>
         <p>
           We are seniors at Middlebury College in Vermont. As we were looking at jobs, we found it difficult to figure out the "vibes" of cities that we could move to. So we did the reasonable CS major thing and made a whole a** website. And this is that. Welcome.
           Here is how it works:
