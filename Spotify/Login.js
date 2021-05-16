@@ -58,20 +58,14 @@ const buildPath = path.resolve(__dirname, "../client/build");
 
   const cookieOption = {
     expire: 3600000 + Date.now(),
-    // Comment out the following 2 lines while in development for the authoriazation flow to work properly
-    // sameSite:'None',
-    // secure: true
   };
-//  app.get('*', (req, res)=> {
-//    res.sendFile(path.resolve('./public', 'index.html' ));
-//    })
 
  app.get('/login', function(req, res) {
  
    var state = generateRandomString(16);
    res.cookie(stateKey, state);
  
-   // your application requests authorization
+   // your application requests authorization and gets redirected to wheredoyouvibe.com
    var scope = 'user-read-private user-read-email user-top-read ';
    res.redirect('https://accounts.spotify.com/authorize?' +
      querystring.stringify({
@@ -118,8 +112,7 @@ const buildPath = path.resolve(__dirname, "../client/build");
         const access_token = body.access_token;
         const refresh_token = body.refresh_token;
 
-        // we can also pass the token to the browser to make requests from there
-        
+        //pass token as a cookie that expires in an hour
         res.cookie( "access_token", access_token, {expires: new Date(3600000 + Date.now())});
 
         res.redirect(
@@ -154,9 +147,9 @@ const buildPath = path.resolve(__dirname, "../client/build");
  });
 
  app.get('/logout', function(req, res) {
+   //logout bu deleting the access_token from the cookies 
   refreshKey = req.query.refresh_token;
 
-  res.clearCookie('refresh_token', cookieOption);
   res.clearCookie("access_token", cookieOption);
 
   res.redirect(

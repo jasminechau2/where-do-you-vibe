@@ -28,7 +28,7 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
   const latLan = cityLocations.map(location => {
     i = i + 1;
     return (
-        <Marker position={location} 
+        <Marker position={location}
          eventHandlers={{
           click: () => {
             map.setView(
@@ -48,7 +48,11 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
         }}
         key = {location}
         >
-          <Popup>
+          <Popup
+          onClose = {() =>
+            map.setView([40,0], 2)
+          }
+          >
             {popupContent[i]}
           </Popup>
         </Marker> 
@@ -72,10 +76,7 @@ function Map({cityLocations, cityInfo, cityDetails, selectedCity}) {
   const [map, setMap] = useState(null);
   const center = [40,0];
   const zoom = 2;
-
-  
-    console.log(selectedCity);
-
+  console.log(selectedCity);
 
   return (
     <div id="mapid">
