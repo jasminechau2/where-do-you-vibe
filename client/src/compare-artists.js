@@ -79,12 +79,7 @@ var sortListOfMatches = function sortListOfMatches(cityMatches, genreCities, gen
       let cityGenrePos = cityGenre-2;
       for(let userGenrePos = 0; userGenrePos < numUserGenres; userGenrePos++){
         if(genreCities[matchedCityNumber][2][cityGenre] === genreSortedListForUser[userGenrePos]){
-          let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
-          cityScore += differenceSquared;
-          if(cityGenre>25){
-            let differenceSquared = Math.pow(cityGenrePos - userGenrePos,5);
-            cityScore += differenceSquared;
-          } else if(cityGenre <5 | userGenrePos < 5){
+          if(cityGenre <5 | userGenrePos < 5){
             cityScore = 0;
           } else{
             let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
@@ -133,9 +128,24 @@ var findCities = function findCities(user, places) {
 
   let genreCities = getListofCityGenres(places.items);
 
+  // top 3 user compared to and top 3 of all cites
+  let cityMatches = createListOfPotentialMatches(genreCities, genreSortedListForUser, 2, 3, 3);
+  let topCitiesAndCountries = sortListOfMatches(cityMatches, genreCities, genreSortedListForUser, 15 , 3);
+  topCitiesList.push.apply(topCitiesList, topCitiesAndCountries[0]);
+  topCountriesList.push.apply(topCountriesList, topCitiesAndCountries[1]);
+
+  if(topCitiesList.length >= 5){
+    let returnList = [];
+    returnList.push(topCitiesList.slice(0,5));
+    returnList.push(topCountriesList.slice(0,5));
+    returnList.push(genreReturnList.slice(0,10));
+  
+    return returnList;
+  }
+
   // top 5 user compared to and top 5 of all cites
-  let cityMatches = createListOfPotentialMatches(genreCities, genreSortedListForUser, 2, 5, 5);
-  let topCitiesAndCountries = sortListOfMatches(cityMatches, genreCities, genreSortedListForUser, 15 , 5);
+  cityMatches = createListOfPotentialMatches(genreCities, genreSortedListForUser, 2, 3, 5);
+  topCitiesAndCountries = sortListOfMatches(cityMatches, genreCities, genreSortedListForUser, 15 , 5);
   topCitiesList.push.apply(topCitiesList, topCitiesAndCountries[0]);
   topCountriesList.push.apply(topCountriesList, topCitiesAndCountries[1]);
 
