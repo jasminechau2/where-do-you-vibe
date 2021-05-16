@@ -73,6 +73,7 @@ class App extends Component {
         points: this.getCitiesLatLng()
       }); 
     });
+
   };
 
   getCitiesLatLng(){

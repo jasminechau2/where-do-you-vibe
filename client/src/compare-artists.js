@@ -116,6 +116,7 @@ var findCities = function findCities(user, places) {
   let artists = user.items;
 
   let genreSortedListForUser = getSortedUserGenreList(artists);
+  console.log(genreSortedListForUser);
 
   let genreListMax = 10;
   if (genreSortedListForUser.length < genreListMax){
