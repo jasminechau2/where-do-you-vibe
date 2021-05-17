@@ -41,22 +41,22 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
             fontWeight: "bolder"
         },
         {
-            fontSize: "36px",
+            fontSize: "48px",
             color: "#333333",
             fontWeight: "bold"
         },
         {
-            fontSize: "36px",
+            fontSize: "42px",
             color: "#595959",
             fontWeight: "normal"
         },
         {
-            fontSize: "32px",
+            fontSize: "36px",
             color: "#636363",
             fontWeight: "normal",
         },
         {
-            fontSize: "32px",
+            fontSize: "28px",
             color: "#757575",
             fontWeight: "normal",
         },
