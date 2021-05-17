@@ -79,12 +79,8 @@ var sortListOfMatches = function sortListOfMatches(cityMatches, genreCities, gen
       let cityGenrePos = cityGenre-2;
       for(let userGenrePos = 0; userGenrePos < numUserGenres; userGenrePos++){
         if(genreCities[matchedCityNumber][2][cityGenre] === genreSortedListForUser[userGenrePos]){
-          if(cityGenre <5 | userGenrePos < 5){
-            cityScore = 0;
-          } else{
-            let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
-            cityScore += differenceSquared;
-          }
+          let differenceSquared = Math.pow(cityGenrePos - userGenrePos,2);
+          cityScore += differenceSquared;
         }
       }
     }
@@ -114,6 +110,12 @@ var findCities = function findCities(user, places) {
   let topCitiesList = [];
   let topCountriesList = [];
   let artists = user.items;
+
+  if(artists.length === 0){
+    let returnList = [];
+    returnList.push(["You don't have enough data.", ""])
+    return returnList;
+  }
 
   let genreSortedListForUser = getSortedUserGenreList(artists);
 

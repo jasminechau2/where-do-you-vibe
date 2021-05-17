@@ -67,7 +67,7 @@ class App extends Component {
   };
 
   getGenreInfo(time){
-    spotifyApi.getMyTopArtists({time_range: time, limit: 20})
+    spotifyApi.getMyTopArtists({time_range: time, limit: 50})
     .then((data)=>{
       this.setState({algoGeneration: findCities.findCities(data, this.state.allCities)});
       this.setState({
