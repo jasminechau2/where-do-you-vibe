@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Map from './components/Map.js'
+import Map from './components/Map.js';
 import SpotifyWebApi from 'spotify-web-api-js'; //https://github.com/thelinmichael/spotify-web-api-node
 import cities from './places.json';
 import latLng from './lat-lng.json'
@@ -133,6 +133,8 @@ class App extends Component {
             <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
             since you got Spotify
             </button>
+            <div>
+            </div>
           </div>
         }
 
@@ -167,6 +169,8 @@ class App extends Component {
             <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
             since you got Spotify
             </button>
+            <div>
+            </div>
           </div>
           <div className="map-wrapper">
           <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} />
