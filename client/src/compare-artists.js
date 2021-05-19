@@ -1,8 +1,6 @@
 
 var getSortedUserGenreList = function getSortedUserGenreList(artists) {
   let genreObjForUser = Object();
-console.log(getSortedUserGenreList);
-console.log(artists);
   for (let i = 0; i < artists.length; i++) {
     let genreListForArtist = artists[i].genres;
     let posValue = Math.log(artists.length-i);
@@ -119,7 +117,6 @@ var findCities = function findCities(user, places) {
   }
 
   let genreSortedListForUser = getSortedUserGenreList(artists);
-  console.log(genreSortedListForUser);
 
   let genreListMax = 10;
   if (genreSortedListForUser.length < genreListMax){

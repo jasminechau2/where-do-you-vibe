@@ -138,7 +138,7 @@ const buildPath = path.resolve(__dirname, "../client/build");
      json: true
    };
  
-   request.post(authOptions, function(error, response, body) {
+   request.post(authOptions, function(error, response, body) { //sets the cookie 
      if (!error && response.statusCode === 200) {
        var access_token = body.access_token;
        res.cookie( "access_token", access_token, {expires: 3600000 + Date.now()})

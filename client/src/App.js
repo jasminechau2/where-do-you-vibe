@@ -46,7 +46,7 @@ class App extends Component {
 
   };
 
-  componentDidMount(){
+  componentDidMount(){ //makes the calls after the states are set
     if(this.state.loggedIn){
       this.getUserInfo();
     };
@@ -63,7 +63,7 @@ class App extends Component {
       });  
   };
 
-  getGenreInfo(time){
+  getGenreInfo(time){ // call to get top artist of a user
     spotifyApi.getMyTopArtists({time_range: time, limit: 50})
     .then((data)=>{
       this.setState({algoGeneration: findCities.findCities(data, this.state.allCities)});
@@ -76,7 +76,7 @@ class App extends Component {
 
   };
 
-  getCitiesLatLng(){
+  getCitiesLatLng(){ //get the latitiude and longtitude 
     var i = 0;
     var k = 0;
     var cities = this.state.algoGeneration[0];
@@ -168,7 +168,9 @@ class App extends Component {
             since you got Spotify
             </button>
           </div>
-          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} selectedCity={this.state.topCity}/>
+          <div className="map-wrapper">
+          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} />
+          </div>
         </div>
       }
 
