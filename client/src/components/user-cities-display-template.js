@@ -154,7 +154,6 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
                 </p>
             ); 
            };
-
     };
 
     return ( 
@@ -183,10 +182,6 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
                 <h2>Your top genres:</h2>
                 <div className="genres">{combineGenres}</div>
             </div>
-
-
-            {/* {combineCities.length === 0 ? <div style = {styles[0]}> You have no matches </div> : combineCities}
-            {combineGenres} */}
         </div>
         
     )

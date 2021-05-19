@@ -113,7 +113,7 @@ const buildPath = path.resolve(__dirname, "../client/build");
         const refresh_token = body.refresh_token;
 
         //pass token as a cookie that expires in an hour
-        res.cookie( "access_token", access_token, {expires: new Date(3600000 + Date.now())});
+        res.cookie( "access_token", access_token, cookieOption);
 
         res.redirect(
           `${FRONTEND_URI}/`,
@@ -138,7 +138,7 @@ const buildPath = path.resolve(__dirname, "../client/build");
      json: true
    };
  
-   request.post(authOptions, function(error, response, body) {
+   request.post(authOptions, function(error, response, body) { //sets the cookie 
      if (!error && response.statusCode === 200) {
        var access_token = body.access_token;
        res.cookie( "access_token", access_token, {expires: 3600000 + Date.now()})
@@ -165,3 +165,8 @@ const buildPath = path.resolve(__dirname, "../client/build");
 }
  app.listen(PORT);
  console.log("Listening on port %d", PORT); // eslint-disable-line no-console
+
+ //references
+ // https://flaviocopes.com/cookies/#samesite
+ // https://alligator.io/nodejs/express-cookies/
+ // https://www.tutorialspoint.com/javascript/javascript_cookies.htm

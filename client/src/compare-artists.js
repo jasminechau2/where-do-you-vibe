@@ -1,7 +1,6 @@
 
 var getSortedUserGenreList = function getSortedUserGenreList(artists) {
   let genreObjForUser = Object();
-
   for (let i = 0; i < artists.length; i++) {
     let genreListForArtist = artists[i].genres;
     let posValue = Math.log(artists.length-i);

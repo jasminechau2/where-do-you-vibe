@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Map from './components/Map.js'
+import Map from './components/Map.js';
 import SpotifyWebApi from 'spotify-web-api-js'; //https://github.com/thelinmichael/spotify-web-api-node
 import cities from './places.json';
 import latLng from './lat-lng.json'
 
-//import './components/UserGenresTemplate.js';
 import UserCityList from './components/user-cities-display-template';
 
 
@@ -28,8 +27,6 @@ class App extends Component {
     super();
     const tokens = document.cookie.split(';')
     const access_tok = tokens[0].split('=');
-    //const params = this.getHashParams();
-    //const token = params.access_token; //This reads the token from the url, token allows us access to user info
 
     if (access_tok[0] !== "") {
       spotifyApi.setAccessToken(access_tok[1]);
@@ -49,7 +46,7 @@ class App extends Component {
 
   };
 
-  componentDidMount(){
+  componentDidMount(){ //makes the calls after the states are set
     if(this.state.loggedIn){
       this.getUserInfo();
     };
@@ -66,7 +63,7 @@ class App extends Component {
       });  
   };
 
-  getGenreInfo(time){
+  getGenreInfo(time){ // call to get top artist of a user
     spotifyApi.getMyTopArtists({time_range: time, limit: 50})
     .then((data)=>{
       this.setState({algoGeneration: findCities.findCities(data, this.state.allCities)});
@@ -76,9 +73,10 @@ class App extends Component {
         points: this.getCitiesLatLng()
       }); 
     });
+
   };
 
-  getCitiesLatLng(){
+  getCitiesLatLng(){ //get the latitiude and longtitude 
     var i = 0;
     var k = 0;
     var cities = this.state.algoGeneration[0];
@@ -135,6 +133,8 @@ class App extends Component {
             <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
             since you got Spotify
             </button>
+            <div>
+            </div>
           </div>
         }
 
@@ -169,8 +169,12 @@ class App extends Component {
             <button className="spotify-style" onClick={() => this.getGenreInfo('long_term')}>
             since you got Spotify
             </button>
+            <div>
+            </div>
           </div>
-          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} selectedCity={this.state.topCity}/>
+          <div className="map-wrapper">
+          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} />
+          </div>
         </div>
       }
 
@@ -187,3 +191,7 @@ class App extends Component {
   }
 }
 export default App;
+
+//references
+// https://www.joekarlsson.com/2019/04/how-to-build-a-spotify-player-with-react-in-15-minutes/
+// https://medium.com/@jonnykalambay/now-playing-using-spotifys-awesome-api-with-react-7db8173a7b13

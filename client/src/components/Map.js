@@ -1,7 +1,8 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap} from 'react-leaflet'
 import React, {useState, useCallback} from "react"
-//USER GENRE LIST LIMIT IS 15
+
 function MakeMarkers({cityInfo, cityDetails, cityLocations}){
+  //creates the markers for the map
   const map = useMap();
 
   var popupContent = [];
@@ -36,16 +37,21 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
               10
             );
           },
-          mouseover: (hoover) => {
-            hoover.target.openPopup();
+          mouseover: (open) => {
+            open.target.openPopup();
           }
         }}
         key = {location}
         >
           <Popup
-          onClose = {() =>
-            map.setView([40,0], 2)
-          }
+            autoPan = {false}
+            onClose = {() =>{
+              var pos = map.getCenter();
+              if(pos.lat === location[0] && pos.lng === location[1]){
+                map.setView([40,0], 2)
+              }
+            } 
+            }
           >
             {popupContent[i]}
           </Popup>
@@ -56,7 +62,7 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
   return (latLan)
 }
 
-function ResetButton({map}){
+function ResetButton({map}){ //resets the map to original orientation 
  
   const onClick = useCallback(() => {
     map.setView([40,0], 2)
@@ -66,23 +72,25 @@ function ResetButton({map}){
     <button className="spotify-style" onClick={onClick}>Reset zoom</button>)
 }
 
-function Map({cityLocations, cityInfo, cityDetails, selectedCity}) {
+function Map({cityLocations, cityInfo, cityDetails}) {
+  
   const [map, setMap] = useState(null);
   const center = [40,0];
   const zoom = 2;
-  console.log(selectedCity);
-
   return (
     <div id="mapid">
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
        crossorigin=""/>  
         <MapContainer 
+            worldCopyJump = {true}
+            minZoom ={zoom}
             center={center}
             zoom={zoom}
             scrollWheelZoom={true}
             style={{
-              height: '600px',
+              height: '500px',
+              width: '750px'
               }}
               whenCreated={setMap}
               > 
@@ -99,3 +107,9 @@ function Map({cityLocations, cityInfo, cityDetails, selectedCity}) {
 }
 
 export default Map;
+
+//references
+//https://stackoverflow.com/questions/65663372/how-to-change-map-zoom-dynamically-when-clicking-on-a-marker-in-react-leaflet-v
+//https://react-leaflet.js.org/
+//https://stackoverflow.com/questions/51662140/how-to-toggle-popup-in-react-leaflet-on-mouse-hover
+//https://react-leaflet.js.org/docs/api-map
