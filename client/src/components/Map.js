@@ -73,6 +73,7 @@ function ResetButton({map}){ //resets the map to original orientation
 }
 
 function Map({cityLocations, cityInfo, cityDetails}) {
+  
   const [map, setMap] = useState(null);
   const center = [40,0];
   const zoom = 2;
