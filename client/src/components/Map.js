@@ -44,11 +44,9 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
         >
           <Popup
             autoPan = {false}
-            eventHandlers={{
-            click : () =>{
-                map.setView([40,0], 2)
-              }
-            }}  
+            onclose ={() =>{
+              map.setView([40,0], 2)
+             } }
           >
             {popupContent[i]}
           </Popup>
