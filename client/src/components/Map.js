@@ -44,9 +44,13 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
         >
           <Popup
             autoPan = {false}
-            onclose ={() =>{
-              map.setView([40,0], 2)
-             } }
+            onClose = {() =>{
+              var pos = map.getCenter();
+              if(pos.lat === location[0] && pos.lng === location[1]){
+                map.setView([40,0], 2)
+              }
+            } 
+            }
           >
             {popupContent[i]}
           </Popup>
