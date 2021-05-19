@@ -11,54 +11,109 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
         {
             fontSize: "52px",
             color: "#004EB9",
-            fontWeight: "bolder"
+            fontWeight: "bolder",
+            textDecoration:"underline",
+            cursor:"pointer"
         },
         {
             fontSize: "36px",
             color: "#0035B9",
-            fontWeight: "bold"
+            fontWeight: "bold",
+            textDecoration:"underline",
+            cursor:"pointer"
         },
         {
             fontSize: "36px",
             color: "#0048D3",
-            fontWeight: "normal"
+            fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
         },
         {
             fontSize: "32px",
             color: "#005CED",
             fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
         },
         {
-            fontSize: "32px",
+            fontSize: "24px",
             color: "#0F6BFF",
             fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
+        },
+        {
+            fontSize: "24px",
+            color: "#0F6BFF",
+            fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
+        },
+        {
+            fontSize: "24px",
+            color: "#0F6BFF",
+            fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
+        },
+        {
+            fontSize: "24px",
+            color: "#0F6BFF",
+            fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
+        },
+        {
+            fontSize: "24px",
+            color: "#0F6BFF",
+            fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
+        },
+        {
+            fontSize: "24px",
+            color: "#0F6BFF",
+            fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
         },
     ]
     const cityStyles = [
         {
             fontSize: "52px",
             color: "#000000",
-            fontWeight: "bolder"
+            fontWeight: "bolder",
+            textDecoration:"underline",
+            cursor:"pointer"
         },
         {
             fontSize: "48px",
             color: "#333333",
-            fontWeight: "bold"
+            fontWeight: "bold",
+            textDecoration:"underline",
+            cursor:"pointer"
         },
         {
             fontSize: "42px",
             color: "#595959",
-            fontWeight: "normal"
+            fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
         },
         {
             fontSize: "36px",
             color: "#636363",
             fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
         },
         {
             fontSize: "28px",
             color: "#757575",
             fontWeight: "normal",
+            textDecoration:"underline",
+            cursor:"pointer"
         },
     ]
     
@@ -70,7 +125,14 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
                  style = {cityStyles[i]}
                  key = {cities[i]}
                  onClick = {() =>{
-                    console.log("https://everynoise.com/everyplace.cgi?root=Brownsville%20Texas%20US&scope=all");
+                    var stringArray = cities[i].split(/(\s+)/);
+                    for(let i = 0; i<stringArray.length;i++){
+                        if(stringArray[i]===" "){
+                            stringArray[i] = "%20";
+                        }
+                    }
+                    var joinedCityString = stringArray.join("");
+                    window.open("https://everynoise.com/everyplace.cgi?root=" +joinedCityString+ "%20"+countries[i]+"&scope=all");
                  }}
                  >
                  {cities[i]}, {countries[i]}
@@ -81,7 +143,13 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
              combineGenres.push(  //genres return in the correct order
                 <p
                 style = {genreStyles[i]}
-                key = {genres[i]}> 
+                key = {genres[i]}
+                onClick = {() =>{
+                    var genreString = genres[i].replace(/[^A-Z0-9]/ig, "");
+                    window.open("https://everynoise.com/engenremap-" +genreString+ ".html");
+                 }}
+                
+                > 
                 {genres[i]}
                 </p>
             ); 
@@ -93,7 +161,18 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
         <div>
             <div className="main-display-wrapper">
                 <h1>Your top city:</h1>
-                <div style = {cityStyles[0]} onClick = {() => {callback(cities[0]); }}> {cities[0]+", "+countries[0]}
+                <div style = {cityStyles[0]} 
+                onClick = {() => {
+                    var stringArray = cities[0].split(/(\s+)/);
+                    for(let i = 0; i<stringArray.length;i++){
+                        if(stringArray[0]===" "){
+                            stringArray[0] = "%20";
+                        }
+                    }
+                    var joinedCityString = stringArray.join("");
+                    window.open("https://everynoise.com/everyplace.cgi?root=" +joinedCityString+ "%20"+countries[0]+"&scope=all");
+                }}
+                > {cities[0]+", "+countries[0]}
                 </div>
             </div>
             <div className="main-display-wrapper">
