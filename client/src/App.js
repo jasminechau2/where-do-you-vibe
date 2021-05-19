@@ -64,7 +64,7 @@ class App extends Component {
   };
 
   getGenreInfo(time){
-    spotifyApi.getMyTopArtists({time_range: time, limit: 100})
+    spotifyApi.getMyTopArtists({time_range: time, limit: 50})
     .then((data)=>{
       this.setState({algoGeneration: findCities.findCities(data, this.state.allCities)});
       this.setState({
@@ -113,10 +113,11 @@ class App extends Component {
           <p>
             We need to talk to you about our algorithm. While we were building this site we realized that it takes our 
             opinion on how matching should work and then displays it to you as truth. 
-          </p> 
-          <p style={{
-            textDecoration:"underline"
-          }}>Isn't that what all algorithms do?</p>        
+          </p>   
+          <a href="https://www.youtube.com/watch?v=heQzqX35c9A" style={{
+            textDecoration:"underline",
+            textColor:"black"
+          }}>Isn't that what all algorithms do?</a>     
         </div>
         }
 

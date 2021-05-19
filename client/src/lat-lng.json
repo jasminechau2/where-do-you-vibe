@@ -123,8 +123,8 @@
     {
       "city": "Prince George",
       "country": "CA",
-      "lat": 37.3566009,
-      "lng": -121.85168
+      "lat": 53.9128645,
+      "lng": -122.7453699
     },
     {
       "city": "The Bronx New York",
@@ -237,8 +237,8 @@
     {
       "city": "Brantford",
       "country": "CA",
-      "lat": 33.8492853,
-      "lng": -117.8926901
+      "lat": 43.1408157,
+      "lng": -80.2631733
     },
     {
       "city": "Viedma",
@@ -321,8 +321,8 @@
     {
       "city": "Brampton",
       "country": "CA",
-      "lat": 34.1371454,
-      "lng": -118.1860415
+      "lat": 43.6858146,
+      "lng": -79.7599337
     },
     {
       "city": "Hull",
@@ -651,8 +651,8 @@
     {
       "city": "Saint-Eustache",
       "country": "CA",
-      "lat": 34.179325,
-      "lng": -118.909155
+      "lat": 45.5646052,
+      "lng": -73.8929714
     },
     {
       "city": "Versailles",
@@ -1137,8 +1137,8 @@
     {
       "city": "Hamilton",
       "country": "CA",
-      "lat": 37.2940035,
-      "lng": -121.9362119
+      "lat": 43.2560802,
+      "lng": -79.8728583
     },
     {
       "city": "Essen",
@@ -1341,8 +1341,8 @@
     {
       "city": "Saint-Hyacinthe",
       "country": "CA",
-      "lat": 33.5729495,
-      "lng": -117.733317
+      "lat": 45.627484,
+      "lng": -72.940636
     },
     {
       "city": "Alta Gracia",
@@ -1881,8 +1881,8 @@
     {
       "city": "Lethbridge",
       "country": "CA",
-      "lat": 32.971272,
-      "lng": -117.129662
+      "lat": 49.694285,
+      "lng": -112.851562
     },
     {
       "city": "Siedlce",
@@ -3387,8 +3387,8 @@
     {
       "city": "Barrie",
       "country": "CA",
-      "lat": 33.9833501,
-      "lng": -114.5341246
+      "lat": 44.3893113,
+      "lng": -79.6901736
     },
     {
       "city": "Nagano",
@@ -3783,8 +3783,8 @@
     {
       "city": "Chicoutimi",
       "country": "CA",
-      "lat": 35.187133,
-      "lng": -117.885359
+      "lat": 48.3370248,
+      "lng": -71.1235261
     },
     {
       "city": "South Tangerang",
@@ -3975,8 +3975,8 @@
     {
       "city": "Drummondville",
       "country": "CA",
-      "lat": 35.637164,
-      "lng": -117.67593
+      "lat": 45.8864303,
+      "lng": -72.5018764
     },
     {
       "city": "Newport",
@@ -4269,8 +4269,8 @@
     {
       "city": "Red Deer",
       "country": "CA",
-      "lat": 39.255668,
-      "lng": -120.9475644
+      "lat": 52.2697395,
+      "lng": -113.8181766
     },
     {
       "city": "Riverside California",
@@ -4557,8 +4557,8 @@
     {
       "city": "Saint John",
       "country": "CA",
-      "lat": 33.4828605,
-      "lng": -117.7082911
+      "lat": 45.278752,
+      "lng": -66.058044
     },
     {
       "city": "Valby",
@@ -4665,8 +4665,8 @@
     {
       "city": "Sydney",
       "country": "CA",
-      "lat": 35.2682244,
-      "lng": -120.6429641
+      "lat": 46.137977,
+      "lng": -60.194092
     },
     {
       "city": "Andorra la Vella",
@@ -4869,8 +4869,8 @@
     {
       "city": "Vaughan",
       "country": "CA",
-      "lat": 32.966122,
-      "lng": -117.060913
+      "lat": 43.7941544,
+      "lng": -79.5268023
     },
     {
       "city": "Shizuoka",
@@ -5325,8 +5325,8 @@
     {
       "city": "Victoriaville",
       "country": "CA",
-      "lat": 34.353745,
-      "lng": -117.620398
+      "lat": 46.0573705,
+      "lng": -71.9536674
     },
     {
       "city": "Estoril",
@@ -5469,8 +5469,8 @@
     {
       "city": "Saint-Jean-sur-Richelieu",
       "country": "CA",
-      "lat": 34.151945,
-      "lng": -118.793039
+      "lat": 45.3056879,
+      "lng": -73.2533401
     },
     {
       "city": "Dronten",
@@ -5637,8 +5637,8 @@
     {
       "city": "Rimouski",
       "country": "CA",
-      "lat": 35.187133,
-      "lng": -117.885359
+      "lat": 48.450155,
+      "lng": -68.529968
     },
     {
       "city": "Andorra la Vella",
@@ -5847,14 +5847,14 @@
     {
       "city": "Richmond Hill",
       "country": "CA",
-      "lat": 33.5039874,
-      "lng": -117.6969043
+      "lat": 43.880078,
+      "lng": -79.439392
     },
     {
       "city": "St. John's",
       "country": "CA",
-      "lat": 36.3846719,
-      "lng": -119.0984395
+      "lat": 47.561701,
+      "lng": -52.715149
     },
     {
       "city": "Le Mans",
@@ -6015,8 +6015,8 @@
     {
       "city": "Blainville",
       "country": "CA",
-      "lat": 35.187133,
-      "lng": -117.885359
+      "lat": 45.67932,
+      "lng": -73.87619
     },
     {
       "city": "Mumbai",
@@ -6057,8 +6057,8 @@
     {
       "city": "Kamloops",
       "country": "CA",
-      "lat": 34.277265,
-      "lng": -118.3813841
+      "lat": 50.6758269,
+      "lng": -120.339415
     },
     {
       "city": "Brumunddal",
@@ -6561,8 +6561,8 @@
     {
       "city": "North Vancouver",
       "country": "CA",
-      "lat": 33.5737587,
-      "lng": -117.7347551
+      "lat": 49.3206294,
+      "lng": -123.0737925
     },
     {
       "city": "vry",
@@ -6837,8 +6837,8 @@
     {
       "city": "Calgary",
       "country": "CA",
-      "lat": 51.0534234,
-      "lng": -114.0625892
+      "lat": 51.0460954,
+      "lng": -114.065465
     },
     {
       "city": "Bonn",
@@ -7095,8 +7095,8 @@
     {
       "city": "Oakville",
       "country": "CA",
-      "lat": 38.4368549,
-      "lng": -122.4022007
+      "lat": 43.447436,
+      "lng": -79.666672
     },
     {
       "city": "Barrow in Furness",
@@ -7209,8 +7209,8 @@
     {
       "city": "Ajax",
       "country": "CA",
-      "lat": 37.758743,
-      "lng": -122.3887005
+      "lat": 43.8505287,
+      "lng": -79.0208814
     },
     {
       "city": "Rio Grande",
@@ -8379,8 +8379,8 @@
     {
       "city": "Corner Brook",
       "country": "CA",
-      "lat": 37.3328873,
-      "lng": -121.8755104
+      "lat": 48.95317,
+      "lng": -57.947388
     },
     {
       "city": "Pembo",
@@ -9255,8 +9255,8 @@
     {
       "city": "Markham",
       "country": "CA",
-      "lat": 34.2367656,
-      "lng": -118.0991325
+      "lat": 43.8563707,
+      "lng": -79.3376825
     },
     {
       "city": "Milton Keynes",
@@ -10185,8 +10185,8 @@
     {
       "city": "Spruce Grove",
       "country": "CA",
-      "lat": 40.0932019,
-      "lng": -123.6797493
+      "lat": 50.1303702,
+      "lng": -122.9507386
     },
     {
       "city": "General Rodriguez",
@@ -10293,8 +10293,8 @@
     {
       "city": "Waterloo",
       "country": "CA",
-      "lat": 38.0346444,
-      "lng": -121.1868893
+      "lat": 43.4652699,
+      "lng": -80.5222961
     },
     {
       "city": "Gillingham",
@@ -10719,8 +10719,8 @@
     {
       "city": "Greater Sudbury",
       "country": "CA",
-      "lat": 37.166095,
-      "lng": -118.284852
+      "lat": 46.49272,
+      "lng": -80.991211
     },
     {
       "city": "Saenz Pena",
@@ -12387,8 +12387,8 @@
     {
       "city": "Langley",
       "country": "CA",
-      "lat": 34.619865,
-      "lng": -117.176047
+      "lat": 49.0986487,
+      "lng": -122.6592326
     },
     {
       "city": "Chofu",
@@ -12957,8 +12957,8 @@
     {
       "city": "Joliette",
       "country": "CA",
-      "lat": 36.216631,
-      "lng": -119.37029
+      "lat": 46.0239798,
+      "lng": -73.4419936
     },
     {
       "city": "Itaja\u00ed",
@@ -13317,8 +13317,8 @@
     {
       "city": "Mount Pearl",
       "country": "CA",
-      "lat": 33.5282163,
-      "lng": -117.6828073
+      "lat": 47.5189377,
+      "lng": -52.8144443
     },
     {
       "city": "Stavropol",
@@ -13383,8 +13383,8 @@
     {
       "city": "Abbotsford",
       "country": "CA",
-      "lat": 37.2787068,
-      "lng": -121.7678565
+      "lat": 49.0521162,
+      "lng": -122.329479
     },
     {
       "city": "Rayong",
@@ -13485,8 +13485,8 @@
     {
       "city": "Longueuil",
       "country": "CA",
-      "lat": 34.463546,
-      "lng": -118.622818
+      "lat": 45.5172382,
+      "lng": -73.4467466
     },
     {
       "city": "Villa Mercedes",
@@ -13557,8 +13557,8 @@
     {
       "city": "Peterborough",
       "country": "CA",
-      "lat": 42.881323,
-      "lng": -71.992491
+      "lat": 44.3048009,
+      "lng": -78.3199496
     },
     {
       "city": "Kingston upon Thames",
@@ -13749,8 +13749,8 @@
     {
       "city": "Levis",
       "country": "CA",
-      "lat": 36.6235615,
-      "lng": -120.4062754
+      "lat": 46.7910096,
+      "lng": -71.1753274
     },
     {
       "city": "Dalmine",
@@ -14211,8 +14211,8 @@
     {
       "city": "St. Catharines",
       "country": "CA",
-      "lat": 35.187133,
-      "lng": -117.885359
+      "lat": 43.1579812,
+      "lng": -79.2441003
     },
     {
       "city": "Nocera Inferiore",
@@ -14235,8 +14235,8 @@
     {
       "city": "Grande Prairie",
       "country": "CA",
-      "lat": 35.073007,
-      "lng": -117.956115
+      "lat": 55.17108,
+      "lng": -118.7949873
     },
     {
       "city": "De Bilt",
@@ -14559,8 +14559,8 @@
     {
       "city": "Richmond",
       "country": "CA",
-      "lat": 37.9357576,
-      "lng": -122.3477486
+      "lat": 49.163168,
+      "lng": -123.137414
     },
     {
       "city": "Pretoria",
@@ -14697,8 +14697,8 @@
     {
       "city": "Halifax",
       "country": "CA",
-      "lat": 41.8842639,
-      "lng": -87.6964047
+      "lat": 44.648618,
+      "lng": -63.5859487
     },
     {
       "city": "Cairo",
@@ -15141,8 +15141,8 @@
     {
       "city": "Boucherville",
       "country": "CA",
-      "lat": 35.187133,
-      "lng": -117.885359
+      "lat": 45.6050197,
+      "lng": -73.4526144
     },
     {
       "city": "Irapuato",
@@ -15525,8 +15525,8 @@
     {
       "city": "London",
       "country": "CA",
-      "lat": 36.4846239,
-      "lng": -119.4440598
+      "lat": 42.9836747,
+      "lng": -81.2496068
     },
     {
       "city": "Andorra la Vella",
@@ -15735,8 +15735,8 @@
     {
       "city": "Thunder Bay",
       "country": "CA",
-      "lat": 33.8126707,
-      "lng": -117.9203441
+      "lat": 48.406414,
+      "lng": -89.259796
     },
     {
       "city": "Limoges",
@@ -16047,8 +16047,8 @@
     {
       "city": "Guelph",
       "country": "CA",
-      "lat": 35.300928,
-      "lng": -120.016177
+      "lat": 43.5460516,
+      "lng": -80.2493276
     },
     {
       "city": "Telford",
@@ -16197,8 +16197,8 @@
     {
       "city": "Repentigny",
       "country": "CA",
-      "lat": 35.187133,
-      "lng": -117.885359
+      "lat": 45.7326055,
+      "lng": -73.4528307
     },
     {
       "city": "Andorra la Vella",
@@ -16257,8 +16257,8 @@
     {
       "city": "Burlington",
       "country": "CA",
-      "lat": 33.7408502,
-      "lng": -116.213213
+      "lat": 43.3248924,
+      "lng": -79.7966835
     },
     {
       "city": "Tegucigalpa",
@@ -17037,8 +17037,8 @@
     {
       "city": "Surrey",
       "country": "CA",
-      "lat": 33.7752737,
-      "lng": -118.105534
+      "lat": 49.1913033,
+      "lng": -122.8491439
     },
     {
       "city": "Lubin",
@@ -17061,8 +17061,8 @@
     {
       "city": "Trois-Rivi\u00e8res",
       "country": "CA",
-      "lat": 34.527808,
-      "lng": -117.812015
+      "lat": 46.3507999,
+      "lng": -72.5571257
     },
     {
       "city": "Potenza",
@@ -17529,8 +17529,8 @@
     {
       "city": "Vaudreuil-Dorion",
       "country": "CA",
-      "lat": 35.187133,
-      "lng": -117.885359
+      "lat": 45.3971509,
+      "lng": -74.0254577
     },
     {
       "city": "Santiago",
@@ -18609,8 +18609,8 @@
     {
       "city": "Woodbridge",
       "country": "CA",
-      "lat": 38.1540849,
-      "lng": -121.301337
+      "lat": 43.7848982,
+      "lng": -79.5923855
     },
     {
       "city": "Oviedo",
@@ -19425,8 +19425,8 @@
     {
       "city": "Regina",
       "country": "CA",
-      "lat": 33.4865332,
-      "lng": -117.7072725
+      "lat": 50.44876,
+      "lng": -104.61731
     },
     {
       "city": "Munich",
@@ -19719,8 +19719,8 @@
     {
       "city": "Windsor",
       "country": "CA",
-      "lat": 38.5471327,
-      "lng": -122.8163802
+      "lat": 42.317099,
+      "lng": -83.0353434
     },
     {
       "city": "Beckton",
@@ -20445,8 +20445,8 @@
     {
       "city": "Cambridge",
       "country": "CA",
-      "lat": 33.552447,
-      "lng": -117.108754
+      "lat": 43.3600536,
+      "lng": -80.3123023
     },
     {
       "city": "Dijon",
@@ -20757,8 +20757,8 @@
     {
       "city": "Granby",
       "country": "CA",
-      "lat": 33.108549,
-      "lng": -117.2222769
+      "lat": 45.3990409,
+      "lng": -72.721834
     },
     {
       "city": "Aabybro",
@@ -20949,8 +20949,8 @@
     {
       "city": "Oshawa",
       "country": "CA",
-      "lat": 34.1627335,
-      "lng": -117.4812198
+      "lat": 43.8975558,
+      "lng": -78.8635324
     },
     {
       "city": "Yokohama",
@@ -21423,8 +21423,8 @@
     {
       "city": "Alma",
       "country": "CA",
-      "lat": 37.8103577,
-      "lng": -122.4227866
+      "lat": 48.548887,
+      "lng": -71.651459
     },
     {
       "city": "Exeter",
@@ -21471,8 +21471,8 @@
     {
       "city": "Terrebonne",
       "country": "CA",
-      "lat": 32.9278747,
-      "lng": -117.0195191
+      "lat": 45.7081005,
+      "lng": -73.6515157
     },
     {
       "city": "Colima",
@@ -21501,8 +21501,8 @@
     {
       "city": "Nanaimo",
       "country": "CA",
-      "lat": 35.045366,
-      "lng": -118.864871
+      "lat": 49.163877,
+      "lng": -123.938122
     },
     {
       "city": "Ivanovo",
@@ -21855,8 +21855,8 @@
     {
       "city": "Saint-Jerome",
       "country": "CA",
-      "lat": 41.7315529,
-      "lng": -121.9999836
+      "lat": 45.775426,
+      "lng": -74.013176
     },
     {
       "city": "Mlad\u00e1 Boleslav",
@@ -21927,8 +21927,8 @@
     {
       "city": "Dartmouth",
       "country": "CA",
-      "lat": 33.6499245,
-      "lng": -117.8281847
+      "lat": 44.6799707,
+      "lng": -63.5720232
     },
     {
       "city": "General Roca",

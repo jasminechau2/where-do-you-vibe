@@ -71,7 +71,7 @@ button.spotify-style{
 
 .main-display-wrapper {
   list-style: none;
-  font-size: 36px;
+  font-size: 22px;
   font-weight: bold;
   border-bottom: solid;
   border-color: black;
@@ -104,7 +104,7 @@ button.spotify-style{
   justify-content: left;
   padding: 12px;
   list-style: none;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
   border-bottom: solid;
   border-color: black;
