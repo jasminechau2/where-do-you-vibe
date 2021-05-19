@@ -113,7 +113,7 @@ const buildPath = path.resolve(__dirname, "../client/build");
         const refresh_token = body.refresh_token;
 
         //pass token as a cookie that expires in an hour
-        res.cookie( "access_token", access_token, {expires: new Date(3600000 + Date.now())});
+        res.cookie( "access_token", access_token, cookieOption);
 
         res.redirect(
           `${FRONTEND_URI}/`,

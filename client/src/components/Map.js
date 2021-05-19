@@ -38,20 +38,17 @@ function MakeMarkers({cityInfo, cityDetails, cityLocations}){
           },
           mouseover: (open) => {
             open.target.openPopup();
-          },
-          popupclose: ()=>{
-            map.setView(
-              [40,0], 
-              2
-            );
           }
         }}
         key = {location}
         >
           <Popup
-          onClose = {() =>
-            map.setView([40,0], 2)
-          }
+            autoPan = {false}
+            eventHandlers={{
+            click : () =>{
+                map.setView([40,0], 2)
+              }
+            }}  
           >
             {popupContent[i]}
           </Popup>
@@ -77,18 +74,19 @@ function Map({cityLocations, cityInfo, cityDetails, selectedCity}) {
   const center = [40,0];
   const zoom = 2;
   console.log(selectedCity);
-
   return (
     <div id="mapid">
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
        crossorigin=""/>  
         <MapContainer 
+            minZoom ={zoom}
             center={center}
             zoom={zoom}
             scrollWheelZoom={true}
             style={{
-              height: '600px',
+              height: '550px',
+              width: '1000px'
               }}
               whenCreated={setMap}
               > 
