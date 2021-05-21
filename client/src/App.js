@@ -137,21 +137,28 @@ class App extends Component {
         }
 
       {!this.state.loggedIn && !this.state.genresGenerated && 
+      <div>
         <div className="main-text-wrapper" > 
-        <h2>Hi! We are Jasmine and Zack.</h2>
-        <p>
-          We are seniors at Middlebury College in Vermont. As we were looking at jobs, we found it difficult to figure out the "vibes" of cities that we could move to. So we did the reasonable CS major thing and made a whole a** website. And this is that. Welcome.
-          Here is how it works:
-        </p>
-        <ol>
-          <li>You click the login button up above</li>
-          <li>Spotify recognizes our site and gives us permission to ask for your listening history</li>
-          <li>We store this "permission slip" in your brower's cookies (don't worry, this is the only thing we use cookies for, we don't track you)</li>
-          <li>Our site sends Spotify your token along with a request to see your listening history for the period you specify</li>
-          <li>Spotify gives us the requested information -- and nothing else</li>
-          <li>We run our algorithm on your data and display a list of cities so you can question your life choices</li>
-        </ol>
+          <h2>Hi! We are Jasmine and Zack.</h2>
+          <p>
+            We are seniors at Middlebury College in Vermont. As we were looking at jobs, we found it difficult to figure out the "vibes" of cities that we could move to. So we did the reasonable CS major thing and made a whole a** website. And this is that. Welcome.
+            Here is how it works:
+          </p>
+          <ol>
+            <li>You click the login button up above</li>
+            <li>Spotify recognizes our site and gives us permission to ask for your listening history</li>
+            <li>We store this "permission slip" in your brower's cookies (don't worry, this is the only thing we use cookies for, we don't track you)</li>
+            <li>Our site sends Spotify your token along with a request to see your listening history for the period you specify</li>
+            <li>Spotify gives us the requested information -- and nothing else</li>
+            <li>We run our algorithm on your data and display a list of cities so you can question your life choices</li>
+          </ol>
         </div>
+        <div className="main-text-wrapper">
+          <a href="https://everynoise.com/everyplace.cgi">Our city data comes from Glenn McDonald's Every Place at Once</a>
+        </div>
+
+      </div>
+        
       }
 
       { this.state.loggedIn && this.state.genresGenerated &&
