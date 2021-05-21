@@ -154,8 +154,6 @@ export default function UserCityDisplayTemplate({citiesObject, callback}) {
                 </p>
             ); 
            };
-           console.log(cities);
-
     };
 
     return ( 
