@@ -82,16 +82,12 @@ function Map({cityLocations, cityInfo, cityDetails}) {
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
        crossorigin=""/>  
-        <MapContainer 
+        <MapContainer className="map-container"
             worldCopyJump = {true}
             minZoom ={zoom}
             center={center}
             zoom={zoom}
             scrollWheelZoom={true}
-            style={{
-              height: '500px',
-              width: '750px'
-              }}
               whenCreated={setMap}
               > 
                <TileLayer

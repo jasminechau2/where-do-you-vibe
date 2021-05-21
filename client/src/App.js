@@ -179,7 +179,7 @@ class App extends Component {
             </div>
           </div>
           <div className="map-wrapper">
-          <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} />
+            <Map cityLocations = {this.state.points} cityInfo={this.state.algoGeneration} cityDetails = {this.state.allCities["items"]} />
           </div>
         </div>
       }
